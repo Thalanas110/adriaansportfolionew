@@ -7,6 +7,7 @@ import devtoolsJson from 'vite-plugin-devtools-json'
 import { nitroV2Plugin } from '@tanstack/nitro-v2-vite-plugin'
 
 const forSites = process.env?.FOR_SITES === 'true'
+const forVercel = process.env?.VERCEL === '1'
 
 const config = defineConfig({
   plugins: [
@@ -16,7 +17,13 @@ const config = defineConfig({
     }),
     tailwindcss(),
     tanstackStart(),
+    forVercel &&
+      nitroV2Plugin({
+        compatibilityDate: '2025-10-08',
+        preset: 'vercel',
+      }),
     forSites &&
+      !forVercel &&
       nitroV2Plugin({
         compatibilityDate: '2025-10-08',
         preset: 'node',
