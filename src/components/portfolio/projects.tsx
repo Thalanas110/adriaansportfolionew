@@ -8,74 +8,74 @@ type Tab = 'SE' | 'QA' | 'AVIATION'
 const SE_PROJECTS = [
   {
     id: 1,
-    name: 'WASTELAND API',
+    name: 'E-Commerce Platform',
+    subtitle: 'Group Project - CSP312A/L, CSP322A/L, CSE316A/L, CSP225A/L, CSC221A/L',
     description:
-      'A high-performance RESTful API built with FastAPI and PostgreSQL. Features JWT auth, Redis caching, and automated OpenAPI docs. Handles 10k+ req/s under load.',
-    tech: ['FastAPI', 'PostgreSQL', 'Redis', 'Docker', 'Python'],
-    status: 'DEPLOYED',
-    stars: 142,
-    link: '#',
+      'Full-stack e-commerce app for a flea market application. Currently deactivated but the whole codebase is here.',
+    tech: ['Vanilla', 'Node.js', 'Supabase', 'PostgreSQL', 'Tailwind CSS'],
+    highlights: ['Core Vanilla JS', 'User Authentication', 'Role-based access'],
+    github: 'https://github.com/Thalanas110/camflea-new',
+    demo: 'https://camflea-newer2.vercel.app/',
   },
   {
     id: 2,
-    name: 'FALLOUT DASHBOARD',
+    name: 'I Care Center Website',
+    subtitle: '',
     description:
-      'Real-time analytics dashboard built with React + TanStack Query. WebSocket-driven live data, customizable widget grid, and exportable reports for post-apocalyptic metrics.',
-    tech: ['React', 'TypeScript', 'WebSockets', 'Recharts', 'Tailwind'],
-    status: 'ACTIVE',
-    stars: 89,
-    link: '#',
+      'Website for my church where I am a part of the media team.',
+    tech: ['React', 'Node.js', 'Supabase', 'PostgreSQL', 'LeafletJS', 'Tailwind CSS'],
+    highlights: ['RBAC operations', 'User authentication', 'Responsive design', 'Video playback', 'God-oriented'],
+    github: '#',
+    demo: 'https://icarecenter.netlify.app/',
   },
   {
     id: 3,
-    name: 'BUNKER CHAT',
+    name: 'War of Dots',
+    subtitle: '',
     description:
-      'End-to-end encrypted messaging platform with E2E encryption, offline-first architecture using IndexedDB, and P2P fallback via WebRTC when servers go dark.',
-    tech: ['Next.js', 'WebRTC', 'IndexedDB', 'Node.js', 'Socket.io'],
-    status: 'ACTIVE',
-    stars: 201,
-    link: '#',
+      'Original website by Tjdog19 & CuriousAnt, remade by me using React with permission from Tea and Python. All credits goes to the original creators.',
+    tech: ['React', 'Node.js', 'Tailwind CSS'],
+    highlights: ['Responsive design', 'Interactive UI', 'Performance and UI beautification'],
+    github: '#',
+    demo: 'https://warofdots.net/',
   },
   {
     id: 4,
-    name: 'RADIATION TRACKER',
+    name: 'JFLAP but for Web',
+    subtitle: '',
     description:
-      'IoT sensor aggregation platform that ingests geospatial radiation data, stores time-series metrics, and visualizes contamination zones on interactive maps.',
-    tech: ['Python', 'TimescaleDB', 'MQTT', 'Leaflet.js', 'Grafana'],
-    status: 'DEPLOYED',
-    stars: 67,
-    link: '#',
+      'JFLAP replacement for testing with formal languages and automatons. Also allows editing on mobile--probs the first ever one done to date.',
+    tech: ['React', 'Tanstack Start', 'Vite', 'GroqAI', 'Tailwind CSS'],
+    highlights: ['AI Assistance', 'Formal Languages', 'Automatons', 'Interactive UI'],
+    github: 'https://github.com/Thalanas110/automata',
+    demo: 'https://automatastudio.vercel.app/',
   },
   {
     id: 5,
-    name: 'VAULT MANAGER',
+    name: 'Practicum Vlogsite',
+    subtitle: '',
     description:
-      'Full-stack inventory management system for post-war resource allocation. Features role-based access, audit trails, barcode scanning, and predictive shortage alerts.',
-    tech: ['React', 'Express', 'MongoDB', 'JWT', 'Bull Queue'],
-    status: 'ACTIVE',
-    stars: 118,
-    link: '#',
+      'Practicum vlogsite which I used to display the vlogs as required by Prof. Loudel M. Manaloto, MSCS. The vlogsite isn\'t required, but overkill is always better.',
+    tech: ['Vanilla', 'Vite', 'Node.js', 'Supabase', 'PostgreSQL'],
+    highlights: ['CRUD operations', 'User authentication', 'Responsive design', 'Video playback', 'Core Vanilla JS'],
+    github: 'https://github.com/zionren/OJTblogsite',
+    demo: 'https://practicumoneblogsite.vercel.app/',
   },
   {
     id: 6,
-    name: 'SIGNAL FORGE',
+    name: 'Devotion Blogsite',
+    subtitle: '',
     description:
-      'CLI + web tool for generating OpenAPI specs from TypeScript interfaces. Auto-syncs with Postman and generates typed SDK clients for 5 languages automatically.',
-    tech: ['TypeScript', 'Node.js', 'Handlebars', 'OpenAPI', 'CLI'],
-    status: 'OPEN SOURCE',
-    stars: 334,
-    link: '#',
+      'Devotion website I did with full admin dashboard so I could just use this instead of randomizing in my notes app on my phone & track devotions better.',
+    tech: ['React', 'Vite', 'Node.js', 'Supabase', 'PostgreSQL', 'Tailwind CSS'],
+    highlights: ['Simple responsive design', 'CRUD operations', 'User authentication', 'Responsive design'],
+    github: 'https://github.com/Thalanas110/DevotionPage',
+    demo: 'https://adriaansdevotions.netlify.app/',
   },
 ]
 
-const STATUS_COLORS: Record<string, string> = {
-  DEPLOYED: '#39FF14',
-  ACTIVE: '#CAFF00',
-  'OPEN SOURCE': '#FF9500',
-}
-
 function SEProjects() {
-  const ALL_PROJECTS_URL = 'https://github.com'
+  const ALL_PROJECTS_URL = 'https://allofadriaansprojects.netlify.app/'
 
   return (
     <div>
@@ -115,29 +115,39 @@ function SEProjects() {
                 <div
                   className="w-1.5 h-1.5 rounded-full animate-pulse"
                   style={{
-                    background: STATUS_COLORS[proj.status] ?? '#39FF14',
-                    boxShadow: `0 0 6px ${STATUS_COLORS[proj.status] ?? '#39FF14'}`,
+                    background: '#39FF14',
+                    boxShadow: '0 0 6px #39FF14',
                   }}
                 />
                 <span
                   className="text-[10px] tracking-[0.15em]"
                   style={{
                     fontFamily: 'Share Tech Mono, monospace',
-                    color: STATUS_COLORS[proj.status] ?? '#39FF14',
+                    color: '#39FF14',
                   }}
                 >
-                  {proj.status}
+                  DEPLOYED
                 </span>
               </div>
             </div>
 
             {/* Name */}
             <h3
-              className="text-[#39FF14] font-bold text-base mb-2 tracking-wide group-hover:text-[#CAFF00] transition-colors"
+              className="text-[#39FF14] font-bold text-base mb-1 tracking-wide group-hover:text-[#CAFF00] transition-colors"
               style={{ fontFamily: 'Orbitron, monospace' }}
             >
               {proj.name}
             </h3>
+
+            {/* Subtitle */}
+            {proj.subtitle && (
+              <p
+                className="text-[#39FF14]/40 text-[10px] leading-relaxed mb-2"
+                style={{ fontFamily: 'Share Tech Mono, monospace' }}
+              >
+                {proj.subtitle}
+              </p>
+            )}
 
             {/* Description */}
             <p
@@ -160,22 +170,34 @@ function SEProjects() {
               ))}
             </div>
 
-            {/* Stars + link */}
+            {/* Links */}
             <div className="flex items-center justify-between">
-              <span
-                className="text-[#39FF14]/40 text-xs"
-                style={{ fontFamily: 'Share Tech Mono, monospace' }}
-              >
-                ★ {proj.stars}
-              </span>
+              {proj.github !== '#' ? (
+                <a
+                  href={proj.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs text-[#39FF14]/50 hover:text-[#39FF14] transition-colors tracking-widest"
+                  style={{ fontFamily: 'Share Tech Mono, monospace' }}
+                >
+                  GITHUB →
+                </a>
+              ) : (
+                <span
+                  className="text-xs text-[#39FF14]/30 tracking-widest"
+                  style={{ fontFamily: 'Share Tech Mono, monospace' }}
+                >
+                  PRIVATE
+                </span>
+              )}
               <a
-                href={proj.link}
+                href={proj.demo}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-xs text-[#39FF14]/50 hover:text-[#39FF14] transition-colors tracking-widest"
+                className="text-xs text-[#CAFF00]/60 hover:text-[#CAFF00] transition-colors tracking-widest"
                 style={{ fontFamily: 'Share Tech Mono, monospace' }}
               >
-                ACCESS →
+                DEMO →
               </a>
             </div>
           </motion.div>
