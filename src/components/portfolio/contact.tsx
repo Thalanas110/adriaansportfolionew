@@ -119,7 +119,7 @@ export function Contact() {
         }}
       />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-6">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-6 overflow-hidden">
         {/* Section header */}
         <motion.div
           initial={{ opacity: 0, x: -30 }}
@@ -155,16 +155,16 @@ export function Contact() {
           />
         </motion.div>
 
-        <div className="grid md:grid-cols-5 gap-10">
+        <div className="grid md:grid-cols-5 gap-6 md:gap-10 w-full overflow-hidden">
           {/* Left: Contact links */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
+            initial={{ opacity: 0, y: 20 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="md:col-span-2 space-y-4"
+            className="md:col-span-2 space-y-4 min-w-0"
           >
             <div
-              className="text-[#39FF14]/40 text-xs tracking-[0.3em] mb-6"
+              className="text-[#39FF14]/40 text-xs tracking-[0.15em] md:tracking-[0.3em] mb-6"
               style={{ fontFamily: 'Share Tech Mono, monospace' }}
             >
               ☢ AVAILABLE CHANNELS
@@ -183,14 +183,14 @@ export function Contact() {
                 initial={{ opacity: 0, x: -20 }}
                 animate={inView ? { opacity: 1, x: 0 } : {}}
                 transition={{ duration: 0.5, delay: 0.2 + i * 0.1 }}
-                className="group flex items-start gap-4 border border-[#39FF14]/10 bg-[#39FF14]/2 p-4 hover:border-[#39FF14]/30 hover:bg-[#39FF14]/5 transition-all duration-200 block"
+                className="group flex items-start gap-3 border border-[#39FF14]/10 bg-[#39FF14]/2 p-3 md:p-4 hover:border-[#39FF14]/30 hover:bg-[#39FF14]/5 transition-all duration-200 overflow-hidden"
               >
                 <div className="text-xl shrink-0 mt-0.5 group-hover:scale-110 transition-transform">
                   {link.icon}
                 </div>
-                <div className="min-w-0">
+                <div className="min-w-0 flex-1 overflow-hidden">
                   <div
-                    className="text-[#39FF14]/40 text-[10px] tracking-[0.3em] mb-1"
+                    className="text-[#39FF14]/40 text-[10px] tracking-[0.15em] md:tracking-[0.3em] mb-1 truncate"
                     style={{ fontFamily: 'Share Tech Mono, monospace' }}
                   >
                     {link.label}
@@ -202,7 +202,7 @@ export function Contact() {
                     {link.value}
                   </div>
                   <div
-                    className="text-[#39FF14]/30 text-[10px] mt-0.5"
+                    className="text-[#39FF14]/30 text-[10px] mt-0.5 truncate"
                     style={{ fontFamily: 'Share Tech Mono, monospace' }}
                   >
                     {link.desc}
@@ -217,26 +217,26 @@ export function Contact() {
 
           {/* Right: Email form */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
+            initial={{ opacity: 0, y: 20 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="md:col-span-3"
+            className="md:col-span-3 min-w-0"
           >
             <div className="border border-[#39FF14]/15 bg-[#060604] relative overflow-hidden">
               {/* Terminal header bar */}
-              <div className="flex items-center gap-3 px-5 py-3 border-b border-[#39FF14]/10 bg-[#39FF14]/3">
-                <div className="flex gap-1.5">
+              <div className="flex items-center gap-3 px-4 py-3 border-b border-[#39FF14]/10 bg-[#39FF14]/3 min-w-0">
+                <div className="flex gap-1.5 shrink-0">
                   <div className="w-2.5 h-2.5 rounded-full bg-[#FF4500]/60" />
                   <div className="w-2.5 h-2.5 rounded-full bg-[#CAFF00]/60" />
                   <div className="w-2.5 h-2.5 rounded-full bg-[#39FF14]/60" />
                 </div>
                 <span
-                  className="text-[#39FF14]/40 text-xs tracking-[0.3em] flex-1 text-center"
+                  className="text-[#39FF14]/40 text-[10px] md:text-xs tracking-tight md:tracking-[0.3em] flex-1 text-center truncate"
                   style={{ fontFamily: 'Share Tech Mono, monospace' }}
                 >
                   TRANSMISSION_TERMINAL_v2.4
                 </span>
-                <div className="w-1.5 h-1.5 rounded-full bg-[#39FF14] animate-pulse shadow-[0_0_6px_#39FF14]" />
+                <div className="w-1.5 h-1.5 rounded-full bg-[#39FF14] animate-pulse shadow-[0_0_6px_#39FF14] shrink-0" />
               </div>
 
               <div className="p-6">
@@ -287,7 +287,7 @@ export function Contact() {
                       {/* Name */}
                       <div>
                         <label
-                          className="block text-[#39FF14]/50 text-[10px] tracking-[0.3em] mb-1.5"
+                          className="block text-[#39FF14]/50 text-[10px] tracking-[0.15em] md:tracking-[0.3em] mb-1.5"
                           style={{ fontFamily: 'Share Tech Mono, monospace' }}
                         >
                           IDENTIFIER [NAME]
@@ -307,7 +307,7 @@ export function Contact() {
                       {/* Email */}
                       <div>
                         <label
-                          className="block text-[#39FF14]/50 text-[10px] tracking-[0.3em] mb-1.5"
+                          className="block text-[#39FF14]/50 text-[10px] tracking-[0.15em] md:tracking-[0.3em] mb-1.5"
                           style={{ fontFamily: 'Share Tech Mono, monospace' }}
                         >
                           UPLINK [EMAIL]
@@ -328,7 +328,7 @@ export function Contact() {
                     {/* Subject */}
                     <div>
                       <label
-                        className="block text-[#39FF14]/50 text-[10px] tracking-[0.3em] mb-1.5"
+                        className="block text-[#39FF14]/50 text-[10px] tracking-[0.15em] md:tracking-[0.3em] mb-1.5"
                         style={{ fontFamily: 'Share Tech Mono, monospace' }}
                       >
                         FREQUENCY [SUBJECT]
@@ -348,7 +348,7 @@ export function Contact() {
                     {/* Message */}
                     <div>
                       <label
-                        className="block text-[#39FF14]/50 text-[10px] tracking-[0.3em] mb-1.5"
+                        className="block text-[#39FF14]/50 text-[10px] tracking-[0.15em] md:tracking-[0.3em] mb-1.5"
                         style={{ fontFamily: 'Share Tech Mono, monospace' }}
                       >
                         MESSAGE BODY
@@ -392,7 +392,7 @@ export function Contact() {
                     >
                       <span className="absolute inset-0 bg-[#39FF14] translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-300" />
                       <span
-                        className="relative text-[#39FF14] group-hover:text-[#060604] font-bold tracking-[0.3em] text-sm transition-colors duration-300"
+                        className="relative text-[#39FF14] group-hover:text-[#060604] font-bold tracking-[0.15em] md:tracking-[0.3em] text-sm transition-colors duration-300"
                         style={{ fontFamily: 'Orbitron, monospace' }}
                       >
                         {formState === 'sending'
@@ -407,10 +407,10 @@ export function Contact() {
 
             {/* Bottom note */}
             <div
-              className="mt-4 text-[#39FF14]/25 text-[10px] tracking-widest text-center"
+              className="mt-4 text-[#39FF14]/25 text-[10px] tracking-wide md:tracking-widest text-center break-words"
               style={{ fontFamily: 'Share Tech Mono, monospace' }}
             >
-              ☢ ENCRYPTED VIA EMAILJS PROTOCOL — SIGNAL MONITORED AT ALL TIMES
+              ☢ ENCRYPTED VIA EMAILJS — SIGNAL MONITORED
             </div>
           </motion.div>
         </div>
