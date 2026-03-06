@@ -15,10 +15,18 @@ export function Nav() {
   const [scrolled, setScrolled] = useState(false)
   const [active, setActive] = useState('HOME')
   const [menuOpen, setMenuOpen] = useState(false)
+  const [hideOnMobile, setHideOnMobile] = useState(true)
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 40)
+
+      // Hide nav on mobile when in hero section
+      const heroEl = document.getElementById('home')
+      if (heroEl) {
+        const heroBottom = heroEl.offsetTop + heroEl.offsetHeight
+        setHideOnMobile(window.scrollY < heroBottom - 100)
+      }
 
       const sections = ['home', 'bio', 'experience', 'projects', 'contact']
       const labels: Record<string, string> = {
@@ -37,6 +45,7 @@ export function Nav() {
       }
     }
     window.addEventListener('scroll', handleScroll, { passive: true })
+    handleScroll() // Call once to set initial state
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
@@ -56,7 +65,7 @@ export function Nav() {
         scrolled
           ? 'bg-[#060604]/95 backdrop-blur-md border-b border-[#39FF14]/20 shadow-[0_0_30px_rgba(57,255,20,0.1)]'
           : 'bg-transparent'
-      }`}
+      } ${hideOnMobile ? 'max-md:opacity-0 max-md:pointer-events-none max-md:-translate-y-full' : 'max-md:opacity-100 max-md:translate-y-0'}`}
     >
       {/* Warning stripes top bar */}
       <div
