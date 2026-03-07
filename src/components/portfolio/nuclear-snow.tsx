@@ -13,6 +13,14 @@ interface Particle {
   swayOffset: number
 }
 
+function isMobile() {
+  return (
+    typeof window !== 'undefined' &&
+    (window.innerWidth <= 768 ||
+      /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent))
+  )
+}
+
 function makeParticle(w: number, h: number, scatter = false): Particle {
   return {
     x: Math.random() * w,
@@ -26,37 +34,62 @@ function makeParticle(w: number, h: number, scatter = false): Particle {
   }
 }
 
-const PARTICLE_COUNT = 200
+const PARTICLE_COUNT_DESKTOP = 200
+const PARTICLE_COUNT_MOBILE = 60
+// Mobile: skip a frame every other tick to halve GPU load
+const MOBILE_FRAME_SKIP = 2
 
 export function NuclearSnow() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
 
   useEffect(() => {
+    // Respect prefers-reduced-motion
+    if (
+      typeof window !== 'undefined' &&
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    ) {
+      return
+    }
+
     const canvas = canvasRef.current
     if (!canvas) return
-    const ctx = canvas.getContext('2d')
+    const ctx = canvas.getContext('2d', { alpha: true })
     if (!ctx) return
 
     let animId: number
     let particles: Particle[] = []
+    let frameCount = 0
+    let mobile = isMobile()
+    let particleCount = mobile ? PARTICLE_COUNT_MOBILE : PARTICLE_COUNT_DESKTOP
 
     const resize = () => {
+      mobile = isMobile()
+      particleCount = mobile ? PARTICLE_COUNT_MOBILE : PARTICLE_COUNT_DESKTOP
       canvas.width = window.innerWidth
       canvas.height = window.innerHeight
+      // Rebuild particles on resize so count stays correct
+      particles = Array.from({ length: particleCount }, () =>
+        makeParticle(canvas.width, canvas.height, true),
+      )
     }
 
     resize()
-    // Scatter initial particles across the screen so it doesn't look empty on load
-    particles = Array.from({ length: PARTICLE_COUNT }, () =>
-      makeParticle(canvas.width, canvas.height, true),
-    )
 
     const draw = () => {
+      animId = requestAnimationFrame(draw)
+
+      // On mobile, only paint every MOBILE_FRAME_SKIP frames (~30 fps)
+      if (mobile) {
+        frameCount++
+        if (frameCount % MOBILE_FRAME_SKIP !== 0) return
+      }
+
       ctx.clearRect(0, 0, canvas.width, canvas.height)
 
       const now = Date.now()
       for (const p of particles) {
-        const sway = Math.sin(now * p.swaySpeed + p.swayOffset) * 0.6
+        // Skip sway calculation on mobile to save CPU
+        const sway = mobile ? 0 : Math.sin(now * p.swaySpeed + p.swayOffset) * 0.6
         p.x += p.drift + sway
         p.y += p.speed
 
@@ -72,11 +105,9 @@ export function NuclearSnow() {
         ctx.fillStyle = `rgba(195, 215, 185, ${p.opacity})`
         ctx.fill()
       }
-
-      animId = requestAnimationFrame(draw)
     }
 
-    draw()
+    animId = requestAnimationFrame(draw)
     window.addEventListener('resize', resize)
 
     return () => {
