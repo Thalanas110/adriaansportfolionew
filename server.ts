@@ -66,7 +66,7 @@
 import path from 'node:path'
 
 // Configuration
-const SERVER_PORT = Number(process.env.PORT ?? 3000)
+const SERVER_PORT = Number(process.env.PORT ?? 8500)
 const CLIENT_DIRECTORY = './dist/client'
 const SERVER_ENTRY_POINT = './dist/server/server.js'
 

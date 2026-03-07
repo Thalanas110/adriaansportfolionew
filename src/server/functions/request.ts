@@ -21,5 +21,5 @@ export const getBaseUrl = createServerFn({ method: 'GET' }).handler(() => {
   }
 
   // Final fallback
-  return 'http://localhost:3000'
+  return 'http://localhost:8500'
 })
