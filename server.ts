@@ -14,7 +14,7 @@
  *
  * PORT (number)
  *   - Server port number
- *   - Default: 3000
+ *   - Default: 8500
  *
  * ASSET_PRELOAD_MAX_SIZE (number)
  *   - Maximum file size in bytes to preload into memory
