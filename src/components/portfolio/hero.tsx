@@ -2,8 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react'
 import { motion, AnimatePresence } from 'motion/react'
-
-const GLITCH_CHARS = '!@#$%^&*<>?/\\|[]{}~RADIOACTIVE☢☣'
+import { GLITCH_CHARS, TERMINAL_LINES } from './portfolio-constants/hero-constants'
 
 function useGlitch(text: string, active: boolean) {
   const [display, setDisplay] = useState(text)
@@ -31,14 +30,6 @@ function useGlitch(text: string, active: boolean) {
   }, [text, active])
   return display
 }
-
-const TERMINAL_LINES = [
-  '> SYSTEM BOOT... OK',
-  '> RADIATION LEVELS: CRITICAL',
-  '> LOADING PERSONNEL FILE...',
-  '> CLEARANCE LEVEL: MAXIMUM',
-  '> FILE DECRYPTED. DISPLAYING...',
-]
 
 function LoadingScreen({ lines }: { lines: string[] }) {
   return (

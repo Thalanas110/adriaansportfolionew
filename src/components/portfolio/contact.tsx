@@ -3,43 +3,13 @@
 import { useRef, useState } from 'react'
 import { motion, useInView } from 'motion/react'
 import emailjs from '@emailjs/browser'
-
-const SERVICE_ID = import.meta.env.VITE_PUBLIC_EMAILJS_SERVICE_ID ?? ''
-const TEMPLATE_ID = import.meta.env.VITE_PUBLIC_EMAILJS_TEMPLATE_ID ?? ''
-const PUBLIC_KEY = import.meta.env.VITE_PUBLIC_EMAILJS_PUBLIC_KEY ?? ''
-
-type FormState = 'idle' | 'sending' | 'success' | 'error'
-
-const CONTACT_LINKS = [
-  {
-    label: 'COMMS: PHONE',
-    value: 'Philippines',
-    href: '+63 945 394 5299',
-    icon: '📡',
-    desc: 'Direct line — no encryptions needed',
-  },
-  {
-    label: 'NETWORK: LINKEDIN',
-    value: 'Linkedin Profile',
-    href: 'https://www.linkedin.com/in/adriaan-dimate-390039260',
-    icon: '🔗',
-    desc: 'Professional bunker network',
-  },
-  {
-    label: 'UPLINK: EMAIL',
-    value: 'My main email address',
-    href: 'aadimate55@gmail.com',
-    icon: '◈',
-    desc: 'Encrypted transmission channel',
-  },
-  {
-    label: 'SIGNAL: FACEBOOK',
-    value: 'Add me before messaging when using this',
-    href: 'https://facebook.com/philippine8129heavy',
-    icon: '⬢',
-    desc: 'Social frequency channel',
-  },
-]
+import {
+  SERVICE_ID,
+  TEMPLATE_ID,
+  PUBLIC_KEY,
+  CONTACT_LINKS,
+  type FormState,
+} from './portfolio-constants/contact-constants'
 
 export function Contact() {
   const ref = useRef<HTMLDivElement>(null)
