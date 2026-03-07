@@ -550,7 +550,7 @@ export function Hero() {
 
                     {/* Photo */}
                     <div
-                      className="relative w-56 h-56 lg:w-64 lg:h-64 rounded-full overflow-hidden"
+                      className="relative w-64 h-64 lg:w-80 lg:h-80 rounded-full overflow-hidden"
                       style={{
                         border: '3px solid rgba(57,255,20,0.35)',
                         boxShadow:
@@ -584,14 +584,14 @@ export function Hero() {
 
                     {/* Biohazard badge — bottom right of photo */}
                     <div
-                      className="absolute bottom-2 right-0 w-9 h-9 rounded-full flex items-center justify-center border border-[#39FF14]/40"
+                      className="absolute bottom-2 right-0 w-11 h-11 rounded-full flex items-center justify-center border border-[#39FF14]/40"
                       style={{
                         background: 'rgba(6,6,4,0.9)',
                         boxShadow: '0 0 12px rgba(57,255,20,0.3)',
                       }}
                     >
                       <span
-                        className="text-sm"
+                        className="text-base"
                         style={{
                           filter: 'drop-shadow(0 0 4px rgba(57,255,20,0.8))',
                         }}
@@ -612,7 +612,7 @@ export function Hero() {
                   </div>
 
                   {/* Rad level */}
-                  <div className="w-full max-w-[260px] border border-[#39FF14]/15 p-3 bg-[#39FF14]/[0.02]">
+                  <div className="w-full max-w-[320px] border border-[#39FF14]/15 p-3 bg-[#39FF14]/[0.02]">
                     <div
                       className="text-[#39FF14]/40 text-[10px] tracking-[0.25em] mb-2"
                       style={{ fontFamily: 'Share Tech Mono, monospace' }}
