@@ -248,7 +248,7 @@ export function Hero() {
 
       <section
         id="home"
-        className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden"
+        className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden py-20 md:py-0"
         style={{ background: '#060604' }}
       >
         {/* Scanline overlay */}
@@ -335,7 +335,7 @@ export function Hero() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.7 }}
-                className="flex flex-col md:flex-row md:items-center md:justify-between gap-10 lg:gap-16"
+                className="flex flex-col md:flex-row md:items-center md:justify-between gap-8 md:gap-10 lg:gap-16"
               >
                 {/* ── LEFT: Text content ── */}
                 <div className="flex-1 min-w-0">
@@ -347,7 +347,7 @@ export function Hero() {
                     className="flex items-center gap-3 mb-3"
                   >
                     <span
-                      className="text-[#39FF14]/50 text-sm tracking-[0.35em]"
+                      className="text-[#39FF14]/50 text-[10px] sm:text-xs md:text-sm tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.35em]"
                       style={{ fontFamily: 'Share Tech Mono, monospace' }}
                     >
                       ☢ HI THERE — WELCOME TO MY WONDERLAND
@@ -519,7 +519,7 @@ export function Hero() {
                   initial={{ opacity: 0, scale: 0.88 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.8, delay: 0.35 }}
-                  className="hidden md:flex flex-col items-center gap-5 shrink-0"
+                  className="flex flex-col items-center gap-3 md:gap-5 shrink-0"
                 >
                   {/* Outer ring + photo */}
                   <div className="relative">
@@ -550,7 +550,7 @@ export function Hero() {
 
                     {/* Photo */}
                     <div
-                      className="relative w-64 h-64 lg:w-80 lg:h-80 rounded-full overflow-hidden"
+                      className="relative w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-80 lg:h-80 rounded-full overflow-hidden"
                       style={{
                         border: '3px solid rgba(57,255,20,0.35)',
                         boxShadow:
@@ -584,14 +584,14 @@ export function Hero() {
 
                     {/* Biohazard badge — bottom right of photo */}
                     <div
-                      className="absolute bottom-2 right-0 w-11 h-11 rounded-full flex items-center justify-center border border-[#39FF14]/40"
+                      className="absolute bottom-1 right-0 w-8 h-8 sm:w-9 sm:h-9 md:w-11 md:h-11 rounded-full flex items-center justify-center border border-[#39FF14]/40"
                       style={{
                         background: 'rgba(6,6,4,0.9)',
                         boxShadow: '0 0 12px rgba(57,255,20,0.3)',
                       }}
                     >
                       <span
-                        className="text-base"
+                        className="text-xs sm:text-sm md:text-base"
                         style={{
                           filter: 'drop-shadow(0 0 4px rgba(57,255,20,0.8))',
                         }}
@@ -612,7 +612,7 @@ export function Hero() {
                   </div>
 
                   {/* Rad level */}
-                  <div className="w-full max-w-[320px] border border-[#39FF14]/15 p-3 bg-[#39FF14]/[0.02]">
+                  <div className="w-full max-w-[240px] sm:max-w-[280px] md:max-w-[320px] border border-[#39FF14]/15 p-2 md:p-3 bg-[#39FF14]/[0.02]">
                     <div
                       className="text-[#39FF14]/40 text-[10px] tracking-[0.25em] mb-2"
                       style={{ fontFamily: 'Share Tech Mono, monospace' }}
