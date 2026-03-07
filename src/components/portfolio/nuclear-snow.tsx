@@ -1,6 +1,11 @@
 'use client'
 
 import { useEffect, useRef } from 'react'
+import {
+  PARTICLE_COUNT_DESKTOP,
+  PARTICLE_COUNT_MOBILE,
+  MOBILE_FRAME_SKIP,
+} from './portfolio-constants/nuclear-snow-constants'
 
 interface Particle {
   x: number
@@ -33,11 +38,6 @@ function makeParticle(w: number, h: number, scatter = false): Particle {
     swayOffset: Math.random() * Math.PI * 2,
   }
 }
-
-const PARTICLE_COUNT_DESKTOP = 200
-const PARTICLE_COUNT_MOBILE = 60
-// Mobile: skip a frame every other tick to halve GPU load
-const MOBILE_FRAME_SKIP = 2
 
 export function NuclearSnow() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
