@@ -8,6 +8,7 @@ import appCss from '../styles.css?url'
 import type { QueryClient } from '@tanstack/react-query'
 import { Toaster } from '@/components/ui/sonner'
 import { ThemeProvider } from 'next-themes'
+import { NuclearSnow } from '@/components/portfolio/nuclear-snow'
 import { getBaseUrl } from '@/server/functions/request'
 import {
   createOGMetaTags,
@@ -133,6 +134,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
           enableSystem={false}
           disableTransitionOnChange
         >
+          <NuclearSnow />
           {children}
           <Toaster />
         </ThemeProvider>
