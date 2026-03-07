@@ -320,15 +320,15 @@ export function Bio() {
                 What I Love
               </span>
             </div>
-            <div className="grid grid-cols-3 gap-2">
+            <div className="grid grid-cols-3 gap-3">
               {HOBBIES.map(({ icon: Icon, label }) => (
                 <div
                   key={label}
-                  className="flex flex-col items-center gap-1.5 py-2.5 border border-[#39FF14]/10 rounded-lg bg-[#39FF14]/[0.03] hover:border-[#39FF14]/30 transition-all cursor-default"
+                  className="flex flex-col items-center justify-center gap-3 py-6 border border-[#39FF14]/10 rounded-lg bg-[#39FF14]/[0.03] hover:border-[#39FF14]/30 transition-all cursor-default"
                 >
-                  <Icon size={14} className="text-[#39FF14]/60" />
+                  <Icon size={24} className="text-[#39FF14]/60" />
                   <span
-                    className="text-[#39FF14]/50 text-[10px]"
+                    className="text-[#39FF14]/50 text-xs"
                     style={{ fontFamily: 'Share Tech Mono, monospace' }}
                   >
                     {label}
