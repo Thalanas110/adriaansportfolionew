@@ -45,7 +45,7 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
     const baseUrl =
       typeof window !== 'undefined'
         ? window.location.origin
-        : (loaderData?.baseUrl ?? 'http://localhost:3000')
+        : (loaderData?.baseUrl ?? 'http://localhost:8500')
 
     const config: OGImageConfig = {
       isCustom: false,

@@ -10,7 +10,14 @@ import {
   Moon,
 } from 'lucide-react'
 
-export const FRAMEWORKS = ['React', 'Angular', 'Supabase', 'Vanilla', 'Appwrite']
+export const FRAMEWORKS = [
+  'Vanilla React', 
+  'Vite', 
+  'Tanstack Start', 
+  'Angular', 
+  'VanillaJS', 
+  'Tailwind CSS'
+]
 
 export const LANGUAGES = [
   'TypeScript',
@@ -32,7 +39,7 @@ export const EDUCATION = [
   {
     degree: 'BS Air Transportation',
     school: '(Future Goal)',
-    period: '2029–2034',
+    period: '?-?', // planned, may change, dependent
     active: false,
   },
 ]
