@@ -1,4 +1,9 @@
-<!DOCTYPE html>
+/**
+ * EmailJS email template.
+ * Paste the exported string into your EmailJS dashboard under the template's HTML content.
+ * Variables: {{from_name}}, {{from_email}}, {{to_email}}, {{subject}}, {{message}}, {{reply_to}}, {{date}}, {{time}}
+ */
+export const EMAIL_TEMPLATE = `<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -14,14 +19,12 @@
             padding: 20px;
             background-color: #f8f9fa;
         }
-        
         .email-container {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             border-radius: 12px;
             padding: 2px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
-        
         .email-content {
             background: white;
             border-radius: 10px;
@@ -29,7 +32,6 @@
             position: relative;
             overflow: hidden;
         }
-        
         .email-content::before {
             content: '';
             position: absolute;
@@ -39,26 +41,22 @@
             height: 4px;
             background: linear-gradient(90deg, #667eea, #764ba2, #f093fb);
         }
-        
         .header {
             text-align: center;
             margin-bottom: 30px;
             padding-top: 10px;
         }
-        
         .header h1 {
             color: #2d3748;
             margin: 0;
             font-size: 24px;
             font-weight: 600;
         }
-        
         .header .subtitle {
             color: #718096;
             font-size: 14px;
             margin-top: 5px;
         }
-        
         .sender-info {
             background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
             border-radius: 8px;
@@ -66,31 +64,26 @@
             margin: 20px 0;
             border-left: 4px solid #667eea;
         }
-        
         .sender-info h3 {
             margin: 0 0 10px 0;
             color: #2d3748;
             font-size: 18px;
         }
-        
         .info-row {
             display: flex;
             align-items: center;
             margin: 8px 0;
             font-size: 14px;
         }
-        
         .info-label {
             font-weight: 600;
             color: #4a5568;
             min-width: 80px;
         }
-        
         .info-value {
             color: #2d3748;
             word-break: break-all;
         }
-        
         .subject-section {
             background: #fff5f5;
             border: 1px solid #fed7d7;
@@ -98,22 +91,18 @@
             padding: 15px;
             margin: 20px 0;
         }
-        
         .subject-section h4 {
             margin: 0 0 8px 0;
             color: #c53030;
             font-size: 16px;
         }
-        
         .subject-text {
             color: #2d3748;
             font-weight: 500;
         }
-        
         .message-section {
             margin: 25px 0;
         }
-        
         .message-section h4 {
             color: #2d3748;
             margin: 0 0 15px 0;
@@ -121,7 +110,6 @@
             border-bottom: 2px solid #e2e8f0;
             padding-bottom: 8px;
         }
-        
         .message-content {
             background: #f7fafc;
             border-radius: 8px;
@@ -132,7 +120,6 @@
             color: #2d3748;
             line-height: 1.7;
         }
-        
         .footer {
             margin-top: 30px;
             padding-top: 20px;
@@ -141,7 +128,6 @@
             color: #718096;
             font-size: 12px;
         }
-        
         .reply-info {
             background: #e6fffa;
             border: 1px solid #81e6d9;
@@ -150,29 +136,14 @@
             margin: 15px 0;
             text-align: center;
         }
-        
         .reply-info strong {
             color: #234e52;
         }
-        
         @media (max-width: 600px) {
-            body {
-                padding: 10px;
-            }
-            
-            .email-content {
-                padding: 20px;
-            }
-            
-            .info-row {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            
-            .info-label {
-                min-width: auto;
-                margin-bottom: 2px;
-            }
+            body { padding: 10px; }
+            .email-content { padding: 20px; }
+            .info-row { flex-direction: column; align-items: flex-start; }
+            .info-label { min-width: auto; margin-bottom: 2px; }
         }
     </style>
 </head>
@@ -183,7 +154,6 @@
                 <h1>💬 New Contact Form Submission</h1>
                 <div class="subtitle">Portfolio Website Contact Form</div>
             </div>
-            
             <div class="sender-info">
                 <h3>👤 Contact Information</h3>
                 <div class="info-row">
@@ -199,21 +169,17 @@
                     <span class="info-value">{{to_email}}</span>
                 </div>
             </div>
-            
             <div class="subject-section">
                 <h4>📋 Subject</h4>
                 <div class="subject-text">{{subject}}</div>
             </div>
-            
             <div class="message-section">
                 <h4>💭 Message</h4>
                 <div class="message-content">{{message}}</div>
             </div>
-            
             <div class="reply-info">
                 <strong>📧 Reply to:</strong> {{reply_to}}
             </div>
-            
             <div class="footer">
                 <p>This email was sent from your portfolio contact form.</p>
                 <p>Received on {{date}} at {{time}}</p>
@@ -221,4 +187,4 @@
         </div>
     </div>
 </body>
-</html>
+</html>`
