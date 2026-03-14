@@ -2,7 +2,8 @@
 
 import { useEffect, useRef, useState } from 'react'
 import { motion, AnimatePresence } from 'motion/react'
-import { GLITCH_CHARS, TERMINAL_LINES } from './portfolio-constants/hero-constants'
+import { GLITCH_CHARS, TERMINAL_LINES, EMP_MAX_CHARGES } from './portfolio-constants/hero-constants'
+import { EmpCounter, EmpExplosion } from './emp-easter-egg'
 
 function useGlitch(text: string, active: boolean) {
   const [display, setDisplay] = useState(text)
@@ -135,6 +136,29 @@ export function Hero() {
   const [loadingDone, setLoadingDone] = useState(false)
   const canvasRef = useRef<HTMLCanvasElement>(null)
 
+  // ── Easter egg: EMP capacitor ──────────────────────────────────────────────
+  const [empCount, setEmpCount] = useState(0)
+  const [empActive, setEmpActive] = useState(false)
+  const [empShaking, setEmpShaking] = useState(false)
+
+  const handleEmpClick = () => {
+    if (empActive) return
+    const next = empCount + 1
+    if (next >= EMP_MAX_CHARGES) {
+      setEmpCount(EMP_MAX_CHARGES)
+      setEmpActive(true)
+      setEmpShaking(true)
+      setTimeout(() => setEmpShaking(false), 650)
+    } else {
+      setEmpCount(next)
+    }
+  }
+
+  const handleEmpComplete = () => {
+    setEmpActive(false)
+    setEmpCount(0)
+  }
+
   const nameText = 'ADRIAAN M. DIMATE'
   const glitchedName = useGlitch(nameText, glitchActive)
 
@@ -237,10 +261,14 @@ export function Hero() {
         {!loadingDone && <LoadingScreen lines={terminalLines} />}
       </AnimatePresence>
 
+      <EmpExplosion active={empActive} onComplete={handleEmpComplete} />
       <section
         id="home"
         className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden py-20 md:py-0"
-        style={{ background: '#060604' }}
+        style={{
+          background: '#060604',
+          animation: empShaking ? 'emp-shake 0.65s ease-out' : undefined,
+        }}
       >
         {/* Scanline overlay */}
         <div
@@ -634,6 +662,14 @@ export function Hero() {
                       CRITICAL
                     </div>
                   </div>
+
+                  {/* Easter egg: EMP capacitor charge bar */}
+                  <EmpCounter
+                    count={empCount}
+                    maxCount={EMP_MAX_CHARGES}
+                    onClick={handleEmpClick}
+                    disabled={empActive}
+                  />
                 </motion.div>
               </motion.div>
             )}
