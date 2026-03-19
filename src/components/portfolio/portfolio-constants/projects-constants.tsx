@@ -51,7 +51,7 @@ export const SE_PROJECTS = [
     subtitle: 'thesis writing - proprietary project for DTI and NMIS',
     description:
       'Thesis project for my thesis writing, using PWA tech for DTI and NMIS meat inspectors',
-    tech: ['Vanilla', 'Vite', 'Node.js', 'Supabase', 'PostgreSQL'],
+    tech: ['ReactJS', 'Tanstack Router', 'Vite', 'Node.js', 'Supabase', 'PostgreSQL'],
     highlights: ['OpenCV', 'Color Extraction', 'PWA features', 'Performance optimization'],
     github: '#',
     demo: '#',
