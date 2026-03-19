@@ -28,7 +28,7 @@ export const SE_PROJECTS = [
     name: 'War of Dots',
     subtitle: 'Game landing page for someonne`s game',
     description:
-      'Original website by Tjdog19 & CuriousAnt, remade by me using React with permission from Tea and Python. All credits goes to the original creators.',
+      'Original website by Tjdog19 & CuriosAnt, remade by me using React with permission from Tea and Python. All credits goes to the original creators.',
     tech: ['React', 'Node.js', 'Tailwind CSS'],
     highlights: ['Responsive design', 'Interactive UI', 'Performance and UI beautification'],
     github: '#',
