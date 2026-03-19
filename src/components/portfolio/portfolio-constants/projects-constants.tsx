@@ -15,7 +15,7 @@ export const SE_PROJECTS = [
   {
     id: 2,
     name: 'I Care Center Website',
-    subtitle: '',
+    subtitle: 'Media Team thing, my main ministry now',
     description:
       'Website for my church where I am a part of the media team.',
     tech: ['React', 'Node.js', 'Supabase', 'PostgreSQL', 'LeafletJS', 'Tailwind CSS'],
@@ -26,7 +26,7 @@ export const SE_PROJECTS = [
   {
     id: 3,
     name: 'War of Dots',
-    subtitle: '',
+    subtitle: 'Game landing page for someonne`s game',
     description:
       'Original website by Tjdog19 & CuriousAnt, remade by me using React with permission from Tea and Python. All credits goes to the original creators.',
     tech: ['React', 'Node.js', 'Tailwind CSS'],
@@ -37,7 +37,7 @@ export const SE_PROJECTS = [
   {
     id: 4,
     name: 'JFLAP but for Web',
-    subtitle: '',
+    subtitle: 'jflap replacement',
     description:
       'JFLAP replacement for testing with formal languages and automatons. Also allows editing on mobile--probs the first ever one done to date.',
     tech: ['React', 'Tanstack Start', 'Vite', 'GroqAI', 'Tailwind CSS'],
@@ -47,24 +47,24 @@ export const SE_PROJECTS = [
   },
   {
     id: 5,
-    name: 'Practicum Vlogsite',
-    subtitle: '',
+    name: 'Botcha Buster',
+    subtitle: 'thesis writing - proprietary project for DTI and NMIS',
     description:
-      'Practicum vlogsite which I used to display the vlogs as required by Prof. Loudel M. Manaloto, MSCS. The vlogsite isn\'t required, but overkill is always better.',
+      'Thesis project for my thesis writing, using PWA tech for DTI and NMIS meat inspectors',
     tech: ['Vanilla', 'Vite', 'Node.js', 'Supabase', 'PostgreSQL'],
-    highlights: ['CRUD operations', 'User authentication', 'Responsive design', 'Video playback', 'Core Vanilla JS'],
-    github: 'https://github.com/zionren/OJTblogsite',
-    demo: 'https://practicumoneblogsite.vercel.app/',
+    highlights: ['OpenCV', 'Color Extraction', 'PWA features', 'Performance optimization'],
+    github: '#',
+    demo: '#',
   },
   {
     id: 6,
     name: 'Devotion Blogsite',
-    subtitle: '',
+    subtitle: 'My main devotion',
     description:
       'Devotion website I did with full admin dashboard so I could just use this instead of randomizing in my notes app on my phone & track devotions better.',
     tech: ['React', 'Vite', 'Node.js', 'Supabase', 'PostgreSQL', 'Tailwind CSS'],
     highlights: ['Simple responsive design', 'CRUD operations', 'User authentication', 'Responsive design'],
-    github: 'https://github.com/Thalanas110/DevotionPage',
+    github: '#',
     demo: 'https://adriaansdevotions.netlify.app/',
   },
 ]
