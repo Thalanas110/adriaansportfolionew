@@ -4,10 +4,10 @@ export const SE_PROJECTS = [
   {
     id: 1,
     name: 'Media Remote Tool',
-    subtitle: 'ProPresenter & OBS Remotes',
+    subtitle: 'Unified OBS + ProPresenter Remote Control System',
     description:
-      'Remote tool for ProPresenter and OBS, combined into one tool, for faster and easier management of media during worship services.',
-    tech: ['React', 'Tanstack Start', 'Node.js', 'ProPresenter integration', 'OBS integration', 'Tailwind CSS'],
+      'A real-time web-based production control dashboard that unifies OBS scene switching and ProPresenter slide control into a single operator interface, designed for live church livestream environments.',
+    tech: ['React', 'Tanstack Start', 'Node.js', 'WebSockets', 'ProPresenter API', 'OBS WebSocket', 'Tailwind CSS'],
     highlights: ['Real-time synchronization', 'Cross-platform compatibility', 'User-friendly interface', 'Performance optimization'],
     github: '#',
     demo: '#',
