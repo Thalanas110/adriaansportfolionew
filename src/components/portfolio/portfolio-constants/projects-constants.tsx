@@ -3,14 +3,14 @@ export type Tab = 'SE' | 'QA' | 'AVIATION'
 export const SE_PROJECTS = [
   {
     id: 1,
-    name: 'E-Commerce Platform',
-    subtitle: 'Group Project - CSP312A/L, CSP322A/L, CSE316A/L, CSP225A/L, CSC221A/L',
+    name: 'Media Remote Tool',
+    subtitle: 'ProPresenter & OBS Remotes',
     description:
-      'Full-stack e-commerce app for a flea market application. Currently deactivated but the whole codebase is here.',
-    tech: ['Vanilla', 'Node.js', 'Supabase', 'PostgreSQL', 'Tailwind CSS'],
-    highlights: ['Core Vanilla JS', 'User Authentication', 'Role-based access'],
-    github: 'https://github.com/Thalanas110/camflea-new',
-    demo: 'https://camflea-newer2.vercel.app/',
+      'Remote tool for ProPresenter and OBS, combined into one tool, for faster and easier management of media during worship services.',
+    tech: ['React', 'Tanstack Start', 'Node.js', 'ProPresenter integration', 'OBS integration', 'Tailwind CSS'],
+    highlights: ['Real-time synchronization', 'Cross-platform compatibility', 'User-friendly interface', 'Performance optimization'],
+    github: '#',
+    demo: '#',
   },
   {
     id: 2,
