@@ -123,15 +123,24 @@ function SEProjects() {
                   PRIVATE
                 </span>
               )}
-              <a
-                href={proj.demo}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-xs text-[#CAFF00]/60 hover:text-[#CAFF00] transition-colors tracking-widest"
-                style={{ fontFamily: 'Share Tech Mono, monospace' }}
-              >
-                DEMO →
-              </a>
+              {proj.demo.includes('#') ? (
+                <span
+                  className="text-xs text-[#CAFF00]/35 tracking-widest"
+                  style={{ fontFamily: 'Share Tech Mono, monospace' }}
+                >
+                  COMING SOON
+                </span>
+              ) : (
+                <a
+                  href={proj.demo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs text-[#CAFF00]/60 hover:text-[#CAFF00] transition-colors tracking-widest"
+                  style={{ fontFamily: 'Share Tech Mono, monospace' }}
+                >
+                  DEMO →
+                </a>
+              )}
             </div>
           </motion.div>
         ))}
