@@ -9,7 +9,7 @@ export const SE_PROJECTS = [
       'A real-time web-based production control dashboard that unifies OBS scene switching and ProPresenter slide control into a single operator interface, designed for live church livestream environments.',
     tech: ['React', 'Tanstack Start', 'Node.js', 'WebSockets', 'ProPresenter API', 'OBS WebSocket', 'Tailwind CSS'],
     highlights: ['Real-time synchronization', 'Cross-platform compatibility', 'User-friendly interface', 'Performance optimization'],
-    github: '#',
+    github: 'https://github.com/Thalanas110/obs-propres-remote-icc',
     demo: '#',
   },
   {
