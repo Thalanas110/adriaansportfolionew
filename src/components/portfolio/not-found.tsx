@@ -208,7 +208,7 @@ export function NotFound() {
             <div className="w-2 h-2 rounded-full bg-[#39FF14]/25" />
             <div className="w-2 h-2 rounded-full bg-[#39FF14]/15" />
             <span
-              className="ml-2 text-[#39FF14]/50 text-xs tracking-widest"
+              className="ml-2 text-[#39FF14]/70 text-sm tracking-wide"
               style={{ fontFamily: 'Orbitron, monospace' }}
             >
               WASTELAND OS v4.0.4 — NAVIGATION SUBSYSTEM
@@ -223,7 +223,7 @@ export function NotFound() {
                 initial={{ opacity: 0, x: -8 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.2 }}
-                className="text-xs"
+                className="text-sm"
                 style={{
                   color:
                     i === 1
@@ -298,7 +298,7 @@ export function NotFound() {
                 >
                   Zone Contaminated — Entry Forbidden
                 </p>
-                <p className="text-[#39FF14]/40 text-xs tracking-widest">
+                <p className="text-[#39FF14]/65 text-sm tracking-wide">
                   The sector you requested has been wiped from the wasteland maps.
                 </p>
               </div>
@@ -306,7 +306,7 @@ export function NotFound() {
               {/* Divider */}
               <div className="w-full flex items-center gap-3">
                 <div className="flex-1 h-px bg-[#39FF14]/20" />
-                <span className="text-[#39FF14]/30 text-xs tracking-widest">⚠ RESTRICTED ⚠</span>
+                <span className="text-[#39FF14]/60 text-sm tracking-wide">⚠ RESTRICTED ⚠</span>
                 <div className="flex-1 h-px bg-[#39FF14]/20" />
               </div>
 
@@ -344,7 +344,7 @@ export function NotFound() {
 
               {/* Radiation meter */}
               <div className="w-full space-y-1">
-                <div className="flex justify-between text-[#39FF14]/30 text-xs">
+                <div className="flex justify-between text-[#39FF14]/60 text-sm">
                   <span>RADIATION LEVEL</span>
                   <span>CRITICAL</span>
                 </div>

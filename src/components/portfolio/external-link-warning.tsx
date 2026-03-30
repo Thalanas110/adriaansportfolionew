@@ -92,7 +92,7 @@ export function ExternalLinkWarning() {
                   ⚠
                 </span>
                 <div>
-                  <div className="text-[#39FF14]/50 text-[10px] tracking-[0.35em] mb-0.5">
+                  <div className="text-[#39FF14]/70 text-xs tracking-[0.28em] mb-0.5">
                     SYSTEM ALERT
                   </div>
                   <div
@@ -107,13 +107,13 @@ export function ExternalLinkWarning() {
               <div className="border-t border-[#39FF14]/15 mb-4" />
 
               {/* Body */}
-              <p className="text-[#39FF14]/60 text-[11px] tracking-widest leading-relaxed mb-3">
+              <p className="text-[#39FF14]/80 text-sm tracking-wide leading-relaxed mb-3">
                 YOU ARE ABOUT TO LEAVE THE SECURE PERIMETER AND BE REDIRECTED TO
                 AN EXTERNAL WEBSITE:
               </p>
 
               <div
-                className="text-[#39FF14] text-[11px] tracking-wider px-3 py-2 mb-4 break-all"
+                className="text-[#39FF14] text-sm tracking-wide px-3 py-2 mb-4 break-all"
                 style={{
                   background: 'rgba(57,255,20,0.05)',
                   border: '1px solid rgba(57,255,20,0.25)',
@@ -122,7 +122,7 @@ export function ExternalLinkWarning() {
                 ◈ {displayHost}
               </div>
 
-              <p className="text-[#39FF14]/30 text-[10px] tracking-widest mb-5">
+              <p className="text-[#39FF14]/60 text-xs tracking-wide mb-5">
                 ☢ THIS ZONE IS BEYOND PERIMETER CONTROL. PROCEED WITH CAUTION.
               </p>
 
@@ -197,7 +197,7 @@ function ExternalLinkButton({
       onClick={onClick}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="flex-1 py-2 text-[11px] tracking-[0.25em]"
+      className="flex-1 py-2 text-xs tracking-[0.2em]"
       style={style}
     >
       {children}

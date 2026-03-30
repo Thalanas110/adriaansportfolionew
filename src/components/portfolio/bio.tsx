@@ -72,7 +72,7 @@ export function Bio() {
             style={{ background: '#39FF14', boxShadow: '0 0 8px #39FF14' }}
           />
           <span
-            className="text-[#39FF14]/40 text-xs tracking-[0.4em]"
+            className="text-[#39FF14]/65 text-xs tracking-[0.35em]"
             style={{ fontFamily: 'Share Tech Mono, monospace' }}
           >
             FILE://
@@ -87,7 +87,7 @@ export function Bio() {
             PERSONNEL DOSSIER
           </h2>
           <span
-            className="hidden md:inline text-[#39FF14]/40 text-xs tracking-[0.4em]"
+            className="hidden md:inline text-[#39FF14]/65 text-xs tracking-[0.35em]"
             style={{ fontFamily: 'Share Tech Mono, monospace' }}
           >
             //CLEARANCE-MAX
@@ -129,7 +129,7 @@ export function Bio() {
             </div>
 
             <div
-              className="text-[#39FF14]/60 text-sm leading-relaxed space-y-3"
+              className="text-[#39FF14]/80 text-base leading-7 space-y-3"
               style={{ fontFamily: 'Share Tech Mono, monospace' }}
             >
               <p>
@@ -161,13 +161,13 @@ export function Bio() {
                   />
                   <div>
                     <div
-                      className="text-white text-xs font-bold"
+                      className="text-white text-sm font-bold"
                       style={{ fontFamily: 'Orbitron, monospace' }}
                     >
                       {t.label}
                     </div>
                     <div
-                      className="text-[#39FF14]/40 text-[11px] mt-0.5"
+                      className="text-[#39FF14]/65 text-xs mt-0.5 leading-relaxed"
                       style={{ fontFamily: 'Share Tech Mono, monospace' }}
                     >
                       {t.desc}
@@ -197,7 +197,7 @@ export function Bio() {
             </div>
 
             <div
-              className="text-[#39FF14]/40 text-[10px] tracking-[0.3em] mb-2"
+              className="text-[#39FF14]/65 text-xs tracking-[0.25em] mb-2"
               style={{ fontFamily: 'Share Tech Mono, monospace' }}
             >
               FRAMEWORKS
@@ -206,7 +206,7 @@ export function Bio() {
               {FRAMEWORKS.map((f) => (
                 <span
                   key={f}
-                  className="border border-[#39FF14]/20 text-[#39FF14]/70 text-xs px-3 py-1 rounded-md hover:border-[#39FF14]/50 hover:text-[#39FF14] transition-all cursor-default"
+                  className="border border-[#39FF14]/25 text-[#39FF14]/85 text-sm px-3 py-1 rounded-md hover:border-[#39FF14]/50 hover:text-[#39FF14] transition-all cursor-default"
                   style={{ fontFamily: 'Share Tech Mono, monospace' }}
                 >
                   {f}
@@ -215,7 +215,7 @@ export function Bio() {
             </div>
 
             <div
-              className="text-[#39FF14]/40 text-[10px] tracking-[0.3em] mb-2"
+              className="text-[#39FF14]/65 text-xs tracking-[0.25em] mb-2"
               style={{ fontFamily: 'Share Tech Mono, monospace' }}
             >
               LANGUAGES & DB
@@ -224,7 +224,7 @@ export function Bio() {
               {LANGUAGES.map((l) => (
                 <span
                   key={l}
-                  className="border border-[#39FF14]/20 text-[#39FF14]/70 text-xs px-3 py-1 rounded-md hover:border-[#39FF14]/50 hover:text-[#39FF14] transition-all cursor-default"
+                  className="border border-[#39FF14]/25 text-[#39FF14]/85 text-sm px-3 py-1 rounded-md hover:border-[#39FF14]/50 hover:text-[#39FF14] transition-all cursor-default"
                   style={{ fontFamily: 'Share Tech Mono, monospace' }}
                 >
                   {l}
@@ -285,13 +285,13 @@ export function Bio() {
                       {edu.degree}
                     </div>
                     <div
-                      className="text-[#39FF14]/50 text-xs mt-0.5"
+                      className="text-[#39FF14]/70 text-sm mt-0.5"
                       style={{ fontFamily: 'Share Tech Mono, monospace' }}
                     >
                       {edu.school}
                     </div>
                     <div
-                      className="text-[#CAFF00] text-[10px] mt-1 tracking-widest"
+                      className="text-[#CAFF00] text-xs mt-1 tracking-wide"
                       style={{ fontFamily: 'Share Tech Mono, monospace' }}
                     >
                       {edu.period}
@@ -326,9 +326,9 @@ export function Bio() {
                   key={label}
                   className="flex flex-col items-center justify-center gap-3 py-6 border border-[#39FF14]/10 rounded-lg bg-[#39FF14]/[0.03] hover:border-[#39FF14]/30 transition-all cursor-default"
                 >
-                  <Icon size={24} className="text-[#39FF14]/60" />
+                  <Icon size={24} className="text-[#39FF14]/75" />
                   <span
-                    className="text-[#39FF14]/50 text-xs"
+                    className="text-[#39FF14]/75 text-sm"
                     style={{ fontFamily: 'Share Tech Mono, monospace' }}
                   >
                     {label}
@@ -383,7 +383,7 @@ export function Bio() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={label}
-                    className="flex items-center justify-center w-9 h-9 border border-[#39FF14]/20 bg-[#39FF14]/5 rounded-lg text-[#39FF14]/60 hover:border-[#39FF14]/50 hover:text-[#39FF14] hover:bg-[#39FF14]/10 transition-all"
+                    className="flex items-center justify-center w-9 h-9 border border-[#39FF14]/20 bg-[#39FF14]/5 rounded-lg text-[#39FF14]/80 hover:border-[#39FF14]/50 hover:text-[#39FF14] hover:bg-[#39FF14]/10 transition-all"
                   >
                     <Icon size={15} />
                   </a>

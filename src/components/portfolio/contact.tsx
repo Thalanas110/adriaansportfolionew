@@ -102,7 +102,7 @@ export function Contact() {
             style={{ background: '#39FF14', boxShadow: '0 0 8px #39FF14' }}
           />
           <span
-            className="text-[#39FF14]/40 text-xs tracking-[0.4em]"
+            className="text-[#39FF14]/65 text-xs tracking-[0.35em]"
             style={{ fontFamily: 'Share Tech Mono, monospace' }}
           >
             TX://
@@ -134,7 +134,7 @@ export function Contact() {
             className="md:col-span-2 space-y-4 min-w-0"
           >
             <div
-              className="text-[#39FF14]/40 text-xs tracking-[0.15em] md:tracking-[0.3em] mb-6"
+              className="text-[#39FF14]/70 text-sm tracking-[0.12em] md:tracking-[0.25em] mb-6"
               style={{ fontFamily: 'Share Tech Mono, monospace' }}
             >
               ☢ AVAILABLE CHANNELS
@@ -160,7 +160,7 @@ export function Contact() {
                 </div>
                 <div className="min-w-0 flex-1 overflow-hidden">
                   <div
-                    className="text-[#39FF14]/40 text-[10px] tracking-[0.15em] md:tracking-[0.3em] mb-1 truncate"
+                    className="text-[#39FF14]/70 text-xs tracking-[0.12em] md:tracking-[0.2em] mb-1 truncate"
                     style={{ fontFamily: 'Share Tech Mono, monospace' }}
                   >
                     {link.label}
@@ -172,13 +172,13 @@ export function Contact() {
                     {link.value}
                   </div>
                   <div
-                    className="text-[#39FF14]/30 text-[10px] mt-0.5 truncate"
+                    className="text-[#39FF14]/60 text-xs mt-0.5 truncate"
                     style={{ fontFamily: 'Share Tech Mono, monospace' }}
                   >
                     {link.desc}
                   </div>
                 </div>
-                <div className="ml-auto self-center text-[#39FF14]/20 group-hover:text-[#39FF14]/60 text-sm transition-colors shrink-0">
+                <div className="ml-auto self-center text-[#39FF14]/50 group-hover:text-[#39FF14]/75 text-sm transition-colors shrink-0">
                   →
                 </div>
               </motion.a>
@@ -201,7 +201,7 @@ export function Contact() {
                   <div className="w-2.5 h-2.5 rounded-full bg-[#39FF14]/60" />
                 </div>
                 <span
-                  className="text-[#39FF14]/40 text-[10px] md:text-xs tracking-tight md:tracking-[0.3em] flex-1 text-center truncate"
+                  className="text-[#39FF14]/65 text-xs md:text-sm tracking-tight md:tracking-[0.2em] flex-1 text-center truncate"
                   style={{ fontFamily: 'Share Tech Mono, monospace' }}
                 >
                   TRANSMISSION_TERMINAL_v2.4
@@ -226,7 +226,7 @@ export function Contact() {
                       TRANSMISSION SENT
                     </div>
                     <div
-                      className="text-[#39FF14]/50 text-xs tracking-wider text-center"
+                      className="text-[#39FF14]/75 text-sm tracking-wide text-center"
                       style={{ fontFamily: 'Share Tech Mono, monospace' }}
                     >
                       Signal acquired. Response incoming within 24–48 hours.
@@ -247,7 +247,7 @@ export function Contact() {
                   >
                     {/* Prompt line */}
                     <div
-                      className="text-[#39FF14]/30 text-xs mb-4"
+                      className="text-[#39FF14]/65 text-sm mb-4"
                       style={{ fontFamily: 'Share Tech Mono, monospace' }}
                     >
                       {'>'} Compose encrypted message. All fields required.
@@ -257,7 +257,7 @@ export function Contact() {
                       {/* Name */}
                       <div>
                         <label
-                          className="block text-[#39FF14]/50 text-[10px] tracking-[0.15em] md:tracking-[0.3em] mb-1.5"
+                          className="block text-[#39FF14]/70 text-xs tracking-[0.12em] md:tracking-[0.2em] mb-1.5"
                           style={{ fontFamily: 'Share Tech Mono, monospace' }}
                         >
                           IDENTIFIER [NAME]
@@ -277,7 +277,7 @@ export function Contact() {
                       {/* Email */}
                       <div>
                         <label
-                          className="block text-[#39FF14]/50 text-[10px] tracking-[0.15em] md:tracking-[0.3em] mb-1.5"
+                          className="block text-[#39FF14]/70 text-xs tracking-[0.12em] md:tracking-[0.2em] mb-1.5"
                           style={{ fontFamily: 'Share Tech Mono, monospace' }}
                         >
                           UPLINK [EMAIL]
@@ -298,7 +298,7 @@ export function Contact() {
                     {/* Subject */}
                     <div>
                       <label
-                        className="block text-[#39FF14]/50 text-[10px] tracking-[0.15em] md:tracking-[0.3em] mb-1.5"
+                        className="block text-[#39FF14]/70 text-xs tracking-[0.12em] md:tracking-[0.2em] mb-1.5"
                         style={{ fontFamily: 'Share Tech Mono, monospace' }}
                       >
                         FREQUENCY [SUBJECT]
@@ -318,7 +318,7 @@ export function Contact() {
                     {/* Message */}
                     <div>
                       <label
-                        className="block text-[#39FF14]/50 text-[10px] tracking-[0.15em] md:tracking-[0.3em] mb-1.5"
+                        className="block text-[#39FF14]/70 text-xs tracking-[0.12em] md:tracking-[0.2em] mb-1.5"
                         style={{ fontFamily: 'Share Tech Mono, monospace' }}
                       >
                         MESSAGE BODY
@@ -334,7 +334,7 @@ export function Contact() {
                         style={{ fontFamily: 'Share Tech Mono, monospace' }}
                       />
                       <div
-                        className="text-[#39FF14]/25 text-[10px] text-right mt-1"
+                        className="text-[#39FF14]/60 text-xs text-right mt-1"
                         style={{ fontFamily: 'Share Tech Mono, monospace' }}
                       >
                         {charCount} CHARS
@@ -377,7 +377,7 @@ export function Contact() {
 
             {/* Bottom note */}
             <div
-              className="mt-4 text-[#39FF14]/25 text-[10px] tracking-wide md:tracking-widest text-center break-words"
+              className="mt-4 text-[#39FF14]/50 text-xs tracking-wide md:tracking-[0.2em] text-center break-words"
               style={{ fontFamily: 'Share Tech Mono, monospace' }}
             >
               ☢ ENCRYPTED VIA EMAILJS — SIGNAL MONITORED

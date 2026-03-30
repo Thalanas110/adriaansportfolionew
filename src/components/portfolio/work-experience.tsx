@@ -60,7 +60,7 @@ export function WorkExperience() {
             style={{ background: '#FF9500', boxShadow: '0 0 8px #FF9500' }}
           />
           <span
-            className="text-[#FF9500]/50 text-xs tracking-[0.4em]"
+            className="text-[#FF9500]/70 text-xs tracking-[0.35em]"
             style={{ fontFamily: 'Share Tech Mono, monospace' }}
           >
             LOG://
@@ -75,7 +75,7 @@ export function WorkExperience() {
             FIELD OPERATIONS
           </h2>
           <span
-            className="hidden md:inline text-[#FF9500]/50 text-xs tracking-[0.4em]"
+            className="hidden md:inline text-[#FF9500]/70 text-xs tracking-[0.35em]"
             style={{ fontFamily: 'Share Tech Mono, monospace' }}
           >
             //WORK-HISTORY
@@ -165,7 +165,7 @@ export function WorkExperience() {
                           {job.role}
                         </h3>
                         <span
-                          className="text-[10px] px-2 py-0.5 rounded-sm border tracking-widest font-semibold"
+                          className="text-xs px-2 py-0.5 rounded-sm border tracking-wide font-semibold"
                           style={{
                             color: accentColor,
                             borderColor: `${accentColor}40`,
@@ -177,7 +177,7 @@ export function WorkExperience() {
                         </span>
                         {job.current && (
                           <span
-                            className="text-[10px] px-2 py-0.5 rounded-sm border tracking-widest font-semibold animate-pulse"
+                            className="text-xs px-2 py-0.5 rounded-sm border tracking-wide font-semibold animate-pulse"
                             style={{
                               color: '#39FF14',
                               borderColor: '#39FF1440',
@@ -204,18 +204,18 @@ export function WorkExperience() {
                       {/* Meta: period + location */}
                       <div className="flex flex-wrap gap-4 mb-4">
                         <div className="flex items-center gap-1.5">
-                          <Calendar size={12} className="text-[#39FF14]/40" />
+                          <Calendar size={12} className="text-[#39FF14]/55" />
                           <span
-                            className="text-[#39FF14]/50 text-xs tracking-wide"
+                            className="text-[#39FF14]/70 text-sm tracking-wide"
                             style={{ fontFamily: 'Share Tech Mono, monospace' }}
                           >
                             {job.period}
                           </span>
                         </div>
                         <div className="flex items-center gap-1.5">
-                          <MapPin size={12} className="text-[#39FF14]/40" />
+                          <MapPin size={12} className="text-[#39FF14]/55" />
                           <span
-                            className="text-[#39FF14]/50 text-xs tracking-wide"
+                            className="text-[#39FF14]/70 text-sm tracking-wide"
                             style={{ fontFamily: 'Share Tech Mono, monospace' }}
                           >
                             {job.location}
@@ -225,7 +225,7 @@ export function WorkExperience() {
 
                       {/* Description */}
                       <p
-                        className="text-[#39FF14]/55 text-sm leading-relaxed mb-4"
+                        className="text-[#39FF14]/80 text-base leading-7 mb-4"
                         style={{ fontFamily: 'Share Tech Mono, monospace' }}
                       >
                         {job.description}
@@ -236,7 +236,7 @@ export function WorkExperience() {
                         {job.highlights.map((h, hi) => (
                           <li
                             key={hi}
-                            className="flex items-start gap-2 text-[#39FF14]/60 text-xs"
+                            className="flex items-start gap-2 text-[#39FF14]/75 text-sm leading-relaxed"
                             style={{ fontFamily: 'Share Tech Mono, monospace' }}
                           >
                             <ChevronRight
@@ -254,7 +254,7 @@ export function WorkExperience() {
                         {job.tags.map((tag) => (
                           <span
                             key={tag}
-                            className="text-[10px] px-2.5 py-1 rounded-md border tracking-wide"
+                            className="text-xs px-2.5 py-1 rounded-md border tracking-wide"
                             style={{
                               color: '#39FF14',
                               borderColor: '#39FF1420',
@@ -282,7 +282,7 @@ export function WorkExperience() {
           className="flex justify-center mt-12"
         >
           <div
-            className="border-2 border-[#FF9500]/20 px-6 py-2 rounded text-[#FF9500]/30 text-xs tracking-[0.5em] rotate-[-1deg]"
+            className="border-2 border-[#FF9500]/20 px-6 py-2 rounded text-[#FF9500]/55 text-sm tracking-[0.35em] rotate-[-1deg]"
             style={{ fontFamily: 'Share Tech Mono, monospace' }}
           >
             END OF FIELD LOG — {WORK.length} OPERATIONS RECORDED

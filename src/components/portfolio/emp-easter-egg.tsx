@@ -152,7 +152,7 @@ export function EmpCounter({ count, maxCount, onClick, disabled }: EmpCounterPro
     >
       {/* Label */}
       <div
-        className="text-[#39FF14]/40 text-[10px] tracking-[0.25em] mb-2 group-hover:text-[#39FF14]/65 transition-colors"
+        className="text-[#39FF14]/65 text-xs tracking-[0.2em] mb-2 group-hover:text-[#39FF14]/85 transition-colors"
         style={{ fontFamily: 'Share Tech Mono, monospace' }}
       >
         {isMaxed ? '⚡ CHARGE FULL — DETONATE?' : 'EMP CAPACITOR'}
@@ -188,7 +188,7 @@ export function EmpCounter({ count, maxCount, onClick, disabled }: EmpCounterPro
 
       {/* Count / CTA */}
       <div
-        className="text-[#39FF14]/30 text-[10px] mt-1 tracking-widest text-right group-hover:text-[#39FF14]/55 transition-colors"
+        className="text-[#39FF14]/60 text-xs mt-1 tracking-wide text-right group-hover:text-[#39FF14]/75 transition-colors"
         style={{ fontFamily: 'Share Tech Mono, monospace' }}
       >
         {isMaxed ? '>>> FIRE <<<' : `${count} / ${maxCount}`}

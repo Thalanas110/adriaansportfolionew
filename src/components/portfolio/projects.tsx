@@ -61,7 +61,7 @@ function ProjectGrid({
                   }}
                 />
                 <span
-                  className="text-[10px] tracking-[0.15em]"
+                  className="text-xs tracking-[0.12em]"
                   style={{
                     fontFamily: 'Share Tech Mono, monospace',
                     color: '#39FF14',
@@ -83,7 +83,7 @@ function ProjectGrid({
             {/* Subtitle */}
             {proj.subtitle && (
               <p
-                className="text-[#39FF14]/40 text-[10px] leading-relaxed mb-2"
+                className="text-[#39FF14]/70 text-xs leading-relaxed mb-2"
                 style={{ fontFamily: 'Share Tech Mono, monospace' }}
               >
                 {proj.subtitle}
@@ -92,7 +92,7 @@ function ProjectGrid({
 
             {/* Description */}
             <p
-              className="text-[#39FF14]/55 text-xs leading-relaxed mb-4"
+              className="text-[#39FF14]/80 text-sm leading-7 mb-4"
               style={{ fontFamily: 'Share Tech Mono, monospace' }}
             >
               {proj.description}
@@ -102,7 +102,7 @@ function ProjectGrid({
             {proj.highlights.length > 0 && (
               <div className="mb-4">
                 <div
-                  className="text-[#39FF14]/45 text-[10px] tracking-[0.12em] mb-2"
+                  className="text-[#39FF14]/70 text-xs tracking-[0.1em] mb-2"
                   style={{ fontFamily: 'Share Tech Mono, monospace' }}
                 >
                   HIGHLIGHTS
@@ -111,7 +111,7 @@ function ProjectGrid({
                   {proj.highlights.map((highlight) => (
                     <p
                       key={highlight}
-                      className="text-[#39FF14]/50 text-[10px] leading-relaxed"
+                      className="text-[#39FF14]/75 text-xs leading-relaxed"
                       style={{ fontFamily: 'Share Tech Mono, monospace' }}
                     >
                       - {highlight}
@@ -126,7 +126,7 @@ function ProjectGrid({
               {proj.tech.map((t) => (
                 <span
                   key={t}
-                  className="text-[10px] border border-[#39FF14]/15 text-[#39FF14]/50 px-2 py-0.5"
+                  className="text-xs border border-[#39FF14]/20 text-[#39FF14]/75 px-2 py-0.5"
                   style={{ fontFamily: 'Share Tech Mono, monospace' }}
                 >
                   {t}
@@ -141,14 +141,14 @@ function ProjectGrid({
                   href={proj.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-xs text-[#39FF14]/50 hover:text-[#39FF14] transition-colors tracking-widest"
+                  className="text-sm text-[#39FF14]/75 hover:text-[#39FF14] transition-colors tracking-wide"
                   style={{ fontFamily: 'Share Tech Mono, monospace' }}
                 >
                   GITHUB →
                 </a>
               ) : (
                 <span
-                  className="text-xs text-[#39FF14]/30 tracking-widest"
+                  className="text-sm text-[#39FF14]/55 tracking-wide"
                   style={{ fontFamily: 'Share Tech Mono, monospace' }}
                 >
                   PRIVATE
@@ -156,7 +156,7 @@ function ProjectGrid({
               )}
               {proj.demo.includes('#') ? (
                 <span
-                  className="text-xs text-[#CAFF00]/35 tracking-widest"
+                  className="text-sm text-[#CAFF00]/60 tracking-wide"
                   style={{ fontFamily: 'Share Tech Mono, monospace' }}
                 >
                   COMING SOON
@@ -166,7 +166,7 @@ function ProjectGrid({
                   href={proj.demo}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-xs text-[#CAFF00]/60 hover:text-[#CAFF00] transition-colors tracking-widest"
+                  className="text-sm text-[#CAFF00]/75 hover:text-[#CAFF00] transition-colors tracking-wide"
                   style={{ fontFamily: 'Share Tech Mono, monospace' }}
                 >
                   DEMO →
@@ -341,7 +341,7 @@ export function Projects() {
             style={{ background: '#39FF14', boxShadow: '0 0 8px #39FF14' }}
           />
           <span
-            className="text-[#39FF14]/40 text-xs tracking-[0.4em]"
+            className="text-[#39FF14]/65 text-xs tracking-[0.35em]"
             style={{ fontFamily: 'Share Tech Mono, monospace' }}
           >
             DB://
@@ -375,7 +375,7 @@ export function Projects() {
           <div className="relative md:hidden" ref={dropdownRef}>
             <button
               onClick={() => setDropdownOpen((o) => !o)}
-              className="w-full flex items-center justify-between border border-[#39FF14]/15 bg-[#39FF14]/[0.02] px-4 py-3 text-[#39FF14] text-xs tracking-[0.2em] transition-colors hover:border-[#39FF14]/40"
+              className="w-full flex items-center justify-between border border-[#39FF14]/20 bg-[#39FF14]/[0.02] px-4 py-3 text-[#39FF14] text-sm tracking-[0.15em] transition-colors hover:border-[#39FF14]/40"
               style={{ fontFamily: 'Orbitron, monospace' }}
             >
               <span>
@@ -383,7 +383,7 @@ export function Projects() {
                 {TABS.find((t) => t.id === activeTab)?.label}
               </span>
               <span
-                className={`text-[#39FF14]/50 text-[10px] transition-transform duration-200 ${
+                className={`text-[#39FF14]/65 text-xs transition-transform duration-200 ${
                   dropdownOpen ? 'rotate-180' : ''
                 }`}
               >
@@ -400,7 +400,7 @@ export function Projects() {
                       setActiveTab(tab.id)
                       setDropdownOpen(false)
                     }}
-                    className={`w-full flex items-center justify-between px-4 py-3 text-xs tracking-[0.2em] transition-colors border-b border-[#39FF14]/10 last:border-b-0 ${
+                    className={`w-full flex items-center justify-between px-4 py-3 text-sm tracking-[0.15em] transition-colors border-b border-[#39FF14]/10 last:border-b-0 ${
                       activeTab === tab.id
                         ? 'bg-[#39FF14] text-[#060604]'
                         : 'text-[#39FF14]/50 hover:text-[#39FF14]/80 hover:bg-[#39FF14]/5'
@@ -413,7 +413,7 @@ export function Projects() {
                     </span>
                     {tab.id === 'AVIATION' && activeTab !== tab.id && (
                       <span
-                        className="text-[8px] border border-current px-1 py-0.5 tracking-wider"
+                        className="text-[10px] border border-current px-1 py-0.5 tracking-wide"
                         style={{ fontFamily: 'Share Tech Mono, monospace' }}
                       >
                         SOON
@@ -431,7 +431,7 @@ export function Projects() {
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`relative px-5 py-3 text-xs tracking-[0.2em] transition-all duration-200 ${
+                className={`relative px-5 py-3 text-sm tracking-[0.15em] transition-all duration-200 ${
                   activeTab === tab.id
                     ? 'bg-[#39FF14] text-[#060604]'
                     : 'text-[#39FF14]/50 hover:text-[#39FF14]/80 hover:bg-[#39FF14]/5'
@@ -442,7 +442,7 @@ export function Projects() {
                 {tab.label}
                 {tab.id === 'AVIATION' && activeTab !== tab.id && (
                   <span
-                    className="ml-2 text-[8px] border border-current px-1 py-0.5 tracking-wider"
+                    className="ml-2 text-[10px] border border-current px-1 py-0.5 tracking-wide"
                     style={{ fontFamily: 'Share Tech Mono, monospace' }}
                   >
                     SOON

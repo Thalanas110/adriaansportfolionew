@@ -18,6 +18,7 @@ function Index() {
       style={{
         background: '#060604',
         fontFamily: 'Share Tech Mono, monospace',
+        lineHeight: 1.6,
       }}
     >
       <Nav />

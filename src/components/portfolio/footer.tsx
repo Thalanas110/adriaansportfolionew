@@ -59,7 +59,7 @@ export function Footer() {
                 ADRIAAN M. DIMATE
               </div>
               <div
-                className="text-[#39FF14]/25 text-[10px] tracking-widest"
+                className="text-[#39FF14]/55 text-xs tracking-wide"
                 style={{ fontFamily: 'Share Tech Mono, monospace' }}
               >
                 BUILT IN THE RUINS
@@ -82,7 +82,7 @@ export function Footer() {
                     .getElementById(link.href.replace('#', ''))
                     ?.scrollIntoView({ behavior: 'smooth' })
                 }
-                className="text-[#39FF14]/30 hover:text-[#39FF14]/70 text-[10px] tracking-[0.25em] transition-colors"
+                className="text-[#39FF14]/70 hover:text-[#39FF14] text-xs tracking-[0.2em] transition-colors"
                 style={{ fontFamily: 'Share Tech Mono, monospace' }}
               >
                 {link.label}
@@ -92,7 +92,7 @@ export function Footer() {
 
           {/* Right: copyright */}
           <div
-            className="text-[#39FF14]/20 text-[10px] tracking-widest"
+            className="text-[#39FF14]/55 text-xs tracking-wide"
             style={{ fontFamily: 'Share Tech Mono, monospace' }}
           >
             © {year} // ALL RIGHTS RESERVED
@@ -107,14 +107,14 @@ export function Footer() {
           transition={{ delay: 0.3 }}
           className="mt-8 border-t border-[#39FF14]/8 pt-6 flex items-center justify-center gap-3"
         >
-          <span className="text-[#39FF14]/15 text-lg">☢</span>
+          <span className="text-[#39FF14]/40 text-lg">☢</span>
           <span
-            className="text-[#39FF14]/15 text-[10px] tracking-[0.4em]"
+            className="text-[#39FF14]/45 text-xs tracking-[0.25em]"
             style={{ fontFamily: 'Share Tech Mono, monospace' }}
           >
             CAUTION: HIGH RADIATION ZONE — CERTIFIED NUCLEAR-GRADE PORTFOLIO
           </span>
-          <span className="text-[#39FF14]/15 text-lg">☢</span>
+          <span className="text-[#39FF14]/40 text-lg">☢</span>
         </motion.div>
       </div>
     </footer>

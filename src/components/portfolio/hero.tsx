@@ -366,7 +366,7 @@ export function Hero() {
                     className="flex items-center gap-3 mb-3"
                   >
                     <span
-                      className="text-[#39FF14]/50 text-[10px] sm:text-xs md:text-sm tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.35em]"
+                      className="text-[#39FF14]/70 text-xs sm:text-sm md:text-base tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.35em]"
                       style={{ fontFamily: 'Share Tech Mono, monospace' }}
                     >
                       ☢ HI THERE — WELCOME TO MY WONDERLAND
@@ -399,7 +399,7 @@ export function Hero() {
                     className="mb-5"
                   >
                     <span
-                      className="text-[#39FF14]/35 text-[11px] tracking-[0.25em]"
+                      className="text-[#39FF14]/60 text-xs sm:text-sm tracking-[0.25em]"
                       style={{ fontFamily: 'Share Tech Mono, monospace' }}
                     >
                       AUTISTIC (ASD)
@@ -441,7 +441,7 @@ export function Hero() {
                       Software Developer
                     </span>
                     <span
-                      className="text-[#39FF14]/40 mx-2"
+                      className="text-[#39FF14]/60 mx-2"
                       style={{ fontFamily: 'Orbitron, monospace' }}
                     >
                       •
@@ -474,7 +474,7 @@ export function Hero() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.6, delay: 0.5 }}
-                    className="text-[#39FF14]/55 text-sm leading-relaxed mb-8 max-w-md"
+                    className="text-[#39FF14]/80 text-base leading-7 mb-8 max-w-xl"
                     style={{ fontFamily: 'Share Tech Mono, monospace' }}
                   >
                     Navigating the skies and code with precision, dedication,
@@ -493,7 +493,7 @@ export function Hero() {
                       (tag) => (
                         <span
                           key={tag}
-                          className="border border-[#39FF14]/30 text-[#39FF14]/70 text-xs px-4 py-1.5 hover:border-[#39FF14]/60 hover:text-[#39FF14] transition-all cursor-default"
+                          className="border border-[#39FF14]/35 text-[#39FF14]/85 text-sm px-4 py-1.5 hover:border-[#39FF14]/60 hover:text-[#39FF14] transition-all cursor-default"
                           style={{ fontFamily: 'Share Tech Mono, monospace' }}
                         >
                           {tag}
@@ -623,7 +623,7 @@ export function Hero() {
                   {/* Classified label */}
                   <div className="border border-[#CAFF00]/20 bg-[#CAFF00]/5 px-5 py-1.5 text-center">
                     <div
-                      className="text-[#CAFF00] text-[10px] tracking-[0.4em]"
+                      className="text-[#CAFF00] text-xs tracking-[0.35em]"
                       style={{ fontFamily: 'Share Tech Mono, monospace' }}
                     >
                       ☢ CLASSIFIED DOSSIER ☢
@@ -633,7 +633,7 @@ export function Hero() {
                   {/* Rad level */}
                   <div className="w-full max-w-[240px] sm:max-w-[280px] md:max-w-[320px] border border-[#39FF14]/15 p-2 md:p-3 bg-[#39FF14]/[0.02]">
                     <div
-                      className="text-[#39FF14]/40 text-[10px] tracking-[0.25em] mb-2"
+                      className="text-[#39FF14]/65 text-xs tracking-[0.2em] mb-2"
                       style={{ fontFamily: 'Share Tech Mono, monospace' }}
                     >
                       RAD LEVEL
@@ -656,7 +656,7 @@ export function Hero() {
                       />
                     </div>
                     <div
-                      className="text-[#39FF14]/30 text-[10px] mt-1 tracking-widest text-right"
+                      className="text-[#39FF14]/65 text-xs mt-1 tracking-wide text-right"
                       style={{ fontFamily: 'Share Tech Mono, monospace' }}
                     >
                       CRITICAL
@@ -685,7 +685,7 @@ export function Hero() {
             className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-20"
           >
             <span
-              className="text-[#39FF14]/30 text-[10px] tracking-[0.4em]"
+              className="text-[#39FF14]/55 text-xs tracking-[0.35em]"
               style={{ fontFamily: 'Share Tech Mono, monospace' }}
             >
               SCROLL

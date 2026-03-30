@@ -128,10 +128,10 @@ export function Nav() {
               className="relative px-4 py-2 group"
             >
               <span
-                className={`text-xs tracking-[0.2em] transition-colors duration-200 ${
+                className={`text-sm tracking-[0.15em] transition-colors duration-200 ${
                   active === item.label
                     ? 'text-[#39FF14]'
-                    : 'text-[#39FF14]/50 group-hover:text-[#39FF14]/80'
+                    : 'text-[#39FF14]/70 group-hover:text-[#39FF14]/90'
                 }`}
                 style={{ fontFamily: 'Share Tech Mono, monospace' }}
               >
@@ -166,7 +166,7 @@ export function Nav() {
             ))}
           </div>
           <span
-            className="text-[#39FF14]/60 text-[10px] tracking-widest"
+            className="text-[#39FF14]/80 text-xs tracking-wide"
             style={{ fontFamily: 'Share Tech Mono, monospace' }}
           >
             RAD:LVL-3
@@ -210,7 +210,7 @@ export function Nav() {
                   className={`text-left text-sm tracking-[0.3em] transition-colors py-2 border-b border-[#39FF14]/10 ${
                     active === item.label
                       ? 'text-[#39FF14]'
-                      : 'text-[#39FF14]/50'
+                      : 'text-[#39FF14]/75'
                   }`}
                   style={{ fontFamily: 'Share Tech Mono, monospace' }}
                 >
