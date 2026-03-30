@@ -3,17 +3,25 @@
 import { useRef, useState, useEffect } from 'react'
 import { motion, useInView, AnimatePresence } from 'motion/react'
 import {
+  type PortfolioProject,
   type Tab,
+  QA_PROJECTS,
   SE_PROJECTS,
   ALL_PROJECTS_URL,
   TABS,
 } from './portfolio-constants/projects-constants'
 
-function SEProjects() {
+function ProjectGrid({
+  projects,
+  statusLabel,
+}: {
+  projects: PortfolioProject[]
+  statusLabel: string
+}) {
   return (
     <div>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
-        {SE_PROJECTS.map((proj, i) => (
+        {projects.map((proj, i) => (
           <motion.div
             key={proj.id}
             initial={{ opacity: 0, y: 20 }}
@@ -59,7 +67,7 @@ function SEProjects() {
                     color: '#39FF14',
                   }}
                 >
-                  DEPLOYED
+                  {statusLabel}
                 </span>
               </div>
             </div>
@@ -89,6 +97,29 @@ function SEProjects() {
             >
               {proj.description}
             </p>
+
+            {/* Highlights */}
+            {proj.highlights.length > 0 && (
+              <div className="mb-4">
+                <div
+                  className="text-[#39FF14]/45 text-[10px] tracking-[0.12em] mb-2"
+                  style={{ fontFamily: 'Share Tech Mono, monospace' }}
+                >
+                  HIGHLIGHTS
+                </div>
+                <div className="space-y-1">
+                  {proj.highlights.map((highlight) => (
+                    <p
+                      key={highlight}
+                      className="text-[#39FF14]/50 text-[10px] leading-relaxed"
+                      style={{ fontFamily: 'Share Tech Mono, monospace' }}
+                    >
+                      - {highlight}
+                    </p>
+                  ))}
+                </div>
+              </div>
+            )}
 
             {/* Tech tags */}
             <div className="flex flex-wrap gap-1.5 mb-4">
@@ -380,7 +411,7 @@ export function Projects() {
                       <span className="mr-2">{tab.icon}</span>
                       {tab.label}
                     </span>
-                    {(tab.id === 'QA' || tab.id === 'AVIATION') && activeTab !== tab.id && (
+                    {tab.id === 'AVIATION' && activeTab !== tab.id && (
                       <span
                         className="text-[8px] border border-current px-1 py-0.5 tracking-wider"
                         style={{ fontFamily: 'Share Tech Mono, monospace' }}
@@ -409,7 +440,7 @@ export function Projects() {
               >
                 <span className="mr-2">{tab.icon}</span>
                 {tab.label}
-                {(tab.id === 'QA' || tab.id === 'AVIATION') && activeTab !== tab.id && (
+                {tab.id === 'AVIATION' && activeTab !== tab.id && (
                   <span
                     className="ml-2 text-[8px] border border-current px-1 py-0.5 tracking-wider"
                     style={{ fontFamily: 'Share Tech Mono, monospace' }}
@@ -431,8 +462,8 @@ export function Projects() {
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.35 }}
           >
-            {activeTab === 'SE' && <SEProjects />}
-            {activeTab === 'QA' && <ComingSoon label="QA DOSSIER" />}
+            {activeTab === 'SE' && <ProjectGrid projects={SE_PROJECTS} statusLabel="DEPLOYED" />}
+            {activeTab === 'QA' && <ProjectGrid projects={QA_PROJECTS} statusLabel="TESTED" />}
             {activeTab === 'AVIATION' && <ComingSoon label="FLIGHT LOG" />}
           </motion.div>
         </AnimatePresence>

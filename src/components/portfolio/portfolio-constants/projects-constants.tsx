@@ -1,6 +1,17 @@
 export type Tab = 'SE' | 'QA' | 'AVIATION'
 
-export const SE_PROJECTS = [
+export type PortfolioProject = {
+  id: number
+  name: string
+  subtitle: string
+  description: string
+  tech: string[]
+  highlights: string[]
+  github: string
+  demo: string
+}
+
+export const SE_PROJECTS: PortfolioProject[] = [
   {
     id: 1,
     name: 'Media Remote Tool',
@@ -66,6 +77,57 @@ export const SE_PROJECTS = [
     highlights: ['Simple responsive design', 'CRUD operations', 'User authentication', 'Responsive design'],
     github: '#',
     demo: 'https://adriaansdevotions.netlify.app/',
+  },
+]
+
+export const QA_PROJECTS: PortfolioProject[] = [
+  {
+    id: 1,
+    name: 'I Care Center Church Website',
+    subtitle: 'QA Testing for Full-Stack Church Web Platform',
+    description:
+      'Performed end-to-end testing on a production church website focusing on authentication, admin workflows, and content management reliability.',
+    tech: ['QA Testing', 'Authentication', 'RBAC', 'SEO Validation'],
+    highlights: [
+      'Validated authentication flows (session, token handling, edge cases)',
+      'Identified and resolved image upload failure (edge function fix)',
+      'Tested role-based access control (RLS) across user types',
+      'Performed cross-device and SEO indexing validation',
+    ],
+    github: '#',
+    demo: 'https://icarecenter.netlify.app/',
+  },
+  {
+    id: 2,
+    name: 'War of Dots',
+    subtitle: 'Beta Testing - Multiplayer Strategy Game',
+    description:
+      'Conducted live beta testing in a real player environment, focusing on gameplay stability, bug detection, and user experience consistency.',
+    tech: ['Beta Testing', 'Gameplay QA', 'Bug Reporting', 'UX Validation'],
+    highlights: [
+      'Tested gameplay under 200-400 concurrent players',
+      'Reported reproducible bugs with structured feedback',
+      'Identified UI/UX inconsistencies and edge-case failures',
+      'Assisted in validating game stability across updates',
+    ],
+    github: '#',
+    demo: 'https://warofdots.net/',
+  },
+  {
+    id: 3,
+    name: 'OBS-ProPresenter Remote (NDI)',
+    subtitle: 'QA Testing for Real-Time Production Control System',
+    description:
+      'Tested a real-time web-based remote system integrating OBS and ProPresenter, ensuring reliability in live streaming environments.',
+    tech: ['OBS WebSocket', 'ProPresenter API', 'WebSockets', 'Integration Testing'],
+    highlights: [
+      'Validated real-time synchronization via WebSockets',
+      'Performed integration testing (OBS WebSocket + ProPresenter API)',
+      'Simulated live production scenarios for stress testing',
+      'Detected and resolved state desynchronization issues',
+    ],
+    github: 'https://github.com/Thalanas110/obs-propres-remote-icc',
+    demo: '#',
   },
 ]
 
