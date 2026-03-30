@@ -18,35 +18,80 @@ export function Nav() {
   const [hideOnMobile, setHideOnMobile] = useState(true)
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 40)
+    const sectionIds = ['home', 'bio', 'experience', 'projects', 'contact'] as const
+    const labels: Record<(typeof sectionIds)[number], string> = {
+      home: 'HOME',
+      bio: 'DOSSIER',
+      experience: 'FIELD OPS',
+      projects: 'PROJECTS',
+      contact: 'TRANSMIT',
+    }
 
-      // Hide nav on mobile when in hero section
+    let rafId = 0
+    let heroBottom = window.innerHeight
+    let sectionTops: Array<{ id: (typeof sectionIds)[number]; top: number }> = []
+
+    const recalcOffsets = () => {
       const heroEl = document.getElementById('home')
-      if (heroEl) {
-        const heroBottom = heroEl.offsetTop + heroEl.offsetHeight
-        setHideOnMobile(window.scrollY < heroBottom - 100)
-      }
+      heroBottom = heroEl ? heroEl.offsetTop + heroEl.offsetHeight : window.innerHeight
 
-      const sections = ['home', 'bio', 'experience', 'projects', 'contact']
-      const labels: Record<string, string> = {
-        home: 'HOME',
-        bio: 'DOSSIER',
-        experience: 'FIELD OPS',
-        projects: 'PROJECTS',
-        contact: 'TRANSMIT',
-      }
-      for (const id of [...sections].reverse()) {
-        const el = document.getElementById(id)
-        if (el && window.scrollY >= el.offsetTop - 120) {
-          setActive(labels[id])
+      sectionTops = sectionIds
+        .map((id) => {
+          const el = document.getElementById(id)
+          return el ? { id, top: el.offsetTop } : null
+        })
+        .filter(
+          (entry): entry is { id: (typeof sectionIds)[number]; top: number } =>
+            Boolean(entry),
+        )
+    }
+
+    const applyScrollState = () => {
+      rafId = 0
+
+      const scrollY = window.scrollY
+      const nextScrolled = scrollY > 40
+      const nextHideOnMobile = scrollY < heroBottom - 100
+
+      let nextActive = 'HOME'
+      for (let i = sectionTops.length - 1; i >= 0; i--) {
+        const section = sectionTops[i]
+        if (scrollY >= section.top - 120) {
+          nextActive = labels[section.id]
           break
         }
       }
+
+      setScrolled((prev) => (prev === nextScrolled ? prev : nextScrolled))
+      setHideOnMobile((prev) =>
+        prev === nextHideOnMobile ? prev : nextHideOnMobile,
+      )
+      setActive((prev) => (prev === nextActive ? prev : nextActive))
     }
+
+    const handleScroll = () => {
+      if (rafId) return
+      rafId = requestAnimationFrame(applyScrollState)
+    }
+
+    const handleResize = () => {
+      recalcOffsets()
+      handleScroll()
+    }
+
+    recalcOffsets()
+    applyScrollState()
+
     window.addEventListener('scroll', handleScroll, { passive: true })
-    handleScroll() // Call once to set initial state
-    return () => window.removeEventListener('scroll', handleScroll)
+    window.addEventListener('resize', handleResize, { passive: true })
+
+    return () => {
+      if (rafId) {
+        cancelAnimationFrame(rafId)
+      }
+      window.removeEventListener('scroll', handleScroll)
+      window.removeEventListener('resize', handleResize)
+    }
   }, [])
 
   const scrollTo = (href: string) => {

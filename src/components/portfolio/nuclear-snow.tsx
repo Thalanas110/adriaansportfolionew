@@ -1,10 +1,13 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import {
+  DESKTOP_TARGET_FPS,
   PARTICLE_COUNT_DESKTOP,
+  PARTICLE_COUNT_LOW_POWER,
   PARTICLE_COUNT_MOBILE,
-  MOBILE_FRAME_SKIP,
+  MOBILE_TARGET_FPS,
+  SNOW_STARTUP_DELAY_MS,
 } from './portfolio-constants/nuclear-snow-constants'
 
 interface Particle {
@@ -18,12 +21,27 @@ interface Particle {
   swayOffset: number
 }
 
+type NavigatorConnection = {
+  saveData?: boolean
+}
+
+type NavigatorWithPerfHints = Navigator & {
+  connection?: NavigatorConnection
+  deviceMemory?: number
+}
+
 function isMobile() {
   return (
     typeof window !== 'undefined' &&
     (window.innerWidth <= 768 ||
       /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent))
   )
+}
+
+function isLowPowerDevice(nav: NavigatorWithPerfHints) {
+  const lowCpu = nav.hardwareConcurrency > 0 && nav.hardwareConcurrency <= 6
+  const lowMemory = typeof nav.deviceMemory === 'number' && nav.deviceMemory <= 8
+  return lowCpu || lowMemory
 }
 
 function makeParticle(w: number, h: number, scatter = false): Particle {
@@ -41,52 +59,104 @@ function makeParticle(w: number, h: number, scatter = false): Particle {
 
 export function NuclearSnow() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
+  const [enabled, setEnabled] = useState(false)
 
   useEffect(() => {
-    // Respect prefers-reduced-motion
+    if (typeof window === 'undefined') return
+
+    const nav = navigator as NavigatorWithPerfHints
     if (
-      typeof window !== 'undefined' &&
-      window.matchMedia('(prefers-reduced-motion: reduce)').matches
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches ||
+      nav.connection?.saveData
     ) {
       return
     }
+
+    const timerId = window.setTimeout(() => {
+      setEnabled(true)
+    }, SNOW_STARTUP_DELAY_MS)
+
+    return () => {
+      window.clearTimeout(timerId)
+    }
+  }, [])
+
+  useEffect(() => {
+    if (!enabled) return
 
     const canvas = canvasRef.current
     if (!canvas) return
     const ctx = canvas.getContext('2d', { alpha: true })
     if (!ctx) return
 
+    const nav = navigator as NavigatorWithPerfHints
+    const lowPower = isLowPowerDevice(nav)
+
     let animId: number
     let particles: Particle[] = []
-    let frameCount = 0
+    let lastFrameTime = 0
+    let isVisible = document.visibilityState === 'visible'
+    let suspendForHero = false
     let mobile = isMobile()
-    let particleCount = mobile ? PARTICLE_COUNT_MOBILE : PARTICLE_COUNT_DESKTOP
 
-    const resize = () => {
-      mobile = isMobile()
-      particleCount = mobile ? PARTICLE_COUNT_MOBILE : PARTICLE_COUNT_DESKTOP
-      canvas.width = window.innerWidth
-      canvas.height = window.innerHeight
-      // Rebuild particles on resize so count stays correct
-      particles = Array.from({ length: particleCount }, () =>
+    const getParticleCount = () => {
+      if (mobile) return PARTICLE_COUNT_MOBILE
+      if (lowPower) return PARTICLE_COUNT_LOW_POWER
+      return PARTICLE_COUNT_DESKTOP
+    }
+
+    const getFrameInterval = () =>
+      1000 / (mobile ? MOBILE_TARGET_FPS : DESKTOP_TARGET_FPS)
+
+    let frameInterval = getFrameInterval()
+
+    const rebuildParticles = () => {
+      particles = Array.from({ length: getParticleCount() }, () =>
         makeParticle(canvas.width, canvas.height, true),
       )
     }
 
-    resize()
+    const resize = () => {
+      mobile = isMobile()
+      frameInterval = getFrameInterval()
+      canvas.width = window.innerWidth
+      canvas.height = window.innerHeight
+      rebuildParticles()
+    }
 
-    const draw = () => {
+    const updateHeroSuspension = () => {
+      suspendForHero = window.scrollY < window.innerHeight * 0.8
+      if (suspendForHero) {
+        ctx.clearRect(0, 0, canvas.width, canvas.height)
+      }
+    }
+
+    const onVisibilityChange = () => {
+      isVisible = document.visibilityState === 'visible'
+      if (!isVisible) {
+        ctx.clearRect(0, 0, canvas.width, canvas.height)
+      }
+    }
+
+    resize()
+    updateHeroSuspension()
+
+    const draw = (timestamp: number) => {
       animId = requestAnimationFrame(draw)
 
-      // On mobile, only paint every MOBILE_FRAME_SKIP frames (~30 fps)
-      if (mobile) {
-        frameCount++
-        if (frameCount % MOBILE_FRAME_SKIP !== 0) return
+      if (!isVisible || suspendForHero) {
+        return
       }
+
+      if (lastFrameTime && timestamp - lastFrameTime < frameInterval) {
+        return
+      }
+
+      lastFrameTime = timestamp
 
       ctx.clearRect(0, 0, canvas.width, canvas.height)
 
-      const now = Date.now()
+      const now = timestamp
       for (const p of particles) {
         // Skip sway calculation on mobile to save CPU
         const sway = mobile ? 0 : Math.sin(now * p.swaySpeed + p.swayOffset) * 0.6
@@ -109,12 +179,20 @@ export function NuclearSnow() {
 
     animId = requestAnimationFrame(draw)
     window.addEventListener('resize', resize)
+    window.addEventListener('scroll', updateHeroSuspension, { passive: true })
+    document.addEventListener('visibilitychange', onVisibilityChange)
 
     return () => {
       cancelAnimationFrame(animId)
       window.removeEventListener('resize', resize)
+      window.removeEventListener('scroll', updateHeroSuspension)
+      document.removeEventListener('visibilitychange', onVisibilityChange)
     }
-  }, [])
+  }, [enabled])
+
+  if (!enabled) {
+    return null
+  }
 
   return (
     <canvas

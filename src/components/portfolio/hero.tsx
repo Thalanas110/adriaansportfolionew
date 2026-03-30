@@ -5,6 +5,31 @@ import { motion, AnimatePresence } from 'motion/react'
 import { GLITCH_CHARS, TERMINAL_LINES, EMP_MAX_CHARGES } from './portfolio-constants/hero-constants'
 import { EmpCounter, EmpExplosion } from './emp-easter-egg'
 
+type NavigatorConnection = {
+  saveData?: boolean
+}
+
+type NavigatorWithPerfHints = Navigator & {
+  connection?: NavigatorConnection
+  deviceMemory?: number
+}
+
+function shouldUseFastStartupMode() {
+  if (typeof window === 'undefined') return false
+
+  const nav = navigator as NavigatorWithPerfHints
+  const prefersReducedMotion = window.matchMedia(
+    '(prefers-reduced-motion: reduce)',
+  ).matches
+  const isMobile =
+    window.innerWidth <= 900 || /Mobi|Android|iPhone|iPad|iPod/i.test(nav.userAgent)
+  const lowCpu = nav.hardwareConcurrency > 0 && nav.hardwareConcurrency <= 6
+  const lowMemory = typeof nav.deviceMemory === 'number' && nav.deviceMemory <= 8
+  const saveData = Boolean(nav.connection?.saveData)
+
+  return prefersReducedMotion || isMobile || lowCpu || lowMemory || saveData
+}
+
 function useGlitch(text: string, active: boolean) {
   const [display, setDisplay] = useState(text)
   useEffect(() => {
@@ -164,34 +189,74 @@ export function Hero() {
 
   // Terminal boot sequence
   useEffect(() => {
+    if (shouldUseFastStartupMode()) {
+      setLoadingDone(true)
+      setShowContent(true)
+      return
+    }
+
     let lineIdx = 0
+    let timeoutId: number | undefined
+
+    const queue = (fn: () => void, delay: number) => {
+      timeoutId = window.setTimeout(fn, delay)
+    }
+
     const addLine = () => {
       if (lineIdx < TERMINAL_LINES.length) {
         setTerminalLines((prev) => [...prev, TERMINAL_LINES[lineIdx]])
         lineIdx++
-        setTimeout(addLine, 420)
+        queue(addLine, 260)
       } else {
-        setTimeout(() => {
+        queue(() => {
           setGlitchActive(true)
-          setTimeout(() => {
+          queue(() => {
             setGlitchActive(false)
             setLoadingDone(true)
-            setTimeout(() => setShowContent(true), 500)
-          }, 1000)
-        }, 300)
+            queue(() => setShowContent(true), 260)
+          }, 450)
+        }, 180)
       }
     }
-    setTimeout(addLine, 400)
+
+    queue(addLine, 180)
+
+    return () => {
+      if (typeof timeoutId === 'number') {
+        window.clearTimeout(timeoutId)
+      }
+    }
   }, [])
 
   // Particle canvas
   useEffect(() => {
+    if (!showContent) return
+
+    if (
+      typeof window !== 'undefined' &&
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    ) {
+      return
+    }
+
+    const nav = navigator as NavigatorWithPerfHints
+    const isMobile =
+      window.innerWidth <= 900 || /Mobi|Android|iPhone|iPad|iPod/i.test(nav.userAgent)
+    if (isMobile || nav.connection?.saveData) {
+      return
+    }
+
     const canvas = canvasRef.current
     if (!canvas) return
     const ctx = canvas.getContext('2d')
     if (!ctx) return
 
     let animId: number
+    let isVisible = document.visibilityState === 'visible'
+    let lastFrameTime = 0
+    const frameInterval = 1000 / 30
+
+    const particleCount = 22
     const particles: {
       x: number
       y: number
@@ -210,7 +275,7 @@ export function Hero() {
     window.addEventListener('resize', resize)
 
     const symbols = ['☢', '☣', '⚠', '◉', '◎', '●', '○']
-    for (let i = 0; i < 40; i++) {
+    for (let i = 0; i < particleCount; i++) {
       particles.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
@@ -222,9 +287,28 @@ export function Hero() {
       })
     }
 
-    const draw = () => {
+    const onVisibilityChange = () => {
+      isVisible = document.visibilityState === 'visible'
+      if (!isVisible) {
+        ctx.clearRect(0, 0, canvas.width, canvas.height)
+      }
+    }
+
+    const draw = (timestamp: number) => {
+      if (!isVisible) {
+        animId = requestAnimationFrame(draw)
+        return
+      }
+
+      if (lastFrameTime && timestamp - lastFrameTime < frameInterval) {
+        animId = requestAnimationFrame(draw)
+        return
+      }
+
+      lastFrameTime = timestamp
       ctx.clearRect(0, 0, canvas.width, canvas.height)
-      particles.forEach((p) => {
+
+      for (const p of particles) {
         ctx.save()
         ctx.globalAlpha = p.opacity
         ctx.fillStyle = '#39FF14'
@@ -240,15 +324,20 @@ export function Hero() {
         if (p.x < -20 || p.x > canvas.width + 20) {
           p.x = Math.random() * canvas.width
         }
-      })
+      }
+
       animId = requestAnimationFrame(draw)
     }
-    draw()
+
+    document.addEventListener('visibilitychange', onVisibilityChange)
+    animId = requestAnimationFrame(draw)
+
     return () => {
       cancelAnimationFrame(animId)
+      document.removeEventListener('visibilitychange', onVisibilityChange)
       window.removeEventListener('resize', resize)
     }
-  }, [])
+  }, [showContent])
 
   const scrollTo = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
