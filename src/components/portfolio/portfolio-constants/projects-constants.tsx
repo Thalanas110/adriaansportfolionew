@@ -14,6 +14,17 @@ export const SE_PROJECTS = [
   },
   {
     id: 2,
+    name: 'Botcha Buster',
+    subtitle: 'thesis writing - proprietary project for DTI and NMIS',
+    description:
+      'Thesis project for my thesis writing, using PWA tech for DTI and NMIS meat inspectors',
+    tech: ['ReactJS', 'Tanstack Router', 'Vite', 'Node.js', 'Supabase', 'PostgreSQL'],
+    highlights: ['OpenCV', 'Color Extraction', 'PWA features', 'Performance optimization'],
+    github: '#',
+    demo: '#',
+  },
+  {
+    id: 3,
     name: 'I Care Center Website',
     subtitle: 'Media Team thing, my main ministry now',
     description:
@@ -22,17 +33,6 @@ export const SE_PROJECTS = [
     highlights: ['RBAC operations', 'User authentication', 'Responsive design', 'Video playback', 'God-oriented'],
     github: '#',
     demo: 'https://icarecenter.netlify.app/',
-  },
-  {
-    id: 3,
-    name: 'War of Dots',
-    subtitle: 'Game landing page for someonne`s game',
-    description:
-      'Original website by Tjdog19 & CuriosAnt, remade by me using React with permission from Tea and Python. All credits goes to the original creators.',
-    tech: ['React', 'Node.js', 'Tailwind CSS'],
-    highlights: ['Responsive design', 'Interactive UI', 'Performance and UI beautification'],
-    github: '#',
-    demo: 'https://warofdots.net/',
   },
   {
     id: 4,
@@ -47,14 +47,14 @@ export const SE_PROJECTS = [
   },
   {
     id: 5,
-    name: 'Botcha Buster',
-    subtitle: 'thesis writing - proprietary project for DTI and NMIS',
+    name: 'War of Dots',
+    subtitle: 'Game landing page for someonne`s game',
     description:
-      'Thesis project for my thesis writing, using PWA tech for DTI and NMIS meat inspectors',
-    tech: ['ReactJS', 'Tanstack Router', 'Vite', 'Node.js', 'Supabase', 'PostgreSQL'],
-    highlights: ['OpenCV', 'Color Extraction', 'PWA features', 'Performance optimization'],
+      'Credited in-game as website designer for War of Dots. Rebuilt the official site in React with permission from the original creators, improving UI and performance.',
+    tech: ['React', 'Node.js', 'Tailwind CSS'],
+    highlights: ['Responsive design', 'Interactive UI', 'Performance and UI beautification'],
     github: '#',
-    demo: '#',
+    demo: 'https://warofdots.net/',
   },
   {
     id: 6,
