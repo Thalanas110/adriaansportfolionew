@@ -22,6 +22,7 @@ export const WORK: WorkItem[] = [
       'Improved OBS Remote for livestreams, built a scalable church site and app, and managed agile workflows with ministry teams',
     highlights: [
       'A new, improved church website',
+      'A unified OBS-ProPresenter remote control system',
     ],
     tags: ['React', 'TypeScript', 'OBS', 'Web Development']
   },
@@ -35,7 +36,7 @@ export const WORK: WorkItem[] = [
     description:
       'Operated and QA`d ProPresenter for live and online services, syncing media in real time and resolving tech issues with worship and media teams.',
     highlights: [
-      'ProPresenter setup and operation for 100+ live and online services',
+      'ProPresenter and OBS setup and operation for 100+ live and online services',
       'OBS Remote configuration and troubleshooting for livestreams',
       'Collaborated with worship and other nteams to resolve tech issues and ensure smooth service flow',
     ],
