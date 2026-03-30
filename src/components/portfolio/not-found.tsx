@@ -293,7 +293,7 @@ export function NotFound() {
               {/* Subtitle */}
               <div className="space-y-1">
                 <p
-                  className="text-[#39FF14]/80 text-sm sm:text-base tracking-[0.3em] uppercase"
+                  className="text-[#39FF14]/80 text-sm sm:text-base tracking-[0.14em] sm:tracking-[0.3em] uppercase"
                   style={{ fontFamily: 'Orbitron, monospace' }}
                 >
                   Zone Contaminated — Entry Forbidden
@@ -315,7 +315,7 @@ export function NotFound() {
                 whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.97 }}
                 onClick={() => router.navigate({ to: '/' })}
-                className="relative group px-8 py-3 border border-[#39FF14]/60 text-[#39FF14] text-sm tracking-[0.25em] uppercase transition-all duration-200"
+                className="relative group px-6 sm:px-8 py-3 border border-[#39FF14]/60 text-[#39FF14] text-xs sm:text-sm tracking-[0.12em] sm:tracking-[0.25em] uppercase transition-all duration-200"
                 style={{
                   fontFamily: 'Orbitron, monospace',
                   background: 'rgba(57,255,20,0.05)',

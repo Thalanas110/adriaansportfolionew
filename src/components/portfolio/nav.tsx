@@ -112,7 +112,7 @@ export function Nav() {
             <div className="absolute inset-0 rounded-full animate-ping bg-[#39FF14]/10" />
           </div>
           <span
-            className="text-[#39FF14] font-bold tracking-[0.3em] text-sm group-hover:text-[#CAFF00] transition-colors"
+            className="text-[#39FF14] font-bold tracking-[0.14em] sm:tracking-[0.3em] text-xs sm:text-sm group-hover:text-[#CAFF00] transition-colors"
             style={{ fontFamily: 'Orbitron, monospace' }}
           >
             ADRIAAN M. DIMATE
@@ -207,7 +207,7 @@ export function Nav() {
                 <button
                   key={item.label}
                   onClick={() => scrollTo(item.href)}
-                  className={`text-left text-sm tracking-[0.3em] transition-colors py-2 border-b border-[#39FF14]/10 ${
+                  className={`text-left text-sm tracking-[0.16em] transition-colors py-2 border-b border-[#39FF14]/10 ${
                     active === item.label
                       ? 'text-[#39FF14]'
                       : 'text-[#39FF14]/75'

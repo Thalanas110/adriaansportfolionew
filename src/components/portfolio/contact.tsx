@@ -102,7 +102,7 @@ export function Contact() {
             style={{ background: '#39FF14', boxShadow: '0 0 8px #39FF14' }}
           />
           <span
-            className="text-[#39FF14]/65 text-xs tracking-[0.35em]"
+            className="text-[#39FF14]/65 text-xs tracking-[0.18em] sm:tracking-[0.35em]"
             style={{ fontFamily: 'Share Tech Mono, monospace' }}
           >
             TX://
@@ -233,7 +233,7 @@ export function Contact() {
                     </div>
                     <button
                       onClick={() => setFormState('idle')}
-                      className="mt-4 border border-[#39FF14]/30 text-[#39FF14]/60 hover:text-[#39FF14] px-6 py-2 text-xs tracking-widest transition-colors"
+                      className="mt-4 border border-[#39FF14]/30 text-[#39FF14]/60 hover:text-[#39FF14] px-6 py-2 text-xs tracking-[0.14em] sm:tracking-widest transition-colors"
                       style={{ fontFamily: 'Share Tech Mono, monospace' }}
                     >
                       NEW TRANSMISSION
@@ -362,7 +362,7 @@ export function Contact() {
                     >
                       <span className="absolute inset-0 bg-[#39FF14] translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-300" />
                       <span
-                        className="relative text-[#39FF14] group-hover:text-[#060604] font-bold tracking-[0.15em] md:tracking-[0.3em] text-sm transition-colors duration-300"
+                        className="relative text-[#39FF14] group-hover:text-[#060604] font-bold tracking-[0.1em] md:tracking-[0.3em] text-xs sm:text-sm transition-colors duration-300"
                         style={{ fontFamily: 'Orbitron, monospace' }}
                       >
                         {formState === 'sending'
@@ -377,7 +377,7 @@ export function Contact() {
 
             {/* Bottom note */}
             <div
-              className="mt-4 text-[#39FF14]/50 text-xs tracking-wide md:tracking-[0.2em] text-center break-words"
+              className="mt-4 text-[#39FF14]/50 text-xs tracking-[0.08em] md:tracking-[0.2em] text-center break-words"
               style={{ fontFamily: 'Share Tech Mono, monospace' }}
             >
               ☢ ENCRYPTED VIA EMAILJS — SIGNAL MONITORED

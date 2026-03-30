@@ -72,7 +72,7 @@ export function Bio() {
             style={{ background: '#39FF14', boxShadow: '0 0 8px #39FF14' }}
           />
           <span
-            className="text-[#39FF14]/65 text-xs tracking-[0.35em]"
+            className="text-[#39FF14]/65 text-xs tracking-[0.18em] sm:tracking-[0.35em]"
             style={{ fontFamily: 'Share Tech Mono, monospace' }}
           >
             FILE://
@@ -197,7 +197,7 @@ export function Bio() {
             </div>
 
             <div
-              className="text-[#39FF14]/65 text-xs tracking-[0.25em] mb-2"
+              className="text-[#39FF14]/65 text-xs tracking-[0.14em] sm:tracking-[0.25em] mb-2"
               style={{ fontFamily: 'Share Tech Mono, monospace' }}
             >
               FRAMEWORKS
@@ -206,7 +206,7 @@ export function Bio() {
               {FRAMEWORKS.map((f) => (
                 <span
                   key={f}
-                  className="border border-[#39FF14]/25 text-[#39FF14]/85 text-sm px-3 py-1 rounded-md hover:border-[#39FF14]/50 hover:text-[#39FF14] transition-all cursor-default"
+                  className="border border-[#39FF14]/25 text-[#39FF14]/85 text-xs sm:text-sm px-3 py-1 rounded-md hover:border-[#39FF14]/50 hover:text-[#39FF14] transition-all cursor-default"
                   style={{ fontFamily: 'Share Tech Mono, monospace' }}
                 >
                   {f}
@@ -215,7 +215,7 @@ export function Bio() {
             </div>
 
             <div
-              className="text-[#39FF14]/65 text-xs tracking-[0.25em] mb-2"
+              className="text-[#39FF14]/65 text-xs tracking-[0.14em] sm:tracking-[0.25em] mb-2"
               style={{ fontFamily: 'Share Tech Mono, monospace' }}
             >
               LANGUAGES & DB
@@ -224,7 +224,7 @@ export function Bio() {
               {LANGUAGES.map((l) => (
                 <span
                   key={l}
-                  className="border border-[#39FF14]/25 text-[#39FF14]/85 text-sm px-3 py-1 rounded-md hover:border-[#39FF14]/50 hover:text-[#39FF14] transition-all cursor-default"
+                  className="border border-[#39FF14]/25 text-[#39FF14]/85 text-xs sm:text-sm px-3 py-1 rounded-md hover:border-[#39FF14]/50 hover:text-[#39FF14] transition-all cursor-default"
                   style={{ fontFamily: 'Share Tech Mono, monospace' }}
                 >
                   {l}

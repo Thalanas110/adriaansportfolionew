@@ -92,11 +92,11 @@ export function ExternalLinkWarning() {
                   ⚠
                 </span>
                 <div>
-                  <div className="text-[#39FF14]/70 text-xs tracking-[0.28em] mb-0.5">
+                  <div className="text-[#39FF14]/70 text-xs tracking-[0.14em] sm:tracking-[0.28em] mb-0.5">
                     SYSTEM ALERT
                   </div>
                   <div
-                    className="text-[#39FF14] text-base tracking-[0.12em]"
+                    className="text-[#39FF14] text-base tracking-[0.08em] sm:tracking-[0.12em]"
                     style={{ fontFamily: 'Orbitron, monospace' }}
                   >
                     EXTERNAL LINK DETECTED
@@ -122,12 +122,12 @@ export function ExternalLinkWarning() {
                 ◈ {displayHost}
               </div>
 
-              <p className="text-[#39FF14]/60 text-xs tracking-wide mb-5">
+              <p className="text-[#39FF14]/60 text-xs tracking-[0.08em] sm:tracking-wide mb-5">
                 ☢ THIS ZONE IS BEYOND PERIMETER CONTROL. PROCEED WITH CAUTION.
               </p>
 
               {/* Actions */}
-              <div className="flex gap-3">
+              <div className="flex flex-col sm:flex-row gap-3">
                 <ExternalLinkButton
                   onClick={handleProceed}
                   variant="confirm"
@@ -197,7 +197,7 @@ function ExternalLinkButton({
       onClick={onClick}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="flex-1 py-2 text-xs tracking-[0.2em]"
+      className="flex-1 py-2 text-xs tracking-[0.12em] sm:tracking-[0.2em]"
       style={style}
     >
       {children}

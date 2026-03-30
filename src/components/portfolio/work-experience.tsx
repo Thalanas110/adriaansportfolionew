@@ -60,7 +60,7 @@ export function WorkExperience() {
             style={{ background: '#FF9500', boxShadow: '0 0 8px #FF9500' }}
           />
           <span
-            className="text-[#FF9500]/70 text-xs tracking-[0.35em]"
+            className="text-[#FF9500]/70 text-xs tracking-[0.18em] sm:tracking-[0.35em]"
             style={{ fontFamily: 'Share Tech Mono, monospace' }}
           >
             LOG://
@@ -282,7 +282,7 @@ export function WorkExperience() {
           className="flex justify-center mt-12"
         >
           <div
-            className="border-2 border-[#FF9500]/20 px-6 py-2 rounded text-[#FF9500]/55 text-sm tracking-[0.35em] rotate-[-1deg]"
+            className="border-2 border-[#FF9500]/20 px-6 py-2 rounded text-[#FF9500]/55 text-xs sm:text-sm tracking-[0.14em] sm:tracking-[0.35em] leading-relaxed text-center max-w-full rotate-[-1deg]"
             style={{ fontFamily: 'Share Tech Mono, monospace' }}
           >
             END OF FIELD LOG — {WORK.length} OPERATIONS RECORDED

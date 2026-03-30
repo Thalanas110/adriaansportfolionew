@@ -61,7 +61,7 @@ function LoadingScreen({ lines }: { lines: string[] }) {
 
       {/* Terminal box */}
       <div
-        className="relative border border-[#39FF14]/30 px-8 py-6 min-w-[340px]"
+        className="relative border border-[#39FF14]/30 px-6 sm:px-8 py-6 w-[92vw] max-w-[360px] sm:w-auto sm:max-w-none sm:min-w-[340px]"
         style={{ background: 'rgba(57,255,20,0.03)' }}
       >
         {/* Corner accents */}
@@ -82,7 +82,7 @@ function LoadingScreen({ lines }: { lines: string[] }) {
             ☢
           </span>
           <span
-            className="text-[#39FF14] text-lg font-bold tracking-[0.3em]"
+            className="text-[#39FF14] text-base sm:text-lg font-bold tracking-[0.16em] sm:tracking-[0.3em]"
             style={{
               fontFamily: 'Orbitron, monospace',
               textShadow: '0 0 12px rgba(57,255,20,0.6)',
@@ -100,7 +100,7 @@ function LoadingScreen({ lines }: { lines: string[] }) {
               initial={{ opacity: 0, x: -8 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.25 }}
-              className="text-[#39FF14]/70 text-xs"
+              className="text-[#39FF14]/70 text-xs sm:text-sm"
               style={{ fontFamily: 'Share Tech Mono, monospace' }}
             >
               {line}
@@ -113,7 +113,7 @@ function LoadingScreen({ lines }: { lines: string[] }) {
       </div>
 
       {/* Progress bar */}
-      <div className="mt-6 w-[340px] h-0.5 bg-[#39FF14]/10 overflow-hidden">
+      <div className="mt-6 w-[92vw] max-w-[340px] h-0.5 bg-[#39FF14]/10 overflow-hidden">
         <motion.div
           initial={{ width: 0 }}
           animate={{ width: '100%' }}
@@ -366,7 +366,7 @@ export function Hero() {
                     className="flex items-center gap-3 mb-3"
                   >
                     <span
-                      className="text-[#39FF14]/70 text-xs sm:text-sm md:text-base tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.35em]"
+                      className="text-[#39FF14]/70 text-xs sm:text-sm md:text-base tracking-[0.15em] sm:tracking-[0.3em] md:tracking-[0.35em]"
                       style={{ fontFamily: 'Share Tech Mono, monospace' }}
                     >
                       ☢ HI THERE — WELCOME TO MY WONDERLAND
@@ -399,7 +399,7 @@ export function Hero() {
                     className="mb-5"
                   >
                     <span
-                      className="text-[#39FF14]/60 text-xs sm:text-sm tracking-[0.25em]"
+                      className="text-[#39FF14]/60 text-xs sm:text-sm tracking-[0.16em] sm:tracking-[0.25em]"
                       style={{ fontFamily: 'Share Tech Mono, monospace' }}
                     >
                       AUTISTIC (ASD)
@@ -515,7 +515,7 @@ export function Hero() {
                       style={{ fontFamily: 'Orbitron, monospace' }}
                     >
                       <span className="absolute inset-0 bg-[#39FF14] translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-300" />
-                      <span className="relative text-[#39FF14] group-hover:text-[#060604] text-sm font-bold tracking-[0.2em] transition-colors duration-300">
+                      <span className="relative text-[#39FF14] group-hover:text-[#060604] text-xs sm:text-sm font-bold tracking-[0.12em] sm:tracking-[0.2em] transition-colors duration-300">
                         ▶ EXPLORE MY WORK
                       </span>
                     </button>
@@ -526,7 +526,7 @@ export function Hero() {
                       style={{ fontFamily: 'Orbitron, monospace' }}
                     >
                       <span className="absolute inset-0 bg-[#CAFF00]/10 translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-300" />
-                      <span className="relative text-[#CAFF00]/70 group-hover:text-[#CAFF00] text-sm font-bold tracking-[0.2em] transition-colors duration-300">
+                      <span className="relative text-[#CAFF00]/70 group-hover:text-[#CAFF00] text-xs sm:text-sm font-bold tracking-[0.12em] sm:tracking-[0.2em] transition-colors duration-300">
                         ◈ OPEN CHANNEL
                       </span>
                     </button>
@@ -623,7 +623,7 @@ export function Hero() {
                   {/* Classified label */}
                   <div className="border border-[#CAFF00]/20 bg-[#CAFF00]/5 px-5 py-1.5 text-center">
                     <div
-                      className="text-[#CAFF00] text-xs tracking-[0.35em]"
+                      className="text-[#CAFF00] text-xs tracking-[0.16em] sm:tracking-[0.35em]"
                       style={{ fontFamily: 'Share Tech Mono, monospace' }}
                     >
                       ☢ CLASSIFIED DOSSIER ☢
@@ -633,7 +633,7 @@ export function Hero() {
                   {/* Rad level */}
                   <div className="w-full max-w-[240px] sm:max-w-[280px] md:max-w-[320px] border border-[#39FF14]/15 p-2 md:p-3 bg-[#39FF14]/[0.02]">
                     <div
-                      className="text-[#39FF14]/65 text-xs tracking-[0.2em] mb-2"
+                      className="text-[#39FF14]/65 text-xs tracking-[0.14em] sm:tracking-[0.2em] mb-2"
                       style={{ fontFamily: 'Share Tech Mono, monospace' }}
                     >
                       RAD LEVEL
@@ -685,7 +685,7 @@ export function Hero() {
             className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-20"
           >
             <span
-              className="text-[#39FF14]/55 text-xs tracking-[0.35em]"
+              className="text-[#39FF14]/55 text-xs tracking-[0.18em] sm:tracking-[0.35em]"
               style={{ fontFamily: 'Share Tech Mono, monospace' }}
             >
               SCROLL

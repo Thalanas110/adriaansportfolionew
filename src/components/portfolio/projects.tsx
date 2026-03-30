@@ -188,11 +188,11 @@ function ProjectGrid({
           href={ALL_PROJECTS_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="relative group flex items-center gap-3 border border-[#CAFF00]/30 bg-transparent px-8 py-3 overflow-hidden hover:shadow-[0_0_30px_rgba(202,255,0,0.2)] transition-all duration-300"
+          className="relative group flex items-center gap-2 sm:gap-3 border border-[#CAFF00]/30 bg-transparent px-5 sm:px-8 py-3 overflow-hidden hover:shadow-[0_0_30px_rgba(202,255,0,0.2)] transition-all duration-300"
         >
           <span className="absolute inset-0 bg-[#CAFF00]/5 translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-300" />
           <span
-            className="relative text-[#CAFF00]/70 group-hover:text-[#CAFF00] text-sm font-bold tracking-[0.25em] transition-colors"
+            className="relative text-[#CAFF00]/70 group-hover:text-[#CAFF00] text-xs sm:text-sm font-bold tracking-[0.12em] sm:tracking-[0.25em] text-center transition-colors"
             style={{ fontFamily: 'Orbitron, monospace' }}
           >
             ◈ ACCESS FULL ARCHIVE
@@ -263,7 +263,7 @@ function ComingSoon({ label }: { label: string }) {
 
       <div className="text-center z-10">
         <div
-          className="text-[#FF4500] text-xs tracking-[0.4em] mb-3 animate-pulse"
+          className="text-[#FF4500] text-xs tracking-[0.16em] sm:tracking-[0.4em] mb-3 animate-pulse"
           style={{ fontFamily: 'Share Tech Mono, monospace' }}
         >
           ⚠ SECTOR UNDER RECONSTRUCTION ⚠
@@ -341,13 +341,13 @@ export function Projects() {
             style={{ background: '#39FF14', boxShadow: '0 0 8px #39FF14' }}
           />
           <span
-            className="text-[#39FF14]/65 text-xs tracking-[0.35em]"
+            className="text-[#39FF14]/65 text-xs tracking-[0.18em] sm:tracking-[0.35em]"
             style={{ fontFamily: 'Share Tech Mono, monospace' }}
           >
             DB://
           </span>
           <h2
-            className="text-2xl md:text-3xl font-black tracking-[0.15em] text-[#39FF14]"
+            className="text-2xl md:text-3xl font-black tracking-[0.08em] md:tracking-[0.15em] text-[#39FF14]"
             style={{
               fontFamily: 'Orbitron, monospace',
               textShadow: '0 0 20px rgba(57,255,20,0.4)',
@@ -375,7 +375,7 @@ export function Projects() {
           <div className="relative md:hidden" ref={dropdownRef}>
             <button
               onClick={() => setDropdownOpen((o) => !o)}
-              className="w-full flex items-center justify-between border border-[#39FF14]/20 bg-[#39FF14]/[0.02] px-4 py-3 text-[#39FF14] text-sm tracking-[0.15em] transition-colors hover:border-[#39FF14]/40"
+              className="w-full flex items-center justify-between border border-[#39FF14]/20 bg-[#39FF14]/[0.02] px-4 py-3 text-[#39FF14] text-sm tracking-[0.1em] transition-colors hover:border-[#39FF14]/40"
               style={{ fontFamily: 'Orbitron, monospace' }}
             >
               <span>
@@ -400,7 +400,7 @@ export function Projects() {
                       setActiveTab(tab.id)
                       setDropdownOpen(false)
                     }}
-                    className={`w-full flex items-center justify-between px-4 py-3 text-sm tracking-[0.15em] transition-colors border-b border-[#39FF14]/10 last:border-b-0 ${
+                    className={`w-full flex items-center justify-between px-4 py-3 text-sm tracking-[0.1em] transition-colors border-b border-[#39FF14]/10 last:border-b-0 ${
                       activeTab === tab.id
                         ? 'bg-[#39FF14] text-[#060604]'
                         : 'text-[#39FF14]/50 hover:text-[#39FF14]/80 hover:bg-[#39FF14]/5'

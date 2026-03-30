@@ -87,7 +87,7 @@ export const QA_PROJECTS: PortfolioProject[] = [
     subtitle: 'QA Testing for Full-Stack Church Web Platform',
     description:
       'Performed end-to-end testing on a production church website focusing on authentication, admin workflows, and content management reliability.',
-    tech: ['QA Testing', 'Authentication', 'RBAC', 'SEO Validation'],
+    tech: ['Cypress', 'PostgreSQL', 'Authentication', 'RBAC', 'SEO Validation'],
     highlights: [
       'Validated authentication flows (session, token handling, edge cases)',
       'Identified and resolved image upload failure (edge function fix)',
@@ -115,7 +115,7 @@ export const QA_PROJECTS: PortfolioProject[] = [
   },
   {
     id: 3,
-    name: 'OBS-ProPresenter Remote (NDI)',
+    name: 'Media Remote Tool',
     subtitle: 'QA Testing for Real-Time Production Control System',
     description:
       'Tested a real-time web-based remote system integrating OBS and ProPresenter, ensuring reliability in live streaming environments.',

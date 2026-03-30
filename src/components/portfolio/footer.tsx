@@ -53,7 +53,7 @@ export function Footer() {
             </div>
             <div>
               <div
-                className="text-[#39FF14]/70 font-bold tracking-[0.3em] text-sm"
+                className="text-[#39FF14]/70 font-bold tracking-[0.14em] sm:tracking-[0.3em] text-xs sm:text-sm"
                 style={{ fontFamily: 'Orbitron, monospace' }}
               >
                 ADRIAAN M. DIMATE
@@ -68,7 +68,7 @@ export function Footer() {
           </div>
 
           {/* Center: quick links */}
-          <div className="flex gap-6">
+          <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
             {[
               { label: 'HOME', href: '#home' },
               { label: 'DOSSIER', href: '#bio' },
@@ -82,7 +82,7 @@ export function Footer() {
                     .getElementById(link.href.replace('#', ''))
                     ?.scrollIntoView({ behavior: 'smooth' })
                 }
-                className="text-[#39FF14]/70 hover:text-[#39FF14] text-xs tracking-[0.2em] transition-colors"
+                className="text-[#39FF14]/70 hover:text-[#39FF14] text-xs tracking-[0.12em] sm:tracking-[0.2em] transition-colors"
                 style={{ fontFamily: 'Share Tech Mono, monospace' }}
               >
                 {link.label}
@@ -105,11 +105,11 @@ export function Footer() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.3 }}
-          className="mt-8 border-t border-[#39FF14]/8 pt-6 flex items-center justify-center gap-3"
+          className="mt-8 border-t border-[#39FF14]/8 pt-6 flex items-center justify-center gap-2 sm:gap-3"
         >
           <span className="text-[#39FF14]/40 text-lg">☢</span>
           <span
-            className="text-[#39FF14]/45 text-xs tracking-[0.25em]"
+            className="text-[#39FF14]/45 text-[11px] sm:text-xs tracking-[0.08em] sm:tracking-[0.25em] text-center leading-relaxed"
             style={{ fontFamily: 'Share Tech Mono, monospace' }}
           >
             CAUTION: HIGH RADIATION ZONE — CERTIFIED NUCLEAR-GRADE PORTFOLIO
