@@ -112,6 +112,7 @@ const SECTIONS: ProjectSectionData[] = [
   { title: 'Minor Projects', projects: minorEntries },
   { title: 'Used by Clients', projects: clientEntries },
   { title: 'Backend & APIs', projects: backendApiEntries },
+  { title: 'Aviation (Coming Soon)', projects: [], comingSoon: true },
   { title: 'Playground', projects: playgroundEntries },
 ]
 
