@@ -291,7 +291,7 @@ export function AllProjectsPage() {
             className="mt-3 text-[#39FF14]/75 text-sm sm:text-base leading-relaxed"
             style={{ fontFamily: 'Share Tech Mono, monospace' }}
           >
-            Single-page list view with your exact groups, plus Playground for the rest.
+            Single page list of every single one of my projects.
           </p>
         </div>
 
