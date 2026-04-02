@@ -9,6 +9,7 @@ import {
 } from 'react'
 import { Nav } from '@/components/portfolio/nav'
 import { Hero } from '@/components/portfolio/hero'
+import { NuclearLandscape } from '@/components/portfolio/nuclear-landscape'
 
 const Bio = lazy(() =>
   import('@/components/portfolio/bio').then((module) => ({ default: module.Bio })),
@@ -92,25 +93,29 @@ function Index() {
         lineHeight: 1.6,
       }}
     >
-      <Nav />
-      <main>
-        <Hero />
-        <DeferredSection minHeight={860} anchorId="bio">
-          <Bio />
+      <NuclearLandscape />
+
+      <div className="relative z-10">
+        <Nav />
+        <main>
+          <Hero />
+          <DeferredSection minHeight={860} anchorId="bio">
+            <Bio />
+          </DeferredSection>
+          <DeferredSection minHeight={820} anchorId="experience">
+            <WorkExperience />
+          </DeferredSection>
+          <DeferredSection minHeight={920} anchorId="projects">
+            <Projects />
+          </DeferredSection>
+          <DeferredSection minHeight={820} anchorId="contact">
+            <Contact />
+          </DeferredSection>
+        </main>
+        <DeferredSection minHeight={200}>
+          <Footer />
         </DeferredSection>
-        <DeferredSection minHeight={820} anchorId="experience">
-          <WorkExperience />
-        </DeferredSection>
-        <DeferredSection minHeight={920} anchorId="projects">
-          <Projects />
-        </DeferredSection>
-        <DeferredSection minHeight={820} anchorId="contact">
-          <Contact />
-        </DeferredSection>
-      </main>
-      <DeferredSection minHeight={200}>
-        <Footer />
-      </DeferredSection>
+      </div>
     </div>
   )
 }

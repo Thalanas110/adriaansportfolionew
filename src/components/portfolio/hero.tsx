@@ -355,7 +355,7 @@ export function Hero() {
         id="home"
         className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden py-20 md:py-0"
         style={{
-          background: '#060604',
+          background: 'rgba(6, 6, 4, 0.76)',
           animation: empShaking ? 'emp-shake 0.65s ease-out' : undefined,
         }}
       >

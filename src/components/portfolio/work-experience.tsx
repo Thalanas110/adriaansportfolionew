@@ -14,7 +14,7 @@ export function WorkExperience() {
       id="experience"
       ref={ref}
       className="relative py-24 overflow-hidden"
-      style={{ background: '#060604' }}
+      style={{ background: 'rgba(6, 6, 4, 0.78)' }}
     >
       {/* Warning stripe top */}
       <div

@@ -5,6 +5,7 @@ import {
   SE_PROJECTS,
 } from './portfolio-constants/projects-constants'
 import { SOME_MORE_PROJECTS } from './portfolio-constants/somemore-constants'
+import { NuclearLandscape } from './nuclear-landscape'
 
 type ProjectSource = 'SE' | 'QA' | 'DUMP'
 
@@ -259,6 +260,8 @@ export function AllProjectsPage() {
         fontFamily: 'Share Tech Mono, monospace',
       }}
     >
+      <NuclearLandscape />
+
       <div
         className="pointer-events-none fixed inset-0 opacity-20"
         style={{

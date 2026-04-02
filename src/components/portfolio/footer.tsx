@@ -8,7 +8,7 @@ export function Footer() {
   return (
     <footer
       className="relative overflow-hidden"
-      style={{ background: '#030303' }}
+      style={{ background: 'rgba(3, 3, 3, 0.85)' }}
     >
       {/* Warning stripe */}
       <div

@@ -315,7 +315,7 @@ export function Projects() {
       id="projects"
       ref={ref}
       className="relative py-24 overflow-hidden"
-      style={{ background: '#060604' }}
+      style={{ background: 'rgba(6, 6, 4, 0.78)' }}
     >
       {/* Scanline overlay */}
       <div

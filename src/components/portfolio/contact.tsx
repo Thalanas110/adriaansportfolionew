@@ -68,7 +68,7 @@ export function Contact() {
       id="contact"
       ref={ref}
       className="relative py-24 overflow-hidden"
-      style={{ background: '#07070A' }}
+      style={{ background: 'rgba(7, 7, 10, 0.78)' }}
     >
       {/* Warning stripe top */}
       <div
