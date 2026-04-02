@@ -186,8 +186,6 @@ function ProjectGrid({
       >
         <a
           href={ALL_PROJECTS_URL}
-          target="_blank"
-          rel="noopener noreferrer"
           className="relative group flex items-center gap-2 sm:gap-3 border border-[#CAFF00]/30 bg-transparent px-5 sm:px-8 py-3 overflow-hidden hover:shadow-[0_0_30px_rgba(202,255,0,0.2)] transition-all duration-300"
         >
           <span className="absolute inset-0 bg-[#CAFF00]/5 translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-300" />

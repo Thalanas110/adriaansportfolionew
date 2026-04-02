@@ -131,7 +131,7 @@ export const QA_PROJECTS: PortfolioProject[] = [
   },
 ]
 
-export const ALL_PROJECTS_URL = 'https://allofadriaansprojects.netlify.app/'
+export const ALL_PROJECTS_URL = '/all-projects'
 
 export const TABS: { id: Tab; label: string; icon: string }[] = [
   { id: 'SE', label: 'SOFTWARE ENG.', icon: '⬡' },

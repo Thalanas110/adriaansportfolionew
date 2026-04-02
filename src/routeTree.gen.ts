@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as PublicRouteImport } from './routes/_public'
 import { Route as PublicIndexRouteImport } from './routes/_public/index'
+import { Route as PublicAllProjectsRouteImport } from './routes/_public/all-projects'
 import { Route as ApiOgRouteImport } from './routes/_api/og'
 import { Route as ApiHelloRouteImport } from './routes/_api/hello'
 
@@ -21,6 +22,11 @@ const PublicRoute = PublicRouteImport.update({
 const PublicIndexRoute = PublicIndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => PublicRoute,
+} as any)
+const PublicAllProjectsRoute = PublicAllProjectsRouteImport.update({
+  id: '/all-projects',
+  path: '/all-projects',
   getParentRoute: () => PublicRoute,
 } as any)
 const ApiOgRoute = ApiOgRouteImport.update({
@@ -38,10 +44,12 @@ export interface FileRoutesByFullPath {
   '/': typeof PublicIndexRoute
   '/hello': typeof ApiHelloRoute
   '/og': typeof ApiOgRoute
+  '/all-projects': typeof PublicAllProjectsRoute
 }
 export interface FileRoutesByTo {
   '/hello': typeof ApiHelloRoute
   '/og': typeof ApiOgRoute
+  '/all-projects': typeof PublicAllProjectsRoute
   '/': typeof PublicIndexRoute
 }
 export interface FileRoutesById {
@@ -49,14 +57,21 @@ export interface FileRoutesById {
   '/_public': typeof PublicRouteWithChildren
   '/_api/hello': typeof ApiHelloRoute
   '/_api/og': typeof ApiOgRoute
+  '/_public/all-projects': typeof PublicAllProjectsRoute
   '/_public/': typeof PublicIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/hello' | '/og'
+  fullPaths: '/' | '/hello' | '/og' | '/all-projects'
   fileRoutesByTo: FileRoutesByTo
-  to: '/hello' | '/og' | '/'
-  id: '__root__' | '/_public' | '/_api/hello' | '/_api/og' | '/_public/'
+  to: '/hello' | '/og' | '/all-projects' | '/'
+  id:
+    | '__root__'
+    | '/_public'
+    | '/_api/hello'
+    | '/_api/og'
+    | '/_public/all-projects'
+    | '/_public/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -81,6 +96,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PublicIndexRouteImport
       parentRoute: typeof PublicRoute
     }
+    '/_public/all-projects': {
+      id: '/_public/all-projects'
+      path: '/all-projects'
+      fullPath: '/all-projects'
+      preLoaderRoute: typeof PublicAllProjectsRouteImport
+      parentRoute: typeof PublicRoute
+    }
     '/_api/og': {
       id: '/_api/og'
       path: '/og'
@@ -99,10 +121,12 @@ declare module '@tanstack/react-router' {
 }
 
 interface PublicRouteChildren {
+  PublicAllProjectsRoute: typeof PublicAllProjectsRoute
   PublicIndexRoute: typeof PublicIndexRoute
 }
 
 const PublicRouteChildren: PublicRouteChildren = {
+  PublicAllProjectsRoute: PublicAllProjectsRoute,
   PublicIndexRoute: PublicIndexRoute,
 }
 
