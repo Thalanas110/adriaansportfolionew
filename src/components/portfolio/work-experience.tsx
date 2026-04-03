@@ -13,8 +13,7 @@ export function WorkExperience() {
     <section
       id="experience"
       ref={ref}
-      className="relative py-24 overflow-hidden"
-      style={{ background: 'rgba(6, 6, 4, 0.78)' }}
+      className="relative py-24 overflow-hidden bg-[#060604]/56 md:bg-[#060604]/78"
     >
       {/* Warning stripe top */}
       <div

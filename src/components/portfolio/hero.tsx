@@ -353,9 +353,8 @@ export function Hero() {
       <EmpExplosion active={empActive} onComplete={handleEmpComplete} />
       <section
         id="home"
-        className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden py-20 md:py-0"
+        className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden py-20 md:py-0 bg-[#060604]/55 md:bg-[#060604]/76"
         style={{
-          background: 'rgba(6, 6, 4, 0.76)',
           animation: empShaking ? 'emp-shake 0.65s ease-out' : undefined,
         }}
       >

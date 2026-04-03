@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { motion, AnimatePresence } from 'motion/react'
 import { useRouter } from '@tanstack/react-router'
+import { AllProjectsPage } from './all-projects'
 
 const GLITCH_CHARS = '!@#$%^&*<>?/\\|[]{}~RADIOACTIVE☢☣'
 
@@ -44,6 +45,12 @@ const TERMINAL_LINES = [
 
 export function NotFound() {
   const router = useRouter()
+  const pathname = router.state.location.pathname
+
+  if (pathname === '/all-projects' || pathname === '/all-projects/') {
+    return <AllProjectsPage />
+  }
+
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const [terminalLines, setTerminalLines] = useState<string[]>([])
   const [glitchActive, setGlitchActive] = useState(false)

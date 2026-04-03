@@ -36,8 +36,7 @@ export function Bio() {
     <section
       id="bio"
       ref={ref}
-      className="relative py-24 overflow-hidden"
-      style={{ background: 'rgba(7, 7, 10, 0.76)' }}
+      className="relative py-24 overflow-hidden bg-[#07070A]/55 md:bg-[#07070A]/76"
     >
       {/* Warning stripe top */}
       <div

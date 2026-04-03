@@ -6,10 +6,7 @@ export function Footer() {
   const year = new Date().getFullYear()
 
   return (
-    <footer
-      className="relative overflow-hidden"
-      style={{ background: 'rgba(3, 3, 3, 0.85)' }}
-    >
+    <footer className="relative overflow-hidden bg-[#030303]/70 md:bg-[#030303]/85">
       {/* Warning stripe */}
       <div
         className="h-3"
