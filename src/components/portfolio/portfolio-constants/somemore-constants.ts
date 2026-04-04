@@ -116,7 +116,7 @@ export const SOME_MORE_PROJECTS: PortfolioProject[] = [
       'Vanilla PHP and MySQL API for managing car rental listings, bookings, and availability.',
     tech: ['Vanilla PHP', 'MySQL'],
     highlights: [],
-    github: '#',
+    github: 'https://github.com/Thalanas110/CarRentalAPI',
     demo: '#',
   },
   {
@@ -127,7 +127,7 @@ export const SOME_MORE_PROJECTS: PortfolioProject[] = [
       'Vanilla PHP and MySQL API for recipes, ingredients, and cookbook entries.',
     tech: ['Vanilla PHP', 'MySQL'],
     highlights: [],
-    github: '#',
+    github: 'https://github.com/Thalanas110/CookbookAPI',
     demo: '#',
   },
     {
@@ -138,7 +138,7 @@ export const SOME_MORE_PROJECTS: PortfolioProject[] = [
       'My take on sir loude`s API for RService, my SHS Capstone back in 2023. ',
     tech: ['Vanilla PHP', 'MySQL'],
     highlights: [],
-    github: '#',
+    github: 'https://github.com/Thalanas110/rservice-api-rest',
     demo: '#',
   },
 
