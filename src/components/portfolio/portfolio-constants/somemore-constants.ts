@@ -105,8 +105,8 @@ export const SOME_MORE_PROJECTS: PortfolioProject[] = [
       'Backend-only API using Vanilla PHP and MySQL inside XAMPP, currently still being fixed.',
     tech: ['PHP', 'MySQL'],
     highlights: [],
-    github: 'https://github.com/zionren/corkboard',
-    demo: 'https://corkboardnew.vercel.app/',
+    github: '#',
+    demo: '#',
   },
   {
     id: 10,
@@ -125,6 +125,17 @@ export const SOME_MORE_PROJECTS: PortfolioProject[] = [
     subtitle: 'Vanilla PHP + MySQL',
     description:
       'Vanilla PHP and MySQL API for recipes, ingredients, and cookbook entries.',
+    tech: ['Vanilla PHP', 'MySQL'],
+    highlights: [],
+    github: '#',
+    demo: '#',
+  },
+    {
+    id: 18,
+    name: 'RService API',
+    subtitle: 'Vanilla PHP + MySQL',
+    description:
+      'My take on sir loude`s API for RService, my SHS Capstone back in 2023. ',
     tech: ['Vanilla PHP', 'MySQL'],
     highlights: [],
     github: '#',

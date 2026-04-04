@@ -91,6 +91,7 @@ const backendApiEntries = pickByNames([
   'blogsite api',
   'Car Rental API v2',
   'Cookbook API',
+  'RService API'
 ])
 
 const categorizedNames = new Set(
