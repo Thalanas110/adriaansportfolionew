@@ -61,8 +61,16 @@ export const TECH_STACK_GROUPS = [
     items: ['Cypress', 'Playwright', 'Postman', 'Manual testing (Game beta)'],
   },
   {
-    title: 'Design',
-    items: ['Photoshop', 'Figma'],
+    title: 'Other',
+    items: [
+      'Photoshop',
+      'Figma',
+      'Trello',
+      'Jira',
+      'ProPresenter',
+      'OBS',
+      'NDI',
+    ],
   },
 ]
 

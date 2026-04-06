@@ -12,6 +12,35 @@ import {
   MapPin,
   Facebook,
 } from 'lucide-react'
+import {
+  siAngular,
+  siAppwrite,
+  siCypress,
+  siDocker,
+  siFigma,
+  siGit,
+  siGithub,
+  siHtml5,
+  siMongodb,
+  siMysql,
+  siNetlify,
+  siNodedotjs,
+  siPhp,
+  siPostgresql,
+  siPostman,
+  siReact,
+  siSupabase,
+  siTailwindcss,
+  siTanstack,
+  siTestinglibrary,
+  siTrello,
+  siJira,
+  siObsstudio,
+  siNdi,
+  siVercel,
+  siVite,
+  type SimpleIcon,
+} from 'simple-icons'
 import resumePdf from '@/assets/adriaan resume new edit (1).pdf?url'
 import {
   TECH_STACK_GROUPS,
@@ -41,6 +70,88 @@ function getStackMark(label: string) {
     .join('')
     .slice(0, 3)
     .toUpperCase()
+}
+
+const STACK_LOGOS: Record<string, SimpleIcon> = {
+  'HTML5/CSS3/JS': siHtml5,
+  React: siReact,
+  'TanStack Query': siTanstack,
+  Vite: siVite,
+  Angular: siAngular,
+  TailwindCSS: siTailwindcss,
+  PHP: siPhp,
+  'Node.js': siNodedotjs,
+  Supabase: siSupabase,
+  Appwrite: siAppwrite,
+  PostgreSQL: siPostgresql,
+  MySQL: siMysql,
+  MongoDB: siMongodb,
+  Docker: siDocker,
+  Git: siGit,
+  GitHub: siGithub,
+  Netlify: siNetlify,
+  Vercel: siVercel,
+  Cypress: siCypress,
+  Postman: siPostman,
+  'Manual testing (Game beta)': siTestinglibrary,
+  Figma: siFigma,
+  Trello: siTrello,
+  Jira: siJira,
+  OBS: siObsstudio,
+  NDI: siNdi,
+}
+
+const STACK_LOGO_IMAGES: Record<string, string> = {
+  Photoshop:
+    'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-plain.svg',
+  Playwright:
+    'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/playwright/playwright-original.svg',
+}
+
+function StackLogo({ item }: { item: string }) {
+  const imageUrl = STACK_LOGO_IMAGES[item]
+  const logo = STACK_LOGOS[item]
+
+  if (imageUrl) {
+    return (
+      <span className="relative inline-flex items-center justify-center w-6 h-6 rounded-sm border border-[#39FF14]/25 bg-[#39FF14]/[0.06]">
+        <img
+          src={imageUrl}
+          alt=""
+          aria-hidden="true"
+          loading="lazy"
+          className="w-3.5 h-3.5 object-contain"
+        />
+        <span className="absolute top-0.5 right-0.5 w-1 h-1 rounded-full bg-[#39FF14]/70" />
+      </span>
+    )
+  }
+
+  if (!logo) {
+    return (
+      <span
+        className="relative inline-flex items-center justify-center w-6 h-6 rounded-sm border border-[#39FF14]/25 bg-[#39FF14]/[0.06] text-[#CAFF00] text-[9px] leading-none tracking-wide"
+        style={{ fontFamily: 'Share Tech Mono, monospace' }}
+      >
+        {getStackMark(item)}
+        <span className="absolute top-0.5 right-0.5 w-1 h-1 rounded-full bg-[#39FF14]/70" />
+      </span>
+    )
+  }
+
+  return (
+    <span className="relative inline-flex items-center justify-center w-6 h-6 rounded-sm border border-[#39FF14]/25 bg-[#39FF14]/[0.06]">
+      <svg
+        aria-hidden="true"
+        viewBox="0 0 24 24"
+        className="w-3.5 h-3.5"
+        style={{ color: `#${logo.hex}` }}
+      >
+        <path fill="currentColor" d={logo.path} />
+      </svg>
+      <span className="absolute top-0.5 right-0.5 w-1 h-1 rounded-full bg-[#39FF14]/70" />
+    </span>
+  )
 }
 
 export function Bio() {
@@ -177,28 +288,28 @@ export function Bio() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 gap-2 mt-auto pt-2">
+            <div className="grid grid-cols-1 gap-2 mt-2 flex-1 auto-rows-fr">
               {TRAITS.map((t, i) => (
                 <motion.div
                   key={t.label}
                   initial={{ opacity: 0, x: -10 }}
                   animate={inView ? { opacity: 1, x: 0 } : {}}
                   transition={{ delay: 0.3 + i * 0.08 }}
-                  className="flex items-start gap-3 border border-[#39FF14]/10 bg-[#39FF14]/[0.03] rounded-lg p-3"
+                  className="flex items-start gap-3 border border-[#39FF14]/10 bg-[#39FF14]/[0.03] rounded-lg p-[14px] min-h-[96px]"
                 >
                   <t.icon
-                    size={16}
+                    size={17}
                     className="text-[#CAFF00] mt-0.5 shrink-0"
                   />
                   <div>
                     <div
-                      className="text-white text-sm font-bold"
+                      className="text-white text-[15px] font-bold"
                       style={{ fontFamily: 'Orbitron, monospace' }}
                     >
                       {t.label}
                     </div>
                     <div
-                      className="text-[#39FF14]/65 text-xs mt-0.5 leading-relaxed"
+                      className="text-[#39FF14]/65 text-[13px] mt-1 leading-relaxed"
                       style={{ fontFamily: 'Share Tech Mono, monospace' }}
                     >
                       {t.desc}
@@ -264,7 +375,7 @@ export function Bio() {
               initial={{ opacity: 0, y: 24 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className={CARD_BASE}
+              className={`${CARD_BASE} flex flex-col`}
             >
               <Dot />
               <div className="flex items-center gap-2 mb-4">
@@ -277,15 +388,15 @@ export function Bio() {
                 </span>
               </div>
 
-              <div className="grid grid-cols-2 gap-3">
+              <div className="grid grid-cols-2 gap-3 flex-1 auto-rows-fr">
                 {HOBBIES.map(({ icon: Icon, label }) => (
                   <div
                     key={label}
-                    className="flex items-center gap-3 border border-[#39FF14]/10 rounded-lg bg-[#39FF14]/[0.03] px-3 py-2"
+                    className="flex items-center gap-3 border border-[#39FF14]/10 rounded-lg bg-[#39FF14]/[0.03] px-3 py-3 min-h-[58px]"
                   >
-                    <Icon size={16} className="text-[#39FF14]/75" />
+                    <Icon size={18} className="text-[#39FF14]/75" />
                     <span
-                      className="text-[#39FF14]/75 text-sm"
+                      className="text-[#39FF14]/75 text-base"
                       style={{ fontFamily: 'Share Tech Mono, monospace' }}
                     >
                       {label}
@@ -406,13 +517,7 @@ export function Bio() {
                           key={item}
                           className="group flex items-center gap-2 border border-[#39FF14]/15 bg-[#39FF14]/[0.03] rounded-md px-2 py-1.5"
                         >
-                          <span
-                            className="relative inline-flex items-center justify-center w-6 h-6 rounded-sm border border-[#39FF14]/25 bg-[#39FF14]/[0.06] text-[#CAFF00] text-[9px] leading-none tracking-wide"
-                            style={{ fontFamily: 'Share Tech Mono, monospace' }}
-                          >
-                            {getStackMark(item)}
-                            <span className="absolute top-0.5 right-0.5 w-1 h-1 rounded-full bg-[#39FF14]/70" />
-                          </span>
+                          <StackLogo item={item} />
                           <span
                             className="text-[#39FF14]/85 text-xs"
                             style={{ fontFamily: 'Share Tech Mono, monospace' }}
