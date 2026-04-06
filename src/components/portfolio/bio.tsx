@@ -14,8 +14,7 @@ import {
 } from 'lucide-react'
 import resumePdf from '@/assets/adriaan resume new edit (1).pdf?url'
 import {
-  FRAMEWORKS,
-  LANGUAGES,
+  TECH_STACK_GROUPS,
   EDUCATION,
   TRAITS,
   HOBBIES,
@@ -28,9 +27,47 @@ function Dot() {
   )
 }
 
+function getStackMark(label: string) {
+  const parts = label
+    .replace(/[^A-Za-z0-9]+/g, ' ')
+    .trim()
+    .split(/\s+/)
+    .filter(Boolean)
+
+  if (parts.length === 0) return '•'
+  if (parts.length === 1) return parts[0].slice(0, 2).toUpperCase()
+  return parts
+    .map((part) => part[0])
+    .join('')
+    .slice(0, 3)
+    .toUpperCase()
+}
+
 export function Bio() {
   const ref = useRef<HTMLDivElement>(null)
   const inView = useInView(ref, { once: true, margin: '-80px' })
+  const connectLinks = [
+    {
+      icon: Github,
+      href: 'https://github.com/',
+      label: 'GitHub',
+    },
+    {
+      icon: Linkedin,
+      href: 'https://linkedin.com/in/',
+      label: 'LinkedIn',
+    },
+    {
+      icon: Facebook,
+      href: 'https://facebook.com/',
+      label: 'Facebook',
+    },
+    {
+      icon: Mail,
+      href: 'mailto:your@email.com',
+      label: 'Email',
+    },
+  ]
 
   return (
     <section
@@ -100,21 +137,13 @@ export function Bio() {
           />
         </motion.div>
 
-        {/* ══ BENTO GRID ══
-            Desktop layout (3 cols):
-            Row 1: [Who I Am (rowspan 2)] [Tech Stack] [Education]
-            Row 2:                        [What I Love (colspan 1)] [Connect + Resume split]
-            Actually we'll do:
-            [WHO I AM — tall]  [TECH STACK]   [EDUCATION]
-                               [WHAT I LOVE]  [CONNECT | RESUME]
-        */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 auto-rows-auto">
-          {/* ── WHO I AM — row-span-2 on md ── */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          {/* LEFT: WHO I AM */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.05 }}
-            className={`${CARD_BASE} flex flex-col gap-4 md:row-span-2`}
+            className={`${CARD_BASE} flex flex-col gap-4`}
           >
             <Dot />
             <div className="flex items-center gap-2">
@@ -144,7 +173,6 @@ export function Bio() {
               </p>
             </div>
 
-            {/* Trait cards */}
             <div className="grid grid-cols-1 gap-2 mt-auto pt-2">
               {TRAITS.map((t, i) => (
                 <motion.div
@@ -177,106 +205,34 @@ export function Bio() {
             </div>
           </motion.div>
 
-          {/* ── TECH STACK ── */}
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.12 }}
-            className={CARD_BASE}
-          >
-            <Dot />
-            <div className="flex items-center gap-2 mb-4">
-              <Code2 size={18} className="text-[#CAFF00]" />
-              <span
-                className="text-white font-bold text-lg"
-                style={{ fontFamily: 'Orbitron, monospace' }}
-              >
-                Tech Stack
-              </span>
-            </div>
-
-            <div
-              className="text-[#39FF14]/65 text-xs tracking-[0.14em] sm:tracking-[0.25em] mb-2"
-              style={{ fontFamily: 'Share Tech Mono, monospace' }}
+          {/* MIDDLE: EDUCATION + WHAT I LOVE + CONNECT */}
+          <div className="grid gap-4 md:grid-rows-[auto_1fr_auto_auto] md:min-h-[680px]">
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.12 }}
+              className={CARD_BASE}
             >
-              FRAMEWORKS
-            </div>
-            <div className="flex flex-wrap gap-2 mb-5">
-              {FRAMEWORKS.map((f) => (
+              <Dot />
+              <div className="flex items-center gap-2 mb-4">
+                <GraduationCap size={18} className="text-[#CAFF00]" />
                 <span
-                  key={f}
-                  className="border border-[#39FF14]/25 text-[#39FF14]/85 text-xs sm:text-sm px-3 py-1 rounded-md hover:border-[#39FF14]/50 hover:text-[#39FF14] transition-all cursor-default"
-                  style={{ fontFamily: 'Share Tech Mono, monospace' }}
+                  className="text-white font-bold text-lg"
+                  style={{ fontFamily: 'Orbitron, monospace' }}
                 >
-                  {f}
+                  Education
                 </span>
-              ))}
-            </div>
+              </div>
 
-            <div
-              className="text-[#39FF14]/65 text-xs tracking-[0.14em] sm:tracking-[0.25em] mb-2"
-              style={{ fontFamily: 'Share Tech Mono, monospace' }}
-            >
-              LANGUAGES & DB
-            </div>
-            <div className="flex flex-wrap gap-2">
-              {LANGUAGES.map((l) => (
-                <span
-                  key={l}
-                  className="border border-[#39FF14]/25 text-[#39FF14]/85 text-xs sm:text-sm px-3 py-1 rounded-md hover:border-[#39FF14]/50 hover:text-[#39FF14] transition-all cursor-default"
-                  style={{ fontFamily: 'Share Tech Mono, monospace' }}
-                >
-                  {l}
-                </span>
-              ))}
-            </div>
-          </motion.div>
-
-          {/* ── EDUCATION ── */}
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.19 }}
-            className={CARD_BASE}
-          >
-            <Dot />
-            <div className="flex items-center gap-2 mb-5">
-              <GraduationCap size={18} className="text-[#CAFF00]" />
-              <span
-                className="text-white font-bold text-lg"
-                style={{ fontFamily: 'Orbitron, monospace' }}
-              >
-                Education
-              </span>
-            </div>
-
-            <div className="space-y-5">
-              {EDUCATION.map((edu, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, x: 10 }}
-                  animate={inView ? { opacity: 1, x: 0 } : {}}
-                  transition={{ delay: 0.3 + i * 0.1 }}
-                  className="flex items-start gap-3"
-                >
-                  <div className="flex flex-col items-center mt-1 shrink-0">
-                    <div
-                      className="w-3 h-3 rounded-full border-2"
-                      style={{
-                        borderColor: edu.active ? '#CAFF00' : '#39FF14',
-                        background: edu.active
-                          ? 'rgba(202,255,0,0.2)'
-                          : 'transparent',
-                        boxShadow: edu.active
-                          ? '0 0 8px rgba(202,255,0,0.4)'
-                          : 'none',
-                      }}
-                    />
-                    {i < EDUCATION.length - 1 && (
-                      <div className="w-px h-8 bg-[#39FF14]/15 mt-1" />
-                    )}
-                  </div>
-                  <div>
+              <div className="space-y-3">
+                {EDUCATION.map((edu, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, x: 10 }}
+                    animate={inView ? { opacity: 1, x: 0 } : {}}
+                    transition={{ delay: 0.2 + i * 0.08 }}
+                    className="border border-[#39FF14]/16 bg-[#39FF14]/[0.03] rounded-lg px-3 py-2"
+                  >
                     <div
                       className="text-white text-sm font-semibold"
                       style={{ fontFamily: 'Orbitron, monospace' }}
@@ -284,68 +240,72 @@ export function Bio() {
                       {edu.degree}
                     </div>
                     <div
-                      className="text-[#39FF14]/70 text-sm mt-0.5"
+                      className="text-[#39FF14]/70 text-xs mt-0.5"
                       style={{ fontFamily: 'Share Tech Mono, monospace' }}
                     >
                       {edu.school}
                     </div>
-                    <div
-                      className="text-[#CAFF00] text-xs mt-1 tracking-wide"
+                      <div
+                        className="text-[#CAFF00] text-[11px] mt-1 tracking-wide"
+                        style={{ fontFamily: 'Share Tech Mono, monospace' }}
+                      >
+                        {edu.period}
+                      </div>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className={CARD_BASE}
+            >
+              <Dot />
+              <div className="flex items-center gap-2 mb-4">
+                <span className="text-red-400 text-sm">♥</span>
+                <span
+                  className="text-white font-bold text-base"
+                  style={{ fontFamily: 'Orbitron, monospace' }}
+                >
+                  What I Love
+                </span>
+              </div>
+
+              <div className="grid grid-cols-2 gap-3">
+                {HOBBIES.map(({ icon: Icon, label }) => (
+                  <div
+                    key={label}
+                    className="flex items-center gap-3 border border-[#39FF14]/10 rounded-lg bg-[#39FF14]/[0.03] px-3 py-2"
+                  >
+                    <Icon size={16} className="text-[#39FF14]/75" />
+                    <span
+                      className="text-[#39FF14]/75 text-sm"
                       style={{ fontFamily: 'Share Tech Mono, monospace' }}
                     >
-                      {edu.period}
-                    </div>
+                      {label}
+                    </span>
                   </div>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
+                ))}
+                {Array.from({ length: Math.max(0, 8 - HOBBIES.length) }).map(
+                  (_, i) => (
+                    <div
+                      key={`hobby-placeholder-${i}`}
+                      aria-hidden="true"
+                      className="h-[44px] border border-[#39FF14]/10 rounded-lg bg-[#39FF14]/[0.015]"
+                    />
+                  ),
+                )}
+              </div>
+            </motion.div>
 
-          {/* ── ROW 2 cols 2+3: What I Love | [Connect + Resume] ── */}
-          {/* WHAT I LOVE */}
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.26 }}
-            className={CARD_BASE}
-          >
-            <Dot />
-            <div className="flex items-center gap-2 mb-4">
-              <span className="text-red-400 text-sm">♥</span>
-              <span
-                className="text-white font-bold text-base"
-                style={{ fontFamily: 'Orbitron, monospace' }}
-              >
-                What I Love
-              </span>
-            </div>
-            <div className="grid grid-cols-3 gap-3">
-              {HOBBIES.map(({ icon: Icon, label }) => (
-                <div
-                  key={label}
-                  className="flex flex-col items-center justify-center gap-3 py-6 border border-[#39FF14]/10 rounded-lg bg-[#39FF14]/[0.03] hover:border-[#39FF14]/30 transition-all cursor-default"
-                >
-                  <Icon size={24} className="text-[#39FF14]/75" />
-                  <span
-                    className="text-[#39FF14]/75 text-sm"
-                    style={{ fontFamily: 'Share Tech Mono, monospace' }}
-                  >
-                    {label}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </motion.div>
-
-          {/* CONNECT + GET RESUME — stacked in same grid cell via inner grid */}
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.33 }}
-            className="grid grid-rows-2 gap-4"
-          >
-            {/* CONNECT */}
-            <div className={`${CARD_BASE}`}>
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.28 }}
+              className={CARD_BASE}
+            >
               <Dot />
               <div
                 className="text-white font-bold text-base mb-4"
@@ -354,28 +314,7 @@ export function Bio() {
                 Connect
               </div>
               <div className="flex items-center gap-2 flex-wrap">
-                {[
-                  {
-                    icon: Github,
-                    href: 'https://github.com/',
-                    label: 'GitHub',
-                  },
-                  {
-                    icon: Linkedin,
-                    href: 'https://linkedin.com/in/',
-                    label: 'LinkedIn',
-                  },
-                  {
-                    icon: Facebook,
-                    href: 'https://facebook.com/',
-                    label: 'Facebook',
-                  },
-                  {
-                    icon: Mail,
-                    href: 'mailto:your@email.com',
-                    label: 'Email',
-                  },
-                ].map(({ icon: Icon, href, label }) => (
+                {connectLinks.map(({ icon: Icon, href, label }) => (
                   <a
                     key={label}
                     href={href}
@@ -387,12 +326,24 @@ export function Bio() {
                     <Icon size={15} />
                   </a>
                 ))}
+                {Array.from({ length: Math.max(0, 6 - connectLinks.length) }).map(
+                  (_, i) => (
+                    <div
+                      key={`connect-placeholder-${i}`}
+                      aria-hidden="true"
+                      className="w-9 h-9 border border-[#39FF14]/18 rounded-lg bg-[#39FF14]/[0.02]"
+                    />
+                  ),
+                )}
               </div>
-            </div>
+            </motion.div>
 
-            {/* GET RESUME */}
-            <div
-              className={`${CARD_BASE} flex flex-col items-center justify-center gap-2 cursor-pointer group`}
+            <motion.button
+              type="button"
+              initial={{ opacity: 0, y: 24 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.32 }}
+              className={`${CARD_BASE} cursor-pointer group flex flex-col items-center justify-center gap-2 text-center`}
               style={{ background: '#141208' }}
               onClick={() => {
                 const a = document.createElement('a')
@@ -401,27 +352,77 @@ export function Bio() {
                 a.click()
               }}
             >
-              <div
-                className="w-12 h-12 rounded-xl border border-[#39FF14]/20 bg-[#39FF14]/5 flex items-center justify-center group-hover:border-[#39FF14]/50 group-hover:bg-[#39FF14]/10 transition-all"
-                style={{ boxShadow: '0 0 20px rgba(57,255,20,0.06)' }}
-              >
+              <div className="w-10 h-10 rounded-lg border border-[#39FF14]/20 bg-[#39FF14]/5 flex items-center justify-center group-hover:border-[#39FF14]/50 group-hover:bg-[#39FF14]/10 transition-all">
                 <Download
-                  size={20}
+                  size={18}
                   className="text-[#39FF14]/70 group-hover:text-[#39FF14] transition-colors"
                 />
               </div>
-              <span
-                className="text-white font-bold text-sm tracking-wide group-hover:text-[#39FF14] transition-colors"
+              <div
+                className="text-white font-bold text-base tracking-wide group-hover:text-[#39FF14] transition-colors"
                 style={{ fontFamily: 'Orbitron, monospace' }}
               >
-                Get Resume
-              </span>
-              <div
-                className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"
-                style={{ boxShadow: 'inset 0 0 30px rgba(57,255,20,0.05)' }}
-              />
-            </div>
-          </motion.div>
+                Download Resume
+              </div>
+            </motion.button>
+          </div>
+
+          {/* RIGHT: TECH STACK */}
+          <div className="md:min-h-[680px]">
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.16 }}
+              className={`${CARD_BASE} h-full`}
+            >
+              <Dot />
+              <div className="flex items-center gap-2 mb-4">
+                <Code2 size={18} className="text-[#CAFF00]" />
+                <span
+                  className="text-white font-bold text-lg"
+                  style={{ fontFamily: 'Orbitron, monospace' }}
+                >
+                  Tech Stack
+                </span>
+              </div>
+
+              <div className="space-y-6">
+                {TECH_STACK_GROUPS.map((group) => (
+                  <div key={group.title}>
+                    <div
+                      className="text-[#39FF14]/65 text-xs tracking-[0.2em] mb-2"
+                      style={{ fontFamily: 'Share Tech Mono, monospace' }}
+                    >
+                      {group.title.toUpperCase()}
+                    </div>
+
+                    <div className="flex flex-wrap gap-2">
+                      {group.items.map((item) => (
+                        <div
+                          key={item}
+                          className="group flex items-center gap-2 border border-[#39FF14]/15 bg-[#39FF14]/[0.03] rounded-md px-2 py-1.5"
+                        >
+                          <span
+                            className="relative inline-flex items-center justify-center w-6 h-6 rounded-sm border border-[#39FF14]/25 bg-[#39FF14]/[0.06] text-[#CAFF00] text-[9px] leading-none tracking-wide"
+                            style={{ fontFamily: 'Share Tech Mono, monospace' }}
+                          >
+                            {getStackMark(item)}
+                            <span className="absolute top-0.5 right-0.5 w-1 h-1 rounded-full bg-[#39FF14]/70" />
+                          </span>
+                          <span
+                            className="text-[#39FF14]/85 text-xs"
+                            style={{ fontFamily: 'Share Tech Mono, monospace' }}
+                          >
+                            {item}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+          </div>
         </div>
       </div>
     </section>

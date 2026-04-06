@@ -8,6 +8,8 @@ import {
   Music,
   BookOpen,
   Moon,
+  Feather,
+  UtensilsCrossed,
 } from 'lucide-react'
 
 export const FRAMEWORKS = [
@@ -27,6 +29,40 @@ export const LANGUAGES = [
   'PostgreSQL',
   'PHP',
   'AppwriteDB',
+]
+
+export const TECH_STACK_GROUPS = [
+  {
+    title: 'Frontend',
+    items: [
+      'HTML5/CSS3/JS',
+      'React',
+      'TanStack Query',
+      'Vite',
+      'Angular',
+      'TailwindCSS',
+    ],
+  },
+  {
+    title: 'Backend',
+    items: ['PHP', 'Node.js', 'Supabase', 'Appwrite'],
+  },
+  {
+    title: 'Database',
+    items: ['PostgreSQL', 'MySQL', 'MongoDB'],
+  },
+  {
+    title: 'CI/CD',
+    items: ['Docker', 'Git', 'GitHub', 'Netlify', 'Vercel'],
+  },
+  {
+    title: 'Testing',
+    items: ['Cypress', 'Playwright', 'Postman', 'Manual testing (Game beta)'],
+  },
+  {
+    title: 'Design',
+    items: ['Photoshop', 'Figma'],
+  },
 ]
 
 export const EDUCATION = [
@@ -69,6 +105,8 @@ export const HOBBIES = [
   { icon: Music, label: 'Music' },
   { icon: BookOpen, label: 'Reading' },
   { icon: Moon, label: 'Sleep' },
+  { icon: Feather, label: 'Poetry' },
+  { icon: UtensilsCrossed, label: 'Cooking' },
 ]
 
 export const CARD_BASE =
