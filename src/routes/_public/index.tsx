@@ -51,6 +51,11 @@ function DeferredSection({
     const node = ref.current
     if (!node || isVisible) return
 
+    if (typeof IntersectionObserver === 'undefined') {
+      setIsVisible(true)
+      return
+    }
+
     const observer = new IntersectionObserver(
       (entries) => {
         if (entries.some((entry) => entry.isIntersecting)) {

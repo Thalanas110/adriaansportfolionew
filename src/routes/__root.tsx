@@ -43,10 +43,7 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
     }
   },
   head: ({ loaderData }) => {
-    const baseUrl =
-      typeof window !== 'undefined'
-        ? window.location.origin
-        : (loaderData?.baseUrl ?? 'http://localhost:8500')
+    const baseUrl = loaderData?.baseUrl ?? 'http://localhost:8500'
 
     const config: OGImageConfig = {
       isCustom: false,
@@ -59,7 +56,7 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
       description:
         'A toxic biohazard-styled, post-thermonuclear war portfolio website showcasing software engineering, QA, and aviation projects with a radioactive wasteland aesthetic.',
       image: ogImageUrl,
-      url: typeof window !== 'undefined' ? window.location.href : baseUrl,
+      url: baseUrl,
     }
 
     const ogTags = createOGMetaTags(metadata)
