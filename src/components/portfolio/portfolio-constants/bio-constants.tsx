@@ -10,6 +10,7 @@ import {
   Moon,
   Feather,
   UtensilsCrossed,
+  Brain,
 } from 'lucide-react'
 
 export const FRAMEWORKS = [
@@ -95,6 +96,11 @@ export const TRAITS = [
     icon: Zap,
     label: 'Quick Learner',
     desc: 'Adapting at mach speed',
+  },
+  {
+    icon: Brain,
+    label: 'Pattern Recognition',
+    desc: 'Spots patterns and edge cases fast',
   },
 ]
 

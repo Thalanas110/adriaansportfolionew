@@ -171,6 +171,10 @@ export function Bio() {
                 for my commercial pilot license. When I'm not coding, you'll
                 find me studying flight charts or exploring new tech stacks.
               </p>
+              <p>
+                Join me on this unique journey where code meets cockpit, and let's
+                reach new heights together.
+              </p>
             </div>
 
             <div className="grid grid-cols-1 gap-2 mt-auto pt-2">
