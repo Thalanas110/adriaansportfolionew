@@ -106,6 +106,8 @@ const STACK_LOGO_IMAGES: Record<string, string> = {
     'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-plain.svg',
   Playwright:
     'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/playwright/playwright-original.svg',
+  ProPresenter:
+    'https://cdn.prod.website-files.com/662f9c93a3bc73a71bd8dc81/662ff398fa7d280a13da12d3_ProPresenter_white_svg.svg',
 }
 
 function StackLogo({ item }: { item: string }) {
