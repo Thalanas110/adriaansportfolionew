@@ -129,6 +129,7 @@ export const QA_PROJECTS: PortfolioProject[] = [
     github: 'https://github.com/Thalanas110/obs-propres-remote-icc',
     demo: '#',
   },
+  // committer
   {
     id: 4,
     name: 'ExamHub - Exam system',
