@@ -129,7 +129,7 @@ export const QA_PROJECTS: PortfolioProject[] = [
     github: 'https://github.com/Thalanas110/obs-propres-remote-icc',
     demo: '#',
   },
-    {
+  {
     id: 4,
     name: 'ExamHub - Exam system',
     subtitle: 'QA Testing for the Elective final projects',
@@ -137,12 +137,12 @@ export const QA_PROJECTS: PortfolioProject[] = [
       'Involved heavy use of testing for the exam project via Playwright and PHP, alongside Postman. Tested for edge cases and security vulnerabilities, especially in the anti-cheat features.',
     tech: ['PHP Unit Testing', 'Playwright', 'Postman'],
     highlights: [
-      'Validated real-time synchronization via WebSockets',
-      'Performed integration testing (OBS WebSocket + ProPresenter API)',
-      'Simulated live production scenarios for stress testing',
-      'Detected and resolved state desynchronization issues',
+      'Tested AES-GCM-256 encryption implementation for security',
+      'Validated role-based access control (RBAC) across user roles',
+      'Simulated cheating scenarios to test anti-cheat features',
+      'Performed cross-browser testing for compatibility',
     ],
-    github: 'https://github.com/Thalanas110/obs-propres-remote-icc',
+    github: 'https://github.com/Thalanas110/ExamSystemG8Submission1',
     demo: '#',
   }
 ]
