@@ -29,7 +29,7 @@ export const SE_PROJECTS: PortfolioProject[] = [
     subtitle: 'thesis writing - proprietary project for DTI and NMIS',
     description:
       'Thesis project for my thesis writing, using PWA tech for DTI and NMIS meat inspectors',
-    tech: ['ReactJS', 'Tanstack Router', 'Vite', 'Node.js', 'Supabase', 'PostgreSQL'],
+    tech: ['ReactJS', 'Tanstack Router', 'Vite', 'Node.js', 'Supabase', 'PostgreSQL', 'OpenCV', 'Tailwind CSS'],
     highlights: ['OpenCV', 'Color Extraction', 'PWA features', 'Performance optimization'],
     github: '#',
     demo: '#',
@@ -62,21 +62,21 @@ export const SE_PROJECTS: PortfolioProject[] = [
     subtitle: 'Game landing page for someonne`s game',
     description:
       'Credited in-game as website designer for War of Dots. Rebuilt the official site in React with permission from the original creators, improving UI and performance.',
-    tech: ['React', 'Node.js', 'Tailwind CSS'],
+    tech: ['React', 'Tanstack Query', 'Node.js', 'Tailwind CSS'],
     highlights: ['Responsive design', 'Interactive UI', 'Performance and UI beautification'],
     github: '#',
     demo: 'https://warofdots.net/',
   },
   {
     id: 6,
-    name: 'Devotion Blogsite',
-    subtitle: 'My main devotion',
+    name: 'ExamHub - Exam system',
+    subtitle: 'Frontend Development and Backend Development elective final projects',
     description:
-      'Devotion website I did with full admin dashboard so I could just use this instead of randomizing in my notes app on my phone & track devotions better.',
-    tech: ['React', 'Vite', 'Node.js', 'Supabase', 'PostgreSQL', 'Tailwind CSS'],
-    highlights: ['Simple responsive design', 'CRUD operations', 'User authentication', 'Responsive design'],
-    github: '#',
-    demo: 'https://adriaansdevotions.netlify.app/',
+      'Exam system I did for final project in Frontend and Backend electives. One of my most overkill operations ever, submitted to Sir Melner and Sir Churt.',
+    tech: ['React', 'Vite', 'Node.js', 'PHP', 'MySQL/MariaDB', 'Tailwind CSS'],
+    highlights: ['AES-GCM-256 encryption', 'Role-based access control', 'Anti-cheat features'],
+    github: 'https://github.com/Thalanas110/ExamSystemG8Submission1',
+    demo: '#',
   },
 ]
 
@@ -129,6 +129,22 @@ export const QA_PROJECTS: PortfolioProject[] = [
     github: 'https://github.com/Thalanas110/obs-propres-remote-icc',
     demo: '#',
   },
+    {
+    id: 4,
+    name: 'ExamHub - Exam system',
+    subtitle: 'QA Testing for the Elective final projects',
+    description:
+      'Involved heavy use of testing for the exam project via Playwright and PHP, alongside Postman. Tested for edge cases and security vulnerabilities, especially in the anti-cheat features.',
+    tech: ['PHP Unit Testing', 'Playwright', 'Postman'],
+    highlights: [
+      'Validated real-time synchronization via WebSockets',
+      'Performed integration testing (OBS WebSocket + ProPresenter API)',
+      'Simulated live production scenarios for stress testing',
+      'Detected and resolved state desynchronization issues',
+    ],
+    github: 'https://github.com/Thalanas110/obs-propres-remote-icc',
+    demo: '#',
+  }
 ]
 
 export const ALL_PROJECTS_URL = '/all-projects'
