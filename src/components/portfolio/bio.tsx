@@ -41,7 +41,7 @@ import {
   siVite,
   type SimpleIcon,
 } from 'simple-icons'
-import resumePdf from '@/assets/adriaan resume new edit (1).pdf?url'
+import resumePdf from '@/assets/final adriaan resume.pdf?url'
 import {
   TECH_STACK_GROUPS,
   EDUCATION,
