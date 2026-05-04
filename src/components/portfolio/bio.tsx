@@ -12,7 +12,7 @@ import {
   MapPin,
   Facebook,
 } from 'lucide-react'
-import resumePdf from '@/assets/adriaan resume new edit (1).pdf?url'
+import resumePdf from '@/assets/final adriaan resume.pdf?url'
 import {
   FRAMEWORKS,
   LANGUAGES,
