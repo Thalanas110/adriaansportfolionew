@@ -8,6 +8,9 @@ import {
   Music,
   BookOpen,
   Moon,
+  Feather,
+  UtensilsCrossed,
+  Brain,
 } from 'lucide-react'
 
 export const FRAMEWORKS = [
@@ -27,6 +30,48 @@ export const LANGUAGES = [
   'PostgreSQL',
   'PHP',
   'AppwriteDB',
+]
+
+export const TECH_STACK_GROUPS = [
+  {
+    title: 'Frontend',
+    items: [
+      'HTML5/CSS3/JS',
+      'React',
+      'TanStack Query',
+      'Vite',
+      'Angular',
+      'TailwindCSS',
+    ],
+  },
+  {
+    title: 'Backend',
+    items: ['PHP', 'Node.js', 'Supabase', 'Appwrite'],
+  },
+  {
+    title: 'Database',
+    items: ['PostgreSQL', 'MySQL', 'MongoDB'],
+  },
+  {
+    title: 'CI/CD',
+    items: ['Docker', 'Git', 'GitHub', 'Netlify', 'Vercel'],
+  },
+  {
+    title: 'Testing',
+    items: ['Cypress', 'Playwright', 'Postman', 'Manual testing (Game beta)'],
+  },
+  {
+    title: 'Other',
+    items: [
+      'Photoshop',
+      'Figma',
+      'Trello',
+      'Jira',
+      'ProPresenter',
+      'OBS',
+      'NDI',
+    ],
+  },
 ]
 
 export const EDUCATION = [
@@ -60,6 +105,11 @@ export const TRAITS = [
     label: 'Quick Learner',
     desc: 'Adapting at mach speed',
   },
+  {
+    icon: Brain,
+    label: 'Pattern Recognition',
+    desc: 'Spots patterns and edge cases fast',
+  },
 ]
 
 export const HOBBIES = [
@@ -69,6 +119,8 @@ export const HOBBIES = [
   { icon: Music, label: 'Music' },
   { icon: BookOpen, label: 'Reading' },
   { icon: Moon, label: 'Sleep' },
+  { icon: Feather, label: 'Poetry' },
+  { icon: UtensilsCrossed, label: 'Cooking' },
 ]
 
 export const CARD_BASE =

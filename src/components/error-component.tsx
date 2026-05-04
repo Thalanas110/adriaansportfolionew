@@ -28,12 +28,16 @@ export function ErrorComponent({
 
   // Every 1 second, notify parent that an error exists
   useEffect(() => {
+    if (typeof window === 'undefined') {
+      return
+    }
+
     const interval = setInterval(() => {
       window.parent.postMessage(message)
     }, 2000)
 
     return () => clearInterval(interval)
-  }, [])
+  }, [message])
 
   return (
     <div className="flex-grow flex flex-col justify-center items-center gap-6 text-center my-20">

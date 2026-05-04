@@ -10,8 +10,11 @@ interface LinkWarningState {
 
 export function ExternalLinkWarning() {
   const [state, setState] = useState<LinkWarningState>({ open: false, href: '' })
+  const isBrowser = typeof window !== 'undefined' && typeof document !== 'undefined'
 
   const handleClick = useCallback((e: MouseEvent) => {
+    if (typeof window === 'undefined') return
+
     const anchor = (e.target as HTMLElement).closest('a')
     if (!anchor) return
 
@@ -30,11 +33,15 @@ export function ExternalLinkWarning() {
   }, [])
 
   useEffect(() => {
+    if (!isBrowser) return
+
     document.addEventListener('click', handleClick, true)
     return () => document.removeEventListener('click', handleClick, true)
-  }, [handleClick])
+  }, [handleClick, isBrowser])
 
   const handleProceed = () => {
+    if (typeof window === 'undefined') return
+
     window.open(state.href, '_blank', 'noopener,noreferrer')
     setState({ open: false, href: '' })
   }

@@ -67,6 +67,7 @@ const seriousEntries = pickByNames([
   'JFLAP but for Web',
   'Exam Management System',
   'E-commerce Platform',
+  'ExamHub - Exam system'
 ])
 
 const minorEntries = pickByNames([

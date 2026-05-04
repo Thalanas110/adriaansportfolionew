@@ -74,11 +74,13 @@ export function Footer() {
             ].map((link) => (
               <button
                 key={link.label}
-                onClick={() =>
+                onClick={() => {
+                  if (typeof document === 'undefined') return
+
                   document
                     .getElementById(link.href.replace('#', ''))
                     ?.scrollIntoView({ behavior: 'smooth' })
-                }
+                }}
                 className="text-[#39FF14]/70 hover:text-[#39FF14] text-xs tracking-[0.12em] sm:tracking-[0.2em] transition-colors"
                 style={{ fontFamily: 'Share Tech Mono, monospace' }}
               >
