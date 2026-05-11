@@ -12,7 +12,36 @@ import {
   MapPin,
   Facebook,
 } from 'lucide-react'
-import resumePdf from '@/assets/adriaan resume new edit (1).pdf?url'
+import type { SimpleIcon } from 'simple-icons'
+import {
+  siHtml5,
+  siReact,
+  siTanstack,
+  siVite,
+  siAngular,
+  siTailwindcss,
+  siPhp,
+  siNodedotjs,
+  siSupabase,
+  siAppwrite,
+  siPostgresql,
+  siMysql,
+  siMongodb,
+  siDocker,
+  siGit,
+  siGithub,
+  siNetlify,
+  siVercel,
+  siCypress,
+  siPostman,
+  siTestinglibrary,
+  siFigma,
+  siTrello,
+  siJira,
+  siObsstudio,
+  siNdi,
+} from 'simple-icons/icons'
+import resumePdf from '@/assets/final adriaan resume.pdf?url'
 import {
   TECH_STACK_GROUPS,
   EDUCATION,
