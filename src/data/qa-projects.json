@@ -1,0 +1,66 @@
+[
+  {
+    "id": 1,
+    "featured": true,
+    "name": "I Care Center Church Website",
+    "subtitle": "QA Testing for Full-Stack Church Web Platform",
+    "description": "Performed end-to-end testing on a production church website focusing on authentication, admin workflows, and content management reliability.",
+    "tech": ["Cypress", "PostgreSQL", "Authentication", "RBAC", "SEO Validation"],
+    "highlights": [
+      "Validated authentication flows (session, token handling, edge cases)",
+      "Identified and resolved image upload failure (edge function fix)",
+      "Tested role-based access control (RLS) across user types",
+      "Performed cross-device and SEO indexing validation"
+    ],
+    "github": "#",
+    "demo": "https://icarecenter.netlify.app/"
+  },
+  {
+    "id": 2,
+    "featured": true,
+    "name": "War of Dots",
+    "subtitle": "Beta Testing - Multiplayer Strategy Game",
+    "description": "Conducted live beta testing in a real player environment, focusing on gameplay stability, bug detection, and user experience consistency.",
+    "tech": ["Beta Testing", "Gameplay QA", "Bug Reporting", "UX Validation"],
+    "highlights": [
+      "Tested gameplay under 200-400 concurrent players",
+      "Reported reproducible bugs with structured feedback",
+      "Identified UI/UX inconsistencies and edge-case failures",
+      "Assisted in validating game stability across updates"
+    ],
+    "github": "#",
+    "demo": "https://warofdots.net/"
+  },
+  {
+    "id": 3,
+    "featured": true,
+    "name": "Media Remote Tool",
+    "subtitle": "QA Testing for Real-Time Production Control System",
+    "description": "Tested a real-time web-based remote system integrating OBS and ProPresenter, ensuring reliability in live streaming environments.",
+    "tech": ["OBS WebSocket", "ProPresenter API", "WebSockets", "Integration Testing"],
+    "highlights": [
+      "Validated real-time synchronization via WebSockets",
+      "Performed integration testing (OBS WebSocket + ProPresenter API)",
+      "Simulated live production scenarios for stress testing",
+      "Detected and resolved state desynchronization issues"
+    ],
+    "github": "https://github.com/Thalanas110/obs-propres-remote-icc",
+    "demo": "#"
+  },
+  {
+    "id": 4,
+    "featured": true,
+    "name": "ExamHub - Exam system",
+    "subtitle": "QA Testing for the Elective final projects",
+    "description": "Involved heavy use of testing for the exam project via Playwright and PHP, alongside Postman. Tested for edge cases and security vulnerabilities, especially in the anti-cheat features.",
+    "tech": ["PHP Unit Testing", "Playwright", "Postman"],
+    "highlights": [
+      "Tested AES-GCM-256 encryption implementation for security",
+      "Validated role-based access control (RBAC) across user roles",
+      "Simulated cheating scenarios to test anti-cheat features",
+      "Performed cross-browser testing for compatibility"
+    ],
+    "github": "https://github.com/Thalanas110/ExamSystemG8Submission1",
+    "demo": "#"
+  }
+]

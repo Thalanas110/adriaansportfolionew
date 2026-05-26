@@ -5,11 +5,14 @@ import { motion, useInView, AnimatePresence } from 'motion/react'
 import {
   type PortfolioProject,
   type Tab,
-  QA_PROJECTS,
-  SE_PROJECTS,
   ALL_PROJECTS_URL,
   TABS,
 } from './portfolio-constants/projects-constants'
+import seProjectsData from '@/data/se-projects.json'
+import qaProjectsData from '@/data/qa-projects.json'
+
+const SE_PROJECTS: PortfolioProject[] = (seProjectsData as PortfolioProject[]).filter(p => p.featured)
+const QA_PROJECTS: PortfolioProject[] = (qaProjectsData as PortfolioProject[]).filter(p => p.featured)
 
 function ProjectGrid({
   projects,

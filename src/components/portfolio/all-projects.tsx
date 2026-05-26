@@ -1,13 +1,10 @@
 import { Link } from '@tanstack/react-router'
-import {
-  type PortfolioProject,
-  QA_PROJECTS,
-  SE_PROJECTS,
-} from './portfolio-constants/projects-constants'
-import { SOME_MORE_PROJECTS } from './portfolio-constants/somemore-constants'
+import { type PortfolioProject } from './portfolio-constants/projects-constants'
+import seProjectsData from '@/data/se-projects.json'
+import qaProjectsData from '@/data/qa-projects.json'
 import { NuclearLandscape } from './nuclear-landscape'
 
-type ProjectSource = 'SE' | 'QA' | 'DUMP'
+type ProjectSource = 'SE' | 'QA'
 
 type ListedProject = PortfolioProject & {
   source: ProjectSource
@@ -19,19 +16,14 @@ type ProjectSectionData = {
   comingSoon?: boolean
 }
 
-const seEntries: ListedProject[] = SE_PROJECTS.map((project) => ({
+const seEntries: ListedProject[] = (seProjectsData as PortfolioProject[]).map((project) => ({
   ...project,
-  source: 'SE',
+  source: 'SE' as const,
 }))
 
-const qaEntries: ListedProject[] = QA_PROJECTS.map((project) => ({
+const qaEntries: ListedProject[] = (qaProjectsData as PortfolioProject[]).map((project) => ({
   ...project,
-  source: 'QA',
-}))
-
-const moreEntries: ListedProject[] = SOME_MORE_PROJECTS.map((project) => ({
-  ...project,
-  source: 'DUMP',
+  source: 'QA' as const,
 }))
 
 const normalizeName = (value: string) => value.trim().toLowerCase()
@@ -46,7 +38,7 @@ const canonicalName = (value: string) => {
   return normalized
 }
 
-const mergedEntries: ListedProject[] = [...seEntries, ...moreEntries, ...qaEntries]
+const mergedEntries: ListedProject[] = [...seEntries, ...qaEntries]
 
 const dedupedEntries = mergedEntries.filter((project, index, allProjects) => {
   return (
