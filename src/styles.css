@@ -1,0 +1,318 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * VAULT TERMINAL design system.
+ * Post-nuclear CRT terminal: irradiated amber on carbon black,
+ * toxic-green signal accents, monospaced telemetry typography.
+ */
+
+@theme inline {
+  --radius-sm: 0px;
+  --radius-md: 2px;
+  --radius-lg: 2px;
+  --radius-xl: 4px;
+  --radius-2xl: 4px;
+  --radius-3xl: 6px;
+  --radius-4xl: 8px;
+
+  --font-display: "Share Tech Mono", ui-monospace, monospace;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --font-sans: "JetBrains Mono", ui-monospace, monospace;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+
+  --color-rad: var(--rad);
+  --color-rad-dim: var(--rad-dim);
+  --color-signal: var(--signal);
+  --color-signal-dim: var(--signal-dim);
+  --color-warn: var(--warn);
+  --color-panel: var(--panel);
+  --color-grid: var(--grid);
+
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --radius: 2px;
+
+  --background: oklch(0.13 0.008 90);
+  --foreground: oklch(0.9 0.05 90);
+
+  --card: oklch(0.17 0.012 90);
+  --card-foreground: oklch(0.9 0.05 90);
+  --popover: oklch(0.15 0.01 90);
+  --popover-foreground: oklch(0.9 0.05 90);
+
+  --primary: oklch(0.8 0.17 85);
+  --primary-foreground: oklch(0.13 0.01 90);
+  --secondary: oklch(0.22 0.02 95);
+  --secondary-foreground: oklch(0.88 0.06 90);
+
+  --muted: oklch(0.2 0.014 95);
+  --muted-foreground: oklch(0.62 0.045 92);
+
+  --accent: oklch(0.82 0.21 135);
+  --accent-foreground: oklch(0.13 0.01 90);
+
+  --destructive: oklch(0.62 0.22 30);
+  --destructive-foreground: oklch(0.96 0.02 90);
+
+  --border: oklch(0.32 0.05 90 / 55%);
+  --input: oklch(0.28 0.04 90 / 70%);
+  --ring: oklch(0.8 0.17 85);
+
+  --rad: oklch(0.8 0.17 85);
+  --rad-dim: oklch(0.5 0.1 85);
+  --signal: oklch(0.82 0.21 135);
+  --signal-dim: oklch(0.5 0.12 140);
+  --warn: oklch(0.68 0.2 45);
+  --panel: oklch(0.17 0.012 90);
+  --grid: oklch(0.35 0.05 90 / 30%);
+
+  --sidebar: oklch(0.15 0.01 90);
+  --sidebar-foreground: oklch(0.9 0.05 90);
+  --sidebar-primary: oklch(0.8 0.17 85);
+  --sidebar-primary-foreground: oklch(0.13 0.01 90);
+  --sidebar-accent: oklch(0.22 0.02 95);
+  --sidebar-accent-foreground: oklch(0.9 0.05 90);
+  --sidebar-border: oklch(0.32 0.05 90 / 55%);
+  --sidebar-ring: oklch(0.8 0.17 85);
+}
+
+.dark {
+  color-scheme: dark;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-mono);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background: var(--rad);
+    color: var(--background);
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: oklch(0.11 0.006 90);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--rad-dim);
+    border: 2px solid oklch(0.11 0.006 90);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--rad);
+  }
+}
+
+/* ---------- Utilities ---------- */
+
+@utility text-glow {
+  text-shadow:
+    0 0 6px color-mix(in oklab, var(--rad) 55%, transparent),
+    0 0 22px color-mix(in oklab, var(--rad) 22%, transparent);
+}
+
+@utility text-glow-signal {
+  text-shadow:
+    0 0 6px color-mix(in oklab, var(--signal) 60%, transparent),
+    0 0 20px color-mix(in oklab, var(--signal) 25%, transparent);
+}
+
+@utility box-glow {
+  box-shadow:
+    0 0 0 1px color-mix(in oklab, var(--rad) 30%, transparent),
+    0 0 24px -6px color-mix(in oklab, var(--rad) 35%, transparent),
+    inset 0 0 40px -30px color-mix(in oklab, var(--rad) 60%, transparent);
+}
+
+@utility panel {
+  background:
+    linear-gradient(
+      180deg,
+      color-mix(in oklab, var(--panel) 92%, transparent),
+      color-mix(in oklab, var(--background) 92%, transparent)
+    );
+  border: 1px solid var(--border);
+  backdrop-filter: blur(6px);
+}
+
+@utility corner-marks {
+  position: relative;
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border: 1px solid var(--rad);
+    opacity: 0.7;
+    pointer-events: none;
+  }
+  &::before {
+    top: -1px;
+    left: -1px;
+    border-right: 0;
+    border-bottom: 0;
+  }
+  &::after {
+    bottom: -1px;
+    right: -1px;
+    border-left: 0;
+    border-top: 0;
+  }
+}
+
+@utility scanlines {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: repeating-linear-gradient(
+      to bottom,
+      color-mix(in oklab, var(--rad) 5%, transparent) 0px,
+      color-mix(in oklab, var(--rad) 5%, transparent) 1px,
+      transparent 1px,
+      transparent 4px
+    );
+    mix-blend-mode: overlay;
+  }
+}
+
+@utility grid-floor {
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+@utility tick-label {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--muted-foreground);
+}
+
+@utility reveal-up {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  &[data-visible="true"] {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes rad-pulse {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.12);
+  }
+}
+
+@keyframes flicker {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  92% {
+    opacity: 1;
+  }
+  94% {
+    opacity: 0.62;
+  }
+  96% {
+    opacity: 1;
+  }
+  97% {
+    opacity: 0.78;
+  }
+}
+
+@keyframes marquee-x {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes caret {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@utility animate-rad-pulse {
+  animation: rad-pulse 2.4s ease-in-out infinite;
+}
+@utility animate-flicker {
+  animation: flicker 6s linear infinite;
+}
+@utility animate-marquee {
+  animation: marquee-x 26s linear infinite;
+}
+@utility animate-caret {
+  animation: caret 1s step-end infinite;
+}
