@@ -1,5 +1,46 @@
-import { profile, stack } from "@/data/portfolio";
+import { profile, stack, STACK_LOGOS, STACK_LOGO_IMAGES } from "@/data/portfolio";
 import { Reveal, SectionHeader, Tilt } from "./primitives";
+
+function StackLogo({ item }: { item: string }) {
+  const image = STACK_LOGO_IMAGES[item];
+  const icon = STACK_LOGOS[item];
+
+  if (image) {
+    return (
+      <span className="flex size-5 shrink-0 items-center justify-center rounded-sm border border-border/70 bg-background/40 p-0.5">
+        <img
+          src={image}
+          alt=""
+          aria-hidden="true"
+          loading="lazy"
+          className="size-3.5 object-contain"
+        />
+      </span>
+    );
+  }
+
+  if (icon) {
+    return (
+      <span className="flex size-5 shrink-0 items-center justify-center rounded-sm border border-border/70 bg-background/40">
+        <svg
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+          className="size-3.5"
+          fill="currentColor"
+          style={{ color: `#${icon.hex}` }}
+        >
+          <path d={icon.path} />
+        </svg>
+      </span>
+    );
+  }
+
+  return (
+    <span className="flex size-5 shrink-0 items-center justify-center rounded-sm border border-border/70 bg-background/40">
+      <span className="size-1.5 bg-signal/80" />
+    </span>
+  );
+}
 
 export function Dossier() {
   return (
@@ -109,10 +150,10 @@ export function Dossier() {
                       {group.items.map((item) => (
                         <li
                           key={item}
-                          className="flex items-center gap-2 text-xs text-muted-foreground"
+                          className="flex items-center gap-3 text-xs text-muted-foreground transition-colors hover:text-foreground"
                         >
-                          <span className="text-signal">▪</span>
-                          {item}
+                          <StackLogo item={item} />
+                          <span>{item}</span>
                         </li>
                       ))}
                     </ul>
