@@ -89,7 +89,7 @@ export function Dossier() {
 
             <Reveal delay={180}>
               <div className="panel corner-marks p-6">
-                <span className="tick-label text-rad">♥ What I Love</span>
+                <span className="tick-label text-rad">{"\u2665"} What I Love</span>
                 <div className="mt-4 flex flex-wrap gap-2">
                   {profile.loves.map((l) => (
                     <span
@@ -104,6 +104,25 @@ export function Dossier() {
             </Reveal>
 
             <Reveal delay={240}>
+              <div className="panel corner-marks p-6">
+                <span className="tick-label text-rad">Resume</span>
+                <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+                  {profile.resume.note}
+                </p>
+                <a
+                  href={profile.resume.href}
+                  download={profile.resume.download}
+                  className="corner-marks mt-5 inline-flex w-full items-center justify-center border border-rad bg-rad/10 px-4 py-3 text-xs tracking-[0.24em] text-rad transition-all hover:bg-rad hover:text-primary-foreground hover:shadow-[0_0_28px_-6px_var(--rad)]"
+                >
+                  DOWNLOAD RESUME
+                </a>
+                <p className="mt-3 text-[0.65rem] tracking-[0.2em] text-signal">
+                  PDF DOSSIER // DIRECT DOWNLOAD
+                </p>
+              </div>
+            </Reveal>
+
+            <Reveal delay={300}>
               <div className="panel corner-marks p-6">
                 <span className="tick-label text-rad">Connect</span>
                 <div className="mt-4 grid grid-cols-2 gap-px bg-border">
@@ -120,7 +139,7 @@ export function Dossier() {
                       rel="noreferrer"
                       className="bg-card px-4 py-3 text-xs tracking-[0.18em] text-muted-foreground transition-colors hover:bg-rad/10 hover:text-rad"
                     >
-                      {s.label} →
+                      {s.label} {"\u2192"}
                     </a>
                   ))}
                 </div>

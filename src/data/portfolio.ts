@@ -100,6 +100,11 @@ export const profile = {
     { degree: "ISTQB Foundation Track", school: "(In Progress)", years: "? — ?" },
   ],
   loves: ["Coding", "Testing", "Aviation", "Flight Charts", "Photo", "Music", "Reading", "Poetry", "Cooking"],
+  resume: {
+    href: "/final%20adriaan%20resume.pdf",
+    download: "Adriaan-M-Dimate-Resume.pdf",
+    note: "Direct PDF download for recruiters, collaborators, and hiring teams.",
+  },
 };
 
 export const stack: { group: string; items: string[] }[] = [
