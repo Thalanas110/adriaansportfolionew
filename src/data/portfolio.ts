@@ -82,6 +82,7 @@ export const profile = {
   phone: "+63 945 394 5299",
   linkedin: "https://www.linkedin.com/in/adriaan-dimate-390039260",
   github: "https://github.com/Thalanas110",
+  portrait: "/profile.jpg",
   facebook: "https://facebook.com/philippine8129heavy",
   bio: [
     "I'm an autistic developer with a dual passion: creating beautiful digital experiences and conquering the skies. I merge the precision of aviation with the creativity of software engineering — whether I'm writing a feature, filing a bug, or reading a flight chart, the same discipline applies.",
