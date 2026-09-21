@@ -10,7 +10,7 @@
 
 ## Global Constraints
 
-- Existing project content, IDs, categories, links, and ordering remain unchanged; featured records are also present in the complete project dumps.
+- Existing project content, categories, links, and ordering remain unchanged; featured IDs remain stable, while the 18 additional SE dump records use IDs `11`–`28` so the complete list has unique card keys.
 - `featured-se.ts` is the corrected filename for the existing typo `features-se.ts`.
 - No UI behavior, routes, or external URLs change as part of this refactor.
 - Preserve all existing test coverage and run the repository's lint, build, and test gates.
@@ -43,7 +43,7 @@
 
   In `src/data/project-dump-qa.ts`, import `featuredQAProjects` and export `projectDumpQAProjects: Project[] = [...featuredQAProjects]` so every featured QA record is present in the complete QA dump.
 
-  In `src/data/project-dump-se.ts`, import `featuredSEProjects`, prepend `...featuredSEProjects`, and export `projectDumpSEProjects: Project[]`, followed by all 18 additional SE records without changing their order or fields.
+  In `src/data/project-dump-se.ts`, import `featuredSEProjects`, prepend `...featuredSEProjects`, and export `projectDumpSEProjects: Project[]`, followed by all 18 additional SE records in their existing order and fields, renumbered `11`–`28` to avoid duplicate keys with the featured records.
 
 - [ ] **Step 4: Remove the typo-named file**
 

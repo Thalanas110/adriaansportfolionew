@@ -4,7 +4,7 @@ import type { Project } from "./featured-qa.ts";
 export const projectDumpSEProjects: Project[] = [
   ...featuredSEProjects,
   {
-    id: "01",
+    id: "11",
     title: "War of Dots",
     subtitle: "Game landing page for someonne`s game",
     desc: "Credited in-game as website designer for War of Dots. Rebuilt the official site in React with permission from the original creators, improving UI and performance.",
@@ -14,7 +14,7 @@ export const projectDumpSEProjects: Project[] = [
     demo: "https://warofdots.net/",
   },
   {
-    id: "02",
+    id: "12",
     title: "E-commerce Platform",
     subtitle: "Old AppDev and Software Engineering project",
     desc: "Old AppDev project that bled into Software Engineering 2. Deactivated already, not really my style of projects.",
@@ -25,7 +25,7 @@ export const projectDumpSEProjects: Project[] = [
     demo: "https://camflea-newer2.vercel.app/",
   },
   {
-    id: "03",
+    id: "13",
     title: "JFLAP but for Web",
     subtitle: "jflap replacement",
     desc: "JFLAP replacement for testing with formal languages and automatons. Also allows editing on mobile--probs the first ever one done to date.",
@@ -36,7 +36,7 @@ export const projectDumpSEProjects: Project[] = [
     demo: "https://automatastudio.vercel.app/",
   },
   {
-    id: "04",
+    id: "14",
     title: "Portfolio Website",
     subtitle: "Nuke-themed portfolio",
     desc: "Nuke themed portfolio website lol e.g. this",
@@ -46,7 +46,7 @@ export const projectDumpSEProjects: Project[] = [
     demo: "https://adriaansportfolio.vercel.app/",
   },
   {
-    id: "05",
+    id: "15",
     title: "Personal homepage",
     subtitle: "Simple personal homepage",
     desc: "basically just an entire about me page hahaha",
@@ -57,7 +57,7 @@ export const projectDumpSEProjects: Project[] = [
     demo: "https://adriaanmdimate.netlify.app/",
   },
   {
-    id: "06",
+    id: "16",
     title: "Practicum vlogsite",
     subtitle: "Practicum vlogsite with dashboard visuals",
     desc: "Practicum vlogsite with data visualization dashboard, containing interactive charts and reports. Also made sir loudel cry.",
@@ -68,7 +68,7 @@ export const projectDumpSEProjects: Project[] = [
     demo: "https://practicumoneblogsite.vercel.app",
   },
   {
-    id: "07",
+    id: "17",
     title: "Weather App",
     subtitle: "Direct, no-nonsense weather app",
     desc: "No-nonsense weather app that basically gives 'direct-to-the-point' information",
@@ -79,7 +79,7 @@ export const projectDumpSEProjects: Project[] = [
     demo: "https://quicksky.netlify.app/",
   },
   {
-    id: "08",
+    id: "18",
     title: "Poem Blogsite",
     subtitle: "Separate poem-focused blogsite project",
     desc: "main blogsite, but the challenge is, use poems instead of normal paragraphs.",
@@ -90,7 +90,7 @@ export const projectDumpSEProjects: Project[] = [
     demo: "https://adriaanspoems.netlify.app/",
   },
   {
-    id: "09",
+    id: "19",
     title: "Arcanum Corkboard",
     subtitle: "Anonymous corkboard for Arcanum Academy",
     desc: "4th monthsary anonymous corkboard system for Arcanum Academy, an rp hood",
@@ -101,7 +101,7 @@ export const projectDumpSEProjects: Project[] = [
     demo: "https://arcanumcorkboard.netlify.app/",
   },
   {
-    id: "10",
+    id: "20",
     title: "blogsite api",
     subtitle: "Backend-only API using PHP + MySQL",
     desc: "Backend-only API using Vanilla PHP and MySQL inside XAMPP, currently still being fixed.",
@@ -110,7 +110,7 @@ export const projectDumpSEProjects: Project[] = [
     category: "SOFTWARE ENG.",
   },
   {
-    id: "11",
+    id: "21",
     title: "Car Rental API v2",
     subtitle: "Vanilla PHP + MySQL",
     desc: "Vanilla PHP and MySQL API for managing car rental listings, bookings, and availability.",
@@ -120,7 +120,7 @@ export const projectDumpSEProjects: Project[] = [
     github: "https://github.com/Thalanas110/CarRentalAPI",
   },
   {
-    id: "12",
+    id: "22",
     title: "Cookbook API",
     subtitle: "Vanilla PHP + MySQL",
     desc: "Vanilla PHP and MySQL API for recipes, ingredients, and cookbook entries.",
@@ -130,7 +130,7 @@ export const projectDumpSEProjects: Project[] = [
     github: "https://github.com/Thalanas110/CookbookAPI",
   },
   {
-    id: "13",
+    id: "23",
     title: "RService API",
     subtitle: "Vanilla PHP + MySQL",
     desc: "My take on sir loude`s API for RService, my SHS Capstone back in 2023.",
@@ -140,7 +140,7 @@ export const projectDumpSEProjects: Project[] = [
     github: "https://github.com/Thalanas110/rservice-api-rest",
   },
   {
-    id: "14",
+    id: "24",
     title: "bucketlist",
     subtitle: "Simple personal bucketlist app",
     desc: "Simple bucketlist for me. Well, basically, my 2nd ever project upon return to coding, back in 2023.",
@@ -151,7 +151,7 @@ export const projectDumpSEProjects: Project[] = [
     demo: "https://moralesbucketlist.netlify.app/",
   },
   {
-    id: "15",
+    id: "25",
     title: "poem selectors",
     subtitle: "Poem selection interface project",
     desc: "Poem selection panes that I did for my now ex-girlfriend. Under maintenance to remove all names and only the UI plus poems will remain.",
@@ -162,7 +162,7 @@ export const projectDumpSEProjects: Project[] = [
     demo: "https://poemselections.netlify.app/",
   },
   {
-    id: "16",
+    id: "26",
     title: "rpw hood attendance system",
     subtitle: "Attendance tracking system for RP hood",
     desc: "Attendance system for the now-dissolved Gazelvouer hood in RPW. Database dissolved, so don't expect this to work.",
@@ -172,7 +172,7 @@ export const projectDumpSEProjects: Project[] = [
     demo: "https://attendance-tracking-self.vercel.app/",
   },
   {
-    id: "17",
+    id: "27",
     title: "anon corkboard",
     subtitle: "Anonymous monthsary corkboard system",
     desc: "Simple anonymous corkboard system that I used for Gazelvouer Monthsary 2",
@@ -183,7 +183,7 @@ export const projectDumpSEProjects: Project[] = [
     demo: "https://corkboardnew.vercel.app/",
   },
   {
-    id: "18",
+    id: "28",
     title: "rp log out system",
     subtitle: "Logout workflow for RP hood council",
     desc: "Logout system for RP hood council members of a specific hood that needs more fixing and is barely working.",

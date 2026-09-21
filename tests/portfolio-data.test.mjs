@@ -12,6 +12,33 @@ test("project data is split into the four focused datasets", () => {
   assert.equal(projectDumpQAProjects.length, 4);
   assert.equal(projectDumpSEProjects.length, 24);
   assert.equal(archivedProjects.length, 28);
+  assert.equal(
+    new Set(archivedProjects.map(({ category, id }) => `${category}-${id}`)).size,
+    archivedProjects.length,
+  );
+
+  assert.deepEqual(
+    featuredSEProjects.map(({ title }) => title),
+    [
+      "MeatLens - Freshness Inspector",
+      "Jazrielle",
+      "Tahanan",
+      "SnapBooth",
+      "ExamHub",
+      "MyLightDrugstore",
+    ],
+  );
+  assert.deepEqual(
+    featuredSEProjects.map(({ github }) => github),
+    [
+      "https://github.com/MeatLens-Freshness-Inspector/botchabuster",
+      "https://github.com/Thalanas110/Jazrielle",
+      "https://github.com/Thalanas110/tahanan",
+      "https://github.com/Thalanas110/snapbooth",
+      "https://github.com/Thalanas110/ExamHub",
+      "https://github.com/Thalanas110/MyLightDrugstore",
+    ],
+  );
 
   assert.deepEqual(
     projectDumpQAProjects.map(({ title }) => title),
