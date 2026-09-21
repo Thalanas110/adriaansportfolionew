@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ClientOnly } from "@/components/ClientOnly";
-import { archivedProjects } from "@/data/portfolio";
+import { projectDumpQAProjects } from "@/data/project-dump-qa";
+import { projectDumpSEProjects } from "@/data/project-dump-se";
 import { BootScreen } from "@/components/vault/BootScreen";
 import { SceneBackdrop } from "@/components/vault/SceneBackdrop";
 import { SectionHeader } from "@/components/vault/primitives";
@@ -26,9 +27,7 @@ export const Route = createFileRoute("/projects")({
 });
 
 function AllProjects() {
-  const qa = archivedProjects.filter((p) => p.category === "QA TESTING");
-  const se = archivedProjects.filter((p) => p.category === "SOFTWARE ENG.");
-  const ordered = [...qa, ...se];
+  const ordered = [...projectDumpQAProjects, ...projectDumpSEProjects];
 
   return (
     <main className="relative min-h-screen">
