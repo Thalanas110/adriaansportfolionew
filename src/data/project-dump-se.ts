@@ -4,6 +4,50 @@ import type { Project } from "./featured-qa.ts";
 export const projectDumpSEProjects: Project[] = [
   ...featuredSEProjects,
   {
+    id: "29",
+    title: "Zippo",
+    subtitle:
+      "for sir michael's csp323a/l, prototype only, main owned by the team, this ver is incomplete",
+    desc: "Final project for CSP323A/L | AI-powered gifting system featuring content-based recommendations, intelligent filtering, and delivery optimization using Python and Supabase.",
+    highlights: ["Responsive design", "Intelligent Agents"],
+    tech: [
+      "React",
+      "Tanstack Query",
+      "Node.js",
+      "Tailwind CSS",
+      "Python",
+      "FastAPI",
+      "Supabase",
+      "PostgreSQL",
+    ],
+    category: "SOFTWARE ENG.",
+    github: "https://github.com/Thalanas110/zippo",
+  },
+  {
+    id: "30",
+    title: "Media Remote Tool",
+    subtitle:
+      "Unified OBS + ProPresenter Remote Control System, one used in church is currently hidden and classified.",
+    desc: "A real-time web-based production control dashboard that unifies OBS scene switching and ProPresenter slide control into a single operator interface, designed for live church livestream environments.",
+    highlights: [
+      "Real-time synchronization",
+      "Cross-platform compatibility",
+      "User-friendly interface",
+      "Performance optimization",
+    ],
+    tech: [
+      "React",
+      "Tanstack Start",
+      "Node.js",
+      "WebSockets",
+      "ProPresenter API",
+      "OBS WebSocket",
+      "Tailwind CSS",
+    ],
+    category: "SOFTWARE ENG.",
+    github: "https://github.com/Thalanas110/obs-propres-remote-icc",
+  },
+  {
     id: "11",
     title: "War of Dots",
     subtitle: "Game landing page for someonne`s game",

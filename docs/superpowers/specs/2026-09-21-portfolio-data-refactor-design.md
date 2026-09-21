@@ -8,8 +8,8 @@ Reduce the responsibility of `src/data/portfolio.ts` by moving project datasets 
 
 - `featured-qa.ts` owns the featured QA projects and the shared `Project` shape.
 - `featured-se.ts` owns the featured software-engineering projects.
-- `project-dump-qa.ts` owns the complete QA project dump, including featured QA projects.
-- `project-dump-se.ts` owns the complete software-engineering project dump, including featured SE projects.
+- `project-dump-qa.ts` owns the complete QA project dump, including featured QA projects and the displaced legacy QA records.
+- `project-dump-se.ts` owns the complete software-engineering project dump, including featured SE projects, Zippo, Media Remote Tool, and the remaining legacy records.
 - `portfolio.ts` owns non-project portfolio data: profile, stack/icon metadata, operations, and contact channels. It also composes and re-exports `projects` and `archivedProjects` as a compatibility barrel.
 
 Project lists are composed in category order so the home archive continues to show featured QA projects followed by featured software-engineering projects, while the full projects route renders every project-dump record with QA projects before software-engineering projects. Featured projects are a subset of their corresponding project dump, not an alternative to it.
@@ -20,7 +20,7 @@ The project files export typed arrays. The composition layer combines the featur
 
 ## Compatibility and behavior
 
-- Featured and dump datasets are sourced from the current pinned GitHub project lists; featured IDs remain stable, while the 18 additional SE dump records use IDs `11`–`28` so the complete list has unique card keys.
+- Featured and dump datasets are sourced from the current pinned GitHub project lists; displaced older records remain in the complete dump, and dump IDs are unique within each category so rendered card keys do not collide.
 - `featured-se.ts` is the corrected filename for the existing typo `features-se.ts` and remains ready for future pinned-GitHub project updates.
 - The `/projects` route continues to render the complete inventory, now including featured projects as required by the project-dump contract.
 
