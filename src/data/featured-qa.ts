@@ -5,7 +5,7 @@ export type FeaturedQA = {
   desc: string;
   highlights: string[];
   tech: string[];
-  category: "QA TESTING";
+  category: "SOFTWARE ENG." | "QA TESTING";
   github?: string;
   demo?: string;
 };
@@ -15,62 +15,53 @@ export type Project = FeaturedQA;
 export const featuredQAProjects: Project[] = [
   {
     id: "01",
-    title: "I Care Center Church Website",
-    subtitle: "QA Testing for Full-Stack Church Web Platform",
-    desc: "Performed end-to-end testing on a production church website focusing on authentication, admin workflows, and content management reliability.",
-    highlights: [
-      "Validated authentication flows (session, token handling, edge cases)",
-      "Identified and resolved image upload failure (edge function fix)",
-      "Tested role-based access control (RLS) across user types",
-      "Performed cross-device and SEO indexing validation",
-    ],
-    tech: ["Cypress", "PostgreSQL", "Authentication", "RBAC", "SEO Validation"],
+    title: "MeatLens - Freshness Inspector",
+    subtitle: "Meat scanner thesis under construction",
+    desc: "Meat scanner that one can use in order to scan meat. Currently a thesis under construction--be warned.",
+    highlights: [],
+    tech: ["TypeScript"],
     category: "QA TESTING",
-    demo: "https://icarecenter.netlify.app/",
+    github: "https://github.com/MeatLens-Freshness-Inspector/botchabuster",
   },
   {
     id: "02",
-    title: "War of Dots",
-    subtitle: "Beta Testing - Multiplayer Strategy Game",
-    desc: "Conducted live beta testing in a real player environment, focusing on gameplay stability, bug detection, and user experience consistency.",
-    highlights: [
-      "Tested gameplay under 200-400 concurrent players",
-      "Reported reproducible bugs with structured feedback",
-      "Identified UI/UX inconsistencies and edge-case failures",
-      "Assisted in validating game stability across updates",
-    ],
-    tech: ["Beta Testing", "Gameplay QA", "Bug Reporting", "UX Validation"],
+    title: "MyLightDrugstore",
+    subtitle: "Legacy PHP application from 2009-2012",
+    desc: "Old code from 2009-2012.",
+    highlights: [],
+    tech: ["PHP"],
     category: "QA TESTING",
-    demo: "https://warofdots.net/",
+    github: "https://github.com/Thalanas110/MyLightDrugstore",
   },
   {
     id: "03",
-    title: "Media Remote Tool",
-    subtitle: "QA Testing for Real-Time Production Control System",
-    desc: "Tested a real-time web-based remote system integrating OBS and ProPresenter, ensuring reliability in live streaming environments.",
-    highlights: [
-      "Validated real-time synchronization via WebSockets",
-      "Performed integration testing (OBS WebSocket + ProPresenter API)",
-      "Simulated live production scenarios for stress testing",
-      "Detected and resolved state desynchronization issues",
-    ],
-    tech: ["OBS WebSocket", "ProPresenter API", "WebSockets", "Integration Testing"],
+    title: "ExamHub",
+    subtitle: "Automated exam management system",
+    desc: "An automated Exam Management System designed for modern classrooms. Includes real-time monitoring, anti-cheat countermeasures, and a centralized dashboard for student performance analytics. Created as the final requirement for Frontend and Backend Electives.",
+    highlights: [],
+    tech: ["TypeScript"],
     category: "QA TESTING",
-    github: "https://github.com/Thalanas110/obs-propres-remote-icc",
+    github: "https://github.com/Thalanas110/ExamHub",
   },
   {
     id: "04",
-    title: "ExamHub - Exam system",
-    subtitle: "QA Testing for the Elective final projects",
-    desc: "Involved heavy use of testing for the exam project via Playwright and PHP, alongside Postman. Tested for edge cases and security vulnerabilities, especially in the anti-cheat features.",
-    highlights: [
-      "Tested AES-GCM-256 encryption implementation for security",
-      "Validated role-based access control (RBAC) across user roles",
-      "Simulated cheating scenarios to test anti-cheat features",
-      "Performed cross-browser testing for compatibility",
-    ],
-    tech: ["PHP Unit Testing", "Playwright", "Postman"],
+    title: "new-pdc-2",
+    subtitle: "Parallel & Distributed Computing final project",
+    desc: "Parallel & Distributed Computing - final project",
+    highlights: [],
+    tech: ["C++"],
     category: "QA TESTING",
-    github: "https://github.com/Thalanas110/ExamSystemG8Submission1",
+    github: "https://github.com/Thalanas110/new-pdc-2",
+  },
+  {
+    id: "05",
+    title: "SnapBooth",
+    subtitle: "WebSocket-based couple capture app",
+    desc: "A website designed for couples to capture photos, create lasting memories, and build a shared collection of special moments. Collaboration between me and my wife.",
+    highlights: [],
+    tech: ["TypeScript"],
+    category: "QA TESTING",
+    github: "https://github.com/Thalanas110/snapbooth",
+    demo: "https://snapbooth-main.netlify.app/",
   },
 ];

@@ -20,7 +20,7 @@ The project files export typed arrays. The composition layer combines the featur
 
 ## Compatibility and behavior
 
-- Existing project content, categories, links, and ordering remain unchanged; featured IDs remain stable, while the 18 additional SE dump records use IDs `11`–`28` so the complete list has unique card keys.
+- Featured and dump datasets are sourced from the current pinned GitHub project lists; featured IDs remain stable, while the 18 additional SE dump records use IDs `11`–`28` so the complete list has unique card keys.
 - `featured-se.ts` is the corrected filename for the existing typo `features-se.ts` and remains ready for future pinned-GitHub project updates.
 - The `/projects` route continues to render the complete inventory, now including featured projects as required by the project-dump contract.
 

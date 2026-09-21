@@ -10,7 +10,7 @@
 
 ## Global Constraints
 
-- Existing project content, categories, links, and ordering remain unchanged; featured IDs remain stable, while the 18 additional SE dump records use IDs `11`–`28` so the complete list has unique card keys.
+- Featured and dump datasets are sourced from the current pinned GitHub project lists; featured IDs remain stable, while the 18 additional SE dump records use IDs `11`–`28` so the complete list has unique card keys.
 - `featured-se.ts` is the corrected filename for the existing typo `features-se.ts`.
 - No UI behavior, routes, or external URLs change as part of this refactor.
 - Preserve all existing test coverage and run the repository's lint, build, and test gates.
@@ -57,7 +57,7 @@
   rg -n "export (const|type)|title:" src/data/featured-qa.ts src/data/featured-se.ts src/data/project-dump-qa.ts src/data/project-dump-se.ts
   ```
 
-  Expected: four featured QA titles, six featured SE titles, zero archived QA titles, and 18 archived SE titles are present in the focused modules.
+  Expected: five featured QA titles, six featured SE titles, no literal titles in `project-dump-qa.ts` because its five records come from the featured spread, and 18 additional literal titles in `project-dump-se.ts` plus six featured records from its spread.
 
 ### Task 2: Compose the focused modules through `portfolio.ts`
 
@@ -156,4 +156,4 @@
   (rg '^    title:' src/data/project-dump-se.ts | Measure-Object -Line).Lines
   ```
 
-  Expected: no whitespace errors; the intended files are the only task changes; literal title counts are 4 in `featured-qa.ts`, 6 in `featured-se.ts`, 0 in `project-dump-qa.ts` (its four records come from the featured spread), and 18 in `project-dump-se.ts` plus six featured records from its spread.
+  Expected: no whitespace errors; the intended files are the only task changes; literal title counts are 5 in `featured-qa.ts`, 6 in `featured-se.ts`, 0 in `project-dump-qa.ts` (its five records come from the featured spread), and 18 in `project-dump-se.ts` plus six featured records from its spread.
