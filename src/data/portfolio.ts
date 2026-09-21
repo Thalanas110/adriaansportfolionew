@@ -31,6 +31,13 @@ import {
   siNdi,
 } from "simple-icons/icons";
 
+import type { Project } from "./featured-qa.ts";
+import { featuredQAProjects } from "./featured-qa.ts";
+import { featuredSEProjects } from "./featured-se.ts";
+import { projectDumpQAProjects } from "./project-dump-qa.ts";
+import { projectDumpSEProjects } from "./project-dump-se.ts";
+export type { Project } from "./featured-qa.ts";
+
 export const STACK_LOGOS: Record<string, SimpleIcon> = {
   "HTML5/CSS3/JS": siHtml5,
   React: siReact,
@@ -66,14 +73,12 @@ export const STACK_LOGOS: Record<string, SimpleIcon> = {
 export const STACK_LOGO_IMAGES: Record<string, string> = {
   "TanStack Query": "https://tanstack.com/images/logos/logo-color-100.png",
   Angular: "/logos/angular-color.svg",
-  Photoshop:
-    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-plain.svg",
+  Photoshop: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-plain.svg",
   Playwright:
     "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/playwright/playwright-original.svg",
   ProPresenter:
     "https://cdn.prod.website-files.com/662f9c93a3bc73a71bd8dc81/662ff398fa7d280a13da12d3_ProPresenter_white_svg.svg",
-  NDI:
-    "https://2136244485-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FoUOsQw9oPpQ8LFlxOpLI%2Fuploads%2F1U4sO7iJ8fZEcxyRfpHb%2FPicture%202.png?alt=media&token=d4f3e033-ae57-478a-8320-2b5b459d2a49",
+  NDI: "https://2136244485-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FoUOsQw9oPpQ8LFlxOpLI%2Fuploads%2F1U4sO7iJ8fZEcxyRfpHb%2FPicture%202.png?alt=media&token=d4f3e033-ae57-478a-8320-2b5b459d2a49",
 };
 
 export const profile = {
@@ -102,7 +107,17 @@ export const profile = {
     { degree: "Commercial Pilot License — Groundwork", school: "(In Progress)", years: "? — ?" },
     { degree: "ISTQB Foundation Track", school: "(In Progress)", years: "? — ?" },
   ],
-  loves: ["Coding", "Testing", "Aviation", "Flight Charts", "Photo", "Music", "Reading", "Poetry", "Cooking"],
+  loves: [
+    "Coding",
+    "Testing",
+    "Aviation",
+    "Flight Charts",
+    "Photo",
+    "Music",
+    "Reading",
+    "Poetry",
+    "Cooking",
+  ],
   resume: {
     href: "/final%20adriaan%20resume.pdf",
     download: "Adriaan-M-Dimate-Resume.pdf",
@@ -135,10 +150,7 @@ export const operations = [
     place: "Olongapo City, Philippines",
     summary:
       "Improved OBS Remote for livestreams, built a scalable church site and app, and managed agile workflows with ministry teams.",
-    bullets: [
-      "A new, improved church website",
-      "A unified OBS-ProPresenter remote control system",
-    ],
+    bullets: ["A new, improved church website", "A unified OBS-ProPresenter remote control system"],
     tags: ["React", "TypeScript", "OBS", "Web Development"],
   },
   {
@@ -186,318 +198,10 @@ export const operations = [
   },
 ];
 
-export type Project = {
-  id: string;
-  title: string;
-  subtitle: string;
-  desc: string;
-  highlights: string[];
-  tech: string[];
-  category: "SOFTWARE ENG." | "QA TESTING";
-  github?: string;
-  demo?: string;
-};
+export const projects: Project[] = [...featuredQAProjects, ...featuredSEProjects];
 
-/** Featured operations shown on the main archive: 4 QA + 6 SE. */
-export const projects: Project[] = [
-  {
-    id: "01",
-    title: "I Care Center Church Website",
-    subtitle: "QA Testing for Full-Stack Church Web Platform",
-    desc: "Performed end-to-end testing on a production church website focusing on authentication, admin workflows, and content management reliability.",
-    highlights: ["Validated authentication flows (session, token handling, edge cases)", "Identified and resolved image upload failure (edge function fix)", "Tested role-based access control (RLS) across user types", "Performed cross-device and SEO indexing validation"],
-    tech: ["Cypress", "PostgreSQL", "Authentication", "RBAC", "SEO Validation"],
-    category: "QA TESTING",
-    demo: "https://icarecenter.netlify.app/",
-  },
-  {
-    id: "02",
-    title: "War of Dots",
-    subtitle: "Beta Testing - Multiplayer Strategy Game",
-    desc: "Conducted live beta testing in a real player environment, focusing on gameplay stability, bug detection, and user experience consistency.",
-    highlights: ["Tested gameplay under 200-400 concurrent players", "Reported reproducible bugs with structured feedback", "Identified UI/UX inconsistencies and edge-case failures", "Assisted in validating game stability across updates"],
-    tech: ["Beta Testing", "Gameplay QA", "Bug Reporting", "UX Validation"],
-    category: "QA TESTING",
-    demo: "https://warofdots.net/",
-  },
-  {
-    id: "03",
-    title: "Media Remote Tool",
-    subtitle: "QA Testing for Real-Time Production Control System",
-    desc: "Tested a real-time web-based remote system integrating OBS and ProPresenter, ensuring reliability in live streaming environments.",
-    highlights: ["Validated real-time synchronization via WebSockets", "Performed integration testing (OBS WebSocket + ProPresenter API)", "Simulated live production scenarios for stress testing", "Detected and resolved state desynchronization issues"],
-    tech: ["OBS WebSocket", "ProPresenter API", "WebSockets", "Integration Testing"],
-    category: "QA TESTING",
-    github: "https://github.com/Thalanas110/obs-propres-remote-icc",
-  },
-  {
-    id: "04",
-    title: "ExamHub - Exam system",
-    subtitle: "QA Testing for the Elective final projects",
-    desc: "Involved heavy use of testing for the exam project via Playwright and PHP, alongside Postman. Tested for edge cases and security vulnerabilities, especially in the anti-cheat features.",
-    highlights: ["Tested AES-GCM-256 encryption implementation for security", "Validated role-based access control (RBAC) across user roles", "Simulated cheating scenarios to test anti-cheat features", "Performed cross-browser testing for compatibility"],
-    tech: ["PHP Unit Testing", "Playwright", "Postman"],
-    category: "QA TESTING",
-    github: "https://github.com/Thalanas110/ExamSystemG8Submission1",
-  },
-  {
-    id: "05",
-    title: "Meatlens - Freshness Inspector",
-    subtitle: "thesis writing - proprietary project for DTI and City Vet",
-    desc: "Thesis project for my thesis writing, using PWA tech for DTI and City Veterinary Office meat inspectors. Was responsible for all of AppDev and some ML training, my partner did most of the trainig of the MobileNetV3-small model.",
-    highlights: ["OpenCV", "Machine Learning", "PWA features", "Performance optimization"],
-    tech: ["ReactJS", "Tanstack Router", "Vite", "Node.js", "Supabase", "PostgreSQL", "ExpressJS", "OpenCV", "Tailwind CSS", "TensorFlow", "MobileNetV3-Small"],
-    category: "SOFTWARE ENG.",
-    github: "https://github.com/MeatLens-Freshness-Inspector",
-    demo: "https://meatlensv2.netlify.app",
-  },
-  {
-    id: "06",
-    title: "SnapBooth",
-    subtitle: "WebSocket-based couple capture app",
-    desc: "A website designed for couples to capture photos, create lasting memories, and build a shared collection of special moments. Collaboration between me and my wife.",
-    highlights: ["Real-time synchronization", "Cross-platform compatibility", "User-friendly interface", "Performance optimization"],
-    tech: ["React", "Tanstack Start", "Node.js", "WebSockets", "ExpressJS"],
-    category: "SOFTWARE ENG.",
-    github: "https://github.com/Thalanas110/snapbooth",
-    demo: "https://snapbooth-main.netlify.app/",
-  },
-  {
-    id: "07",
-    title: "Tahanan",
-    subtitle: "Internal tool only",
-    desc: "Tandem-inspired application for daily couple life, with necessary custom additions necessary for safety purposes and some more.",
-    highlights: ["SOS capacity", "Android release"],
-    tech: ["React", "Node.js", "Supabase", "Deno", "PostgreSQL", "Capacitor", "LeafletJS", "Tailwind CSS"],
-    category: "SOFTWARE ENG.",
-    github: "https://github.com/Thalanas110/tahanan",
-    demo: "https://tahanan-drab.vercel.app/",
-  },
-  {
-    id: "08",
-    title: "ExamHub - Exam system",
-    subtitle: "Frontend Development and Backend Development elective final projects",
-    desc: "Exam system I did for final project in Frontend and Backend electives. One of my most overkill operations ever, submitted to Sir Melner and Sir Churt.",
-    highlights: ["AES-GCM-256 encryption", "Role-based access control", "Anti-cheat features"],
-    tech: ["React", "Vite", "Node.js", "PHP", "MySQL/MariaDB", "Tailwind CSS"],
-    category: "SOFTWARE ENG.",
-    github: "https://github.com/Thalanas110/ExamHub",
-  },
-  {
-    id: "09",
-    title: "Zippo",
-    subtitle: "for sir michael's csp323a/l, prototype only, main owned by the team, this ver is incomplete",
-    desc: "Final project for CSP323A/L | AI-powered gifting system featuring content-based recommendations, intelligent filtering, and delivery optimization using Python and Supabase.",
-    highlights: ["Responsive design", "Intelligent Agents"],
-    tech: ["React", "Tanstack Query", "Node.js", "Tailwind CSS", "Python", "FastAPI", "Supabase", "PostgreSQL"],
-    category: "SOFTWARE ENG.",
-    github: "https://github.com/Thalanas110/zippo",
-  },
-  {
-    id: "10",
-    title: "Media Remote Tool",
-    subtitle: "Unified OBS + ProPresenter Remote Control System, one used in church is currently hidden and classified.",
-    desc: "A real-time web-based production control dashboard that unifies OBS scene switching and ProPresenter slide control into a single operator interface, designed for live church livestream environments.",
-    highlights: ["Real-time synchronization", "Cross-platform compatibility", "User-friendly interface", "Performance optimization"],
-    tech: ["React", "Tanstack Start", "Node.js", "WebSockets", "ProPresenter API", "OBS WebSocket", "Tailwind CSS"],
-    category: "SOFTWARE ENG.",
-    github: "https://github.com/Thalanas110/obs-propres-remote-icc",
-  },
-];
-
-/** Every remaining declassified build — rendered on /projects. */
-export const archivedProjects: Project[] = [
-  {
-    id: "01",
-    title: "War of Dots",
-    subtitle: "Game landing page for someonne`s game",
-    desc: "Credited in-game as website designer for War of Dots. Rebuilt the official site in React with permission from the original creators, improving UI and performance.",
-    highlights: ["Responsive design", "Interactive UI", "Performance and UI beautification"],
-    tech: ["React", "Tanstack Query", "Node.js", "Tailwind CSS"],
-    category: "SOFTWARE ENG.",
-    demo: "https://warofdots.net/",
-  },
-  {
-    id: "02",
-    title: "E-commerce Platform",
-    subtitle: "Old AppDev and Software Engineering project",
-    desc: "Old AppDev project that bled into Software Engineering 2. Deactivated already, not really my style of projects.",
-    highlights: ["Full-Stack Development", "Database Integration", "User Authentication"],
-    tech: ["Vanilla", "Node.js", "Express", "Supabase", "PostgreSQL", "Tailwind CSS"],
-    category: "SOFTWARE ENG.",
-    github: "https://github.com/Thalanas110/camflea-new",
-    demo: "https://camflea-newer2.vercel.app/",
-  },
-  {
-    id: "03",
-    title: "JFLAP but for Web",
-    subtitle: "jflap replacement",
-    desc: "JFLAP replacement for testing with formal languages and automatons. Also allows editing on mobile--probs the first ever one done to date.",
-    highlights: ["AI Assistance", "Formal Languages", "Automatons", "Interactive UI"],
-    tech: ["React", "Tanstack Start", "Vite", "GroqAI", "Tailwind CSS"],
-    category: "SOFTWARE ENG.",
-    github: "https://github.com/Thalanas110/automata",
-    demo: "https://automatastudio.vercel.app/",
-  },
-  {
-    id: "04",
-    title: "Portfolio Website",
-    subtitle: "Nuke-themed portfolio",
-    desc: "Nuke themed portfolio website lol e.g. this",
-    highlights: [],
-    tech: ["React", "Tailwind CSS", "Node.js", "Tanstack Start", "EmailJS"],
-    category: "SOFTWARE ENG.",
-    demo: "https://adriaansportfolio.vercel.app/",
-  },
-  {
-    id: "05",
-    title: "Personal homepage",
-    subtitle: "Simple personal homepage",
-    desc: "basically just an entire about me page hahaha",
-    highlights: [],
-    tech: ["React", "Tailwind CSS", "Node.js"],
-    category: "SOFTWARE ENG.",
-    github: "https://github.com/Thalanas110/personalpage",
-    demo: "https://adriaanmdimate.netlify.app/",
-  },
-  {
-    id: "06",
-    title: "Practicum vlogsite",
-    subtitle: "Practicum vlogsite with dashboard visuals",
-    desc: "Practicum vlogsite with data visualization dashboard, containing interactive charts and reports. Also made sir loudel cry.",
-    highlights: ["Data Visualization", "Interactive Charts", "Comprehensive Reporting"],
-    tech: ["Vanilla", "Node.js", "Supabase", "PostgreSQL"],
-    category: "SOFTWARE ENG.",
-    github: "https://github.com/zionren/OJTblogsite",
-    demo: "https://practicumoneblogsite.vercel.app",
-  },
-  {
-    id: "07",
-    title: "Weather App",
-    subtitle: "Direct, no-nonsense weather app",
-    desc: "No-nonsense weather app that basically gives 'direct-to-the-point' information",
-    highlights: ["Simplicity", "Direct Information", "Responsive Design"],
-    tech: ["React", "Tailwind CSS", "Node.js", "OpenWeatherMap"],
-    category: "SOFTWARE ENG.",
-    github: "https://github.com/Thalanas110/NewWeatherPWA",
-    demo: "https://quicksky.netlify.app/",
-  },
-  {
-    id: "08",
-    title: "Poem Blogsite",
-    subtitle: "Separate poem-focused blogsite project",
-    desc: "main blogsite, but the challenge is, use poems instead of normal paragraphs.",
-    highlights: ["Poem Formatting", "Responsive Design", "CRUD Operations", "User Authentication"],
-    tech: ["React", "Tanstack Start", "Tailwind CSS", "Node.js", "Supabase", "PostgreSQL"],
-    category: "SOFTWARE ENG.",
-    github: "https://github.com/Thalanas110/poemblog",
-    demo: "https://adriaanspoems.netlify.app/",
-  },
-  {
-    id: "09",
-    title: "Arcanum Corkboard",
-    subtitle: "Anonymous corkboard for Arcanum Academy",
-    desc: "4th monthsary anonymous corkboard system for Arcanum Academy, an rp hood",
-    highlights: ["Anonymous Posting", "Custom Corkboards", "User Management"],
-    tech: ["React", "Tailwind CSS", "Node.js", "PostgreSQL", "Supabase"],
-    category: "SOFTWARE ENG.",
-    github: "https://github.com/Thalanas110/arcanumcorkboard2",
-    demo: "https://arcanumcorkboard.netlify.app/",
-  },
-  {
-    id: "10",
-    title: "blogsite api",
-    subtitle: "Backend-only API using PHP + MySQL",
-    desc: "Backend-only API using Vanilla PHP and MySQL inside XAMPP, currently still being fixed.",
-    highlights: [],
-    tech: ["PHP", "MySQL"],
-    category: "SOFTWARE ENG.",
-  },
-  {
-    id: "11",
-    title: "Car Rental API v2",
-    subtitle: "Vanilla PHP + MySQL",
-    desc: "Vanilla PHP and MySQL API for managing car rental listings, bookings, and availability.",
-    highlights: [],
-    tech: ["Vanilla PHP", "MySQL"],
-    category: "SOFTWARE ENG.",
-    github: "https://github.com/Thalanas110/CarRentalAPI",
-  },
-  {
-    id: "12",
-    title: "Cookbook API",
-    subtitle: "Vanilla PHP + MySQL",
-    desc: "Vanilla PHP and MySQL API for recipes, ingredients, and cookbook entries.",
-    highlights: [],
-    tech: ["Vanilla PHP", "MySQL"],
-    category: "SOFTWARE ENG.",
-    github: "https://github.com/Thalanas110/CookbookAPI",
-  },
-  {
-    id: "13",
-    title: "RService API",
-    subtitle: "Vanilla PHP + MySQL",
-    desc: "My take on sir loude`s API for RService, my SHS Capstone back in 2023.",
-    highlights: [],
-    tech: ["Vanilla PHP", "MySQL"],
-    category: "SOFTWARE ENG.",
-    github: "https://github.com/Thalanas110/rservice-api-rest",
-  },
-  {
-    id: "14",
-    title: "bucketlist",
-    subtitle: "Simple personal bucketlist app",
-    desc: "Simple bucketlist for me. Well, basically, my 2nd ever project upon return to coding, back in 2023.",
-    highlights: [],
-    tech: ["Vanilla"],
-    category: "SOFTWARE ENG.",
-    github: "https://github.com/Thalanas110/Easter_egg",
-    demo: "https://moralesbucketlist.netlify.app/",
-  },
-  {
-    id: "15",
-    title: "poem selectors",
-    subtitle: "Poem selection interface project",
-    desc: "Poem selection panes that I did for my now ex-girlfriend. Under maintenance to remove all names and only the UI plus poems will remain.",
-    highlights: [],
-    tech: ["Vanilla"],
-    category: "SOFTWARE ENG.",
-    github: "https://github.com/Thalanas110/poemselectors/",
-    demo: "https://poemselections.netlify.app/",
-  },
-  {
-    id: "16",
-    title: "rpw hood attendance system",
-    subtitle: "Attendance tracking system for RP hood",
-    desc: "Attendance system for the now-dissolved Gazelvouer hood in RPW. Database dissolved, so don't expect this to work.",
-    highlights: [],
-    tech: ["Vanilla", "Node.js", "PostgreSQL", "Supabase"],
-    category: "SOFTWARE ENG.",
-    demo: "https://attendance-tracking-self.vercel.app/",
-  },
-  {
-    id: "17",
-    title: "anon corkboard",
-    subtitle: "Anonymous monthsary corkboard system",
-    desc: "Simple anonymous corkboard system that I used for Gazelvouer Monthsary 2",
-    highlights: [],
-    tech: ["Vanilla", "PostgreSQL", "Node.js", "Supabase"],
-    category: "SOFTWARE ENG.",
-    github: "https://github.com/zionren/corkboard",
-    demo: "https://corkboardnew.vercel.app/",
-  },
-  {
-    id: "18",
-    title: "rp log out system",
-    subtitle: "Logout workflow for RP hood council",
-    desc: "Logout system for RP hood council members of a specific hood that needs more fixing and is barely working.",
-    highlights: [],
-    tech: ["Vanilla", "Node.js", "PostgreSQL", "Supabase"],
-    category: "SOFTWARE ENG.",
-    github: "https://github.com/Thalanas110/arcanumlogout/",
-    demo: "https://arcanumlogout.vercel.app/",
-  },
-];
+/** Complete declassified build list — rendered on /projects. */
+export const archivedProjects: Project[] = [...projectDumpQAProjects, ...projectDumpSEProjects];
 
 export const channels = [
   {

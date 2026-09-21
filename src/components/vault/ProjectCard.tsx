@@ -1,4 +1,4 @@
-import type { Project } from "@/data/portfolio";
+import type { Project } from "@/data/featured-qa";
 import { Reveal, Tilt } from "./primitives";
 
 export function ProjectCard({ p, index }: { p: Project; index: number }) {

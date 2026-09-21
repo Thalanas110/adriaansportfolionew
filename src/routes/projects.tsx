@@ -11,7 +11,6 @@ const TITLE = "All Projects — Adriaan M. Dimate";
 const DESC =
   "Full declassified flight log of every software engineering and QA build by Adriaan M. Dimate: APIs, web apps, tools and experiments.";
 
-
 export const Route = createFileRoute("/projects")({
   head: () => ({
     meta: [
@@ -60,8 +59,8 @@ function AllProjects() {
         <div className="mx-auto max-w-6xl">
           <SectionHeader code="DB://FULL" title="ALL PROJECTS" tag="//DECLASSIFIED-INDEX" />
           <p className="-mt-8 mb-12 max-w-xl text-sm leading-relaxed text-muted-foreground">
-            Everything outside the featured mission archive — {ordered.length} logged builds,
-            experiments and APIs. QA operations listed first.
+            Everything in the complete project dump — {ordered.length} logged builds, experiments
+            and APIs. QA operations listed first.
           </p>
 
           <div className="grid gap-6 lg:grid-cols-2">
