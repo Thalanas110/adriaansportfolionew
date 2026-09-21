@@ -24,30 +24,6 @@ export const projectDumpSEProjects: Project[] = [
     github: "https://github.com/Thalanas110/zippo",
   },
   {
-    id: "30",
-    title: "Media Remote Tool",
-    subtitle:
-      "Unified OBS + ProPresenter Remote Control System, one used in church is currently hidden and classified.",
-    desc: "A real-time web-based production control dashboard that unifies OBS scene switching and ProPresenter slide control into a single operator interface, designed for live church livestream environments.",
-    highlights: [
-      "Real-time synchronization",
-      "Cross-platform compatibility",
-      "User-friendly interface",
-      "Performance optimization",
-    ],
-    tech: [
-      "React",
-      "Tanstack Start",
-      "Node.js",
-      "WebSockets",
-      "ProPresenter API",
-      "OBS WebSocket",
-      "Tailwind CSS",
-    ],
-    category: "SOFTWARE ENG.",
-    github: "https://github.com/Thalanas110/obs-propres-remote-icc",
-  },
-  {
     id: "11",
     title: "War of Dots",
     subtitle: "Game landing page for someonne`s game",

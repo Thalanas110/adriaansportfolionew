@@ -148,9 +148,11 @@ export const operations = [
     org: "I Care Center",
     period: "Jun 2025 — Present",
     place: "Olongapo City, Philippines",
-    summary:
-      "Improved OBS Remote for livestreams, built a scalable church site and app, and managed agile workflows with ministry teams.",
-    bullets: ["A new, improved church website", "A unified OBS-ProPresenter remote control system"],
+    summary: "Supported internal software and media workflows with ministry teams.",
+    bullets: [
+      "Supported internal web and livestream workflows",
+      "Managed agile collaboration with ministry teams",
+    ],
     tags: ["React", "TypeScript", "OBS", "Web Development"],
   },
   {
@@ -164,7 +166,7 @@ export const operations = [
       "Operated and QA'd ProPresenter for live and online services, syncing media in real time and resolving tech issues with worship and media teams.",
     bullets: [
       "ProPresenter and OBS setup and QA for 100+ live and online services",
-      "OBS Remote configuration and troubleshooting for livestreams",
+      "Maintained media workflows for livestream operations",
       "Collaborated with teams to resolve tech issues and ensure smooth service flow",
     ],
     tags: ["ProPresenter", "OBS", "Live QA", "Tech Support"],

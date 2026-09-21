@@ -3,21 +3,6 @@ import { featuredQAProjects, type Project } from "./featured-qa.ts";
 export const projectDumpQAProjects: Project[] = [
   ...featuredQAProjects,
   {
-    id: "06",
-    title: "I Care Center Church Website",
-    subtitle: "QA Testing for Full-Stack Church Web Platform",
-    desc: "Performed end-to-end testing on a production church website focusing on authentication, admin workflows, and content management reliability.",
-    highlights: [
-      "Validated authentication flows (session, token handling, edge cases)",
-      "Identified and resolved image upload failure (edge function fix)",
-      "Tested role-based access control (RLS) across user types",
-      "Performed cross-device and SEO indexing validation",
-    ],
-    tech: ["Cypress", "PostgreSQL", "Authentication", "RBAC", "SEO Validation"],
-    category: "QA TESTING",
-    demo: "https://icarecenter.netlify.app/",
-  },
-  {
     id: "07",
     title: "War of Dots",
     subtitle: "Beta Testing - Multiplayer Strategy Game",
@@ -31,21 +16,6 @@ export const projectDumpQAProjects: Project[] = [
     tech: ["Beta Testing", "Gameplay QA", "Bug Reporting", "UX Validation"],
     category: "QA TESTING",
     demo: "https://warofdots.net/",
-  },
-  {
-    id: "08",
-    title: "Media Remote Tool",
-    subtitle: "QA Testing for Real-Time Production Control System",
-    desc: "Tested a real-time web-based remote system integrating OBS and ProPresenter, ensuring reliability in live streaming environments.",
-    highlights: [
-      "Validated real-time synchronization via WebSockets",
-      "Performed integration testing (OBS WebSocket + ProPresenter API)",
-      "Simulated live production scenarios for stress testing",
-      "Detected and resolved state desynchronization issues",
-    ],
-    tech: ["OBS WebSocket", "ProPresenter API", "WebSockets", "Integration Testing"],
-    category: "QA TESTING",
-    github: "https://github.com/Thalanas110/obs-propres-remote-icc",
   },
   {
     id: "09",

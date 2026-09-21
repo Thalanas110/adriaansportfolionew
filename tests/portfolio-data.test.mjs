@@ -9,9 +9,9 @@ import { archivedProjects, projects } from "../src/data/portfolio.ts";
 test("project data is split into the four focused datasets", () => {
   assert.equal(featuredQAProjects.length, 5);
   assert.equal(featuredSEProjects.length, 6);
-  assert.equal(projectDumpQAProjects.length, 9);
-  assert.equal(projectDumpSEProjects.length, 26);
-  assert.equal(archivedProjects.length, 35);
+  assert.equal(projectDumpQAProjects.length, 7);
+  assert.equal(projectDumpSEProjects.length, 25);
+  assert.equal(archivedProjects.length, 32);
   assert.equal(
     new Set(archivedProjects.map(({ category, id }) => `${category}-${id}`)).size,
     archivedProjects.length,
@@ -56,20 +56,18 @@ test("project data is split into the four focused datasets", () => {
 
   assert.deepEqual(
     projectDumpQAProjects.map(({ title }) => title),
-    [
-      ...featuredQAProjects,
-      { title: "I Care Center Church Website" },
-      { title: "War of Dots" },
-      { title: "Media Remote Tool" },
-      { title: "ExamHub - Exam system" },
-    ].map(({ title }) => title),
+    [...featuredQAProjects, { title: "War of Dots" }, { title: "ExamHub - Exam system" }].map(
+      ({ title }) => title,
+    ),
   );
   assert.deepEqual(
     projectDumpSEProjects.slice(0, featuredSEProjects.length).map(({ title }) => title),
     featuredSEProjects.map(({ title }) => title),
   );
   assert.ok(projectDumpSEProjects.some(({ title }) => title === "Zippo"));
-  assert.ok(projectDumpSEProjects.some(({ title }) => title === "Media Remote Tool"));
+  assert.ok(!projectDumpQAProjects.some(({ title }) => title === "I Care Center Church Website"));
+  assert.ok(!projectDumpQAProjects.some(({ title }) => title === "Media Remote Tool"));
+  assert.ok(!projectDumpSEProjects.some(({ title }) => title === "Media Remote Tool"));
 
   for (const title of [
     "MeatLens - Freshness Inspector",
