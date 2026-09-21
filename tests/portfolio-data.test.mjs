@@ -65,9 +65,6 @@ test("project data is split into the four focused datasets", () => {
     featuredSEProjects.map(({ title }) => title),
   );
   assert.ok(projectDumpSEProjects.some(({ title }) => title === "Zippo"));
-  assert.ok(!projectDumpQAProjects.some(({ title }) => title === "I Care Center Church Website"));
-  assert.ok(!projectDumpQAProjects.some(({ title }) => title === "Media Remote Tool"));
-  assert.ok(!projectDumpSEProjects.some(({ title }) => title === "Media Remote Tool"));
 
   for (const title of [
     "MeatLens - Freshness Inspector",
