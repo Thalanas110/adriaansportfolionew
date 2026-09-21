@@ -27,7 +27,7 @@ export const Route = createFileRoute("/projects")({
 });
 
 function AllProjects() {
-  const ordered = [...projectDumpQAProjects, ...projectDumpSEProjects];
+  const totalProjects = projectDumpQAProjects.length + projectDumpSEProjects.length;
 
   return (
     <main className="relative min-h-screen">
@@ -58,14 +58,28 @@ function AllProjects() {
         <div className="mx-auto max-w-6xl">
           <SectionHeader code="DB://FULL" title="ALL PROJECTS" tag="//DECLASSIFIED-INDEX" />
           <p className="-mt-8 mb-12 max-w-xl text-sm leading-relaxed text-muted-foreground">
-            Everything in the complete project dump — {ordered.length} logged builds, experiments
-            and APIs. QA operations listed first.
+            Everything in the complete project dump — {totalProjects} logged builds, experiments and
+            APIs. QA and software engineering records are separated below.
           </p>
 
-          <div className="grid gap-6 lg:grid-cols-2">
-            {ordered.map((p, i) => (
-              <ProjectCard key={`${p.category}-${p.id}`} p={p} index={i} />
-            ))}
+          <div className="space-y-24">
+            <section aria-label="QA projects">
+              <SectionHeader code="DB://QA" title="QA OPERATIONS" tag="//QUALITY-ASSURANCE" />
+              <div className="grid gap-6 lg:grid-cols-2">
+                {projectDumpQAProjects.map((p, i) => (
+                  <ProjectCard key={`${p.category}-${p.id}`} p={p} index={i} />
+                ))}
+              </div>
+            </section>
+
+            <section aria-label="Software engineering projects">
+              <SectionHeader code="DB://SE" title="SOFTWARE ENGINEERING" tag="//BUILD-ARCHIVE" />
+              <div className="grid gap-6 lg:grid-cols-2">
+                {projectDumpSEProjects.map((p, i) => (
+                  <ProjectCard key={`${p.category}-${p.id}`} p={p} index={i} />
+                ))}
+              </div>
+            </section>
           </div>
         </div>
         <Footer />
